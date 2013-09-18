@@ -11,3 +11,83 @@
  *= require_self
  *= require_tree .
  */
+/* This file contains the global page styles for headers footers and menus */
+html,
+body {
+	background-image: url(images/back.png);
+	background-repeat: repeat-x;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: Arial;
+	font-size: 12px;
+}
+
+#container {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* css for header */
+header {
+	background-image: url(images/back.png);
+	background-repeat: repeat-x;
+	height: 75px;
+	padding-top: 10px;
+	padding-left: 20px;
+}
+/* css for content */
+article {
+	padding-left: 18px;
+	padding-top: 5px;
+	padding-bottom: 20px;
+	background: #FFFFFF;
+	border-bottom-left-radius: 7px;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+	box-shadow: rgb(0, 0, 0) 1px 1px 4px 0px;
+}
+
+h1 {
+	font-weight: 700; 
+	font-size: 220%; 
+}
+
+h2 {
+	font-weight: 700; 
+	font-size: 160%; 
+}
+
+#add-item-form {
+	background: #EFF3F6; 
+	padding: 1px 8px 1px 8px; 
+	margin-right: 20px; 
+	border: 1px solid;
+	border-bottom-left-radius: 7px;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+}
+
+a:link {
+	color: #0000FF;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #0000FF;
+	text-decoration:none;
+}
+
+a:hover {
+	color: #FF9900;
+}
+
+/* css for footer */
+footer {
+	color: #999999;
+	text-align: center;
+	font-size: 11px;
+}

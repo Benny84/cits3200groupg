@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ProcessSystem</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+	<meta charset = "utf-8"/>
+	<title> Club Process System - Swedish Club of WA </title>
+	<%= stylesheet_link_tag "application" %>
+	<%= javascript_include_tag 'http://code.jquery.com/jquery-1.10.1.min.js' %>
+	<%= javascript_include_tag 'application' %>
 </head>
 <body>
+	<div id = "container">
+		<header>
+			<p style = "font-weight: 700; font-size: 300%; letter-spacing: -2px; margin-top: 0px; color: #FFFFFF">Swedish Club of WA</p>
+			<p style = "font-weight: 200; font-size: 220%; letter-spacing: -2px; margin-top: -45px; margin-left: 100px"><i>Club Process System</i></p>
+		</header>
 
-<%= yield %>
+	<%= yield %>
 
+	</div>
+	<footer>
+		<p>&copy; 2013 CITS3200 Group G</p>
+	</footer>
 </body>
 </html>
