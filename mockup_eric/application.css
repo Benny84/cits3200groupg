@@ -20,16 +20,54 @@ body {
 header {
 	background-image: url(images/back.png);
 	background-repeat: repeat-x;
-	height: 75px;
-	padding-top: 10px;
+	height: 85px;
 	padding-left: 20px;
+	overflow: hidden;
 }
+
+#logoutTab {
+	height: 30px; 
+	width: 84px; 
+	font-size: 14px;
+	background: #FFFFFF; 
+	margin-top: 55px;
+	margin-left: 865px;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	box-shadow: rgb(0, 0, 0) 1px 1px 4px 0px;
+}
+
 /* css for content */
-article {
+#main {
 	padding-left: 18px;
 	padding-top: 5px;
 	padding-bottom: 20px;
 	background: #FFFFFF;
+	border-bottom-left-radius: 7px;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+	box-shadow: rgb(0, 0, 0) 1px 1px 4px 0px;
+}
+
+#centerDiv {
+	width: 400px;
+	height: 300px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+#loginTab {
+	width: 280px;
+	margin: auto;
+	background: #FFFFFF;
+	padding-top: 5px;
+	padding-bottom: 15px;
+	text-align: center;
 	border-bottom-left-radius: 7px;
 	border-top-left-radius: 7px;
 	border-top-right-radius: 7px;
@@ -50,6 +88,7 @@ h2 {
 .add-item-forms {
 	background: #EFF3F6; 
 	padding: 1px 8px 1px 8px; 
+	margin-top: 15px;
 	margin-right: 20px; 
 	border: 1px solid;
 	border-bottom-left-radius: 7px;
@@ -84,7 +123,17 @@ a:visited {
 }
 
 a:hover {
-	color: #FF9900;
+	color: #33CCCC;
+}
+
+#logout  > a, #itemToRoot > a, #currentItemOptions > a {
+	color: #3366FF;
+	text-decoration: none;
+}
+
+#logout  > a:hover, #itemToRoot > a:hover, #currentItemOptions > a:hover {
+	color: #CC66FF;
+	text-decoration: underline;
 }
 
 /* css for footer */

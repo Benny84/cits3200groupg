@@ -8,10 +8,14 @@ $(function () {
 	
 	$('#add-root-item').click(function() {
 		$('#add-root-item-form').show();
+		$('#currentItemOptions').hide();
+		$('#currentItem').hide();
+		$('#child1').hide(); //and loop through all children
+		$('#add-item-form').hide();
 	});
 	
 	$('#edit').click(function() {
-		document.getElementById("hi").innerHTML = "hi";
+		document.getElementById("main").innerHTML = "hi";
 	});
 	
 	$('#add-item-confirm').click(function() {
@@ -40,10 +44,16 @@ $(function () {
 		
 		document.getElementById("add-root-item-form").reset();
 		$('#add-root-item-form').hide();
+		$('#currentItemOptions').show();
+		$('#currentItem').show(); 
+		$('#child1').show();//and loop through all children
 	});
 	
 	$('#add-root-item-cancel').click(function() {
 		$('#add-root-item-form').hide();
+		$('#currentItemOptions').show();
+		$('#currentItem').show(); 
+		$('#child1').show();//and loop through all children
 	});
 	
 	$('#add-root-item-clear').click(function() {
