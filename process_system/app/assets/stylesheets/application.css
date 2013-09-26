@@ -1,7 +1,7 @@
 /* This file contains the global page styles for headers footers and menus */
 html,
 body {
-	background-image: url(images/back.png);
+	background-image: url(<%=asset_path "back.png"%>);
 	background-repeat: repeat-x;
 	margin: 0;
 	padding: 0;
@@ -18,7 +18,7 @@ body {
 
 /* css for header */
 header {
-	background-image: url(images/back.png);
+	background-image: url(<%=asset_path "back.png"%>);
 	background-repeat: repeat-x;
 	height: 85px;
 	padding-left: 20px;
