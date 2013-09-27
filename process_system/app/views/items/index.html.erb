@@ -1,62 +1,62 @@
-    <div id = "main">
-      <div style = "float: left; width: 165px">
-        <p id = "itemToRoot" style = "font-size: 14px; text-align: right; margin-top: 0px"><br/><a id = "add-root-item" href = "#"> + Add Item To Root</a></p>
-        <ul id = "rootChildren">
-          <li><a href = "cps.html">2013</a></li>
-          <li class = "indent">
-            <ul style = "list-style-type: circle">
-            <li><a href = "#">Ikea Food Testing</a></li>
-              <li class = "indent">
-              <ul style = "list-style-type: disc">
-                <li><a href = "#">Transport</a></li>
-              </ul></li>
-            </ul></li>
-          <li><a href = "#">2014</a></li>
-        </ul>
-      </div>
-      
-      <div style = "text-align: left; width: 740px; margin-left: 180px; padding-left: 40px; border-left: 1px solid">
-        <p id = "currentItemOptions" style = "text-align: right; font-size: 14px">
-          <a id = "add-item" href = "#">Add Item</a> | 
-          <a id = "set-email" href = "#">Set Email Reminder</a> | 
-          <a id = "edit" href = "#">Edit</a>
-        </p>
-        
-        <form id = "currentItem">
-          <h1><input type = "checkbox" style = "margin-left: -24px"/> Ikea Food Tasting</h1>
-          <p>The Swedish clubs annual trip to Ikea</p>
-        </form>
-        
-        <div id = "currentItemChildren">
-          <form id = "child1" style = "margin-left: 30px">
-            <h2><input type = "checkbox" style = "margin-left: -24px"/><a href = "#"> Transport</a></h2>
-            <p>A bus needs to be hired from Hireabus.com</p>
-            <p style = "color: red">Email to peterthonnel@swedishclub.com at 18:00 12/12/2013</p>
-          </form>
-        </div>
-        
-        <form id = "add-item-form" class = "add-item-forms">
-        <p>Title: <input type = "text" id = "new-item-title" size = "106" style = "margin-left: 10px"/></p>
-        <p>Body: <input type = "text" id = "new-item-body" size = "106" style = "margin-left: 6px"/></p>
-        <p>Enable Complete/Incomplete status?<input type = "checkbox" id = "new-item-active"/></p>
-        <p style = "text-align: center; font-size: 14px">
-          <a id = "add-item-confirm" href = "#">Confirm Item</a> | 
-          <a id = "add-item-clear" href = "#">Clear</a> | 
-          <a id = "add-item-cancel" href = "#">Cancel</a>
-        </p>
-        </form>
-        
-        <form id = "add-root-item-form" class = "add-item-forms">
-        <p style = "text-align: center">Adding New Item to Root:</p>
-        <p>Title: <input type = "text" id = "new-root-item-title" size = "106" style = "margin-left: 10px"/></p>
-        <p>Body: <input type = "text" id = "new-root-item-body" size = "106" style = "margin-left: 6px"/></p>
-        <p>Enable Complete/Incomplete status?<input type = "checkbox" id = "new-root-item-active"/></p>
-        <p style = "text-align: center; font-size: 14px">
-          <a id = "add-root-item-confirm" href = "#">Confirm Item</a> | 
-          <a id = "add-root-item-clear" href = "#">Clear</a> | 
-          <a id = "add-root-item-cancel" href = "#">Cancel</a>
-        </p>
-        </form>
-      </div>
-    </div>
+<div id = "main">
+  <div id = "heirachyDiv">
+	<p id = "itemToRoot"><br/><a id = "add-root-item" href = "#"> + Add Item To Root</a></p>
+	<ul id = "rootChildren">
+	  <li class = "currentItemPath"><a href = "#">2013</a></li>
+	  <li class = "indent">
+	  <ul>
+		<li class = "currentItemPath"><%= link_to "Ikea Food Testing", items_path %></li>
+		<li class = "indent">
+		<ul>
+		  <li><a href = "#">Transport</a></li>
+		</ul>
+		</li>
+	  </ul></li>
+	  <li><a href = "#">2014</a></li>
+	</ul>
   </div>
+  
+  <div id = "contentPane">
+	<p id = "currentItemOptions">
+	  <a id = "add-item" href = "#">Add Item</a> | 
+	  <a id = "set-email" href = "#">Set Email Reminder</a> | 
+	  <a id = "edit" href = "#">Edit</a>
+	</p>
+	
+	<form id = "currentItem">
+	  <h1><input type = "checkbox" class = "itemCheckbox"/> Ikea Food Tasting</h1>
+	  <p>The Swedish clubs annual trip to Ikea</p>
+	</form>
+	
+	<div id = "currentItemChildren">
+	  <form id = "child1">
+		<h2><input type = "checkbox" class = "itemCheckbox"/><a href = "#"> Transport</a></h2>
+		<p>A bus needs to be hired from Hireabus.com</p>
+		<p class = "emailReminder">Email to peterthonnel@swedishclub.com at 18:00 12/12/2013</p>
+	  </form>
+	</div>
+	
+	<form id = "add-item-form">
+	<p>Title: <input type = "text" id = "new-item-title" size = "106"/></p>
+	<p>Body: <input type = "text" id = "new-item-body" size = "106"/></p>
+	<p>Enable Complete/Incomplete status?<input type = "checkbox" id = "new-item-active"/></p>
+	<p class = "newFormOptions">
+	  <a id = "add-item-confirm" href = "#">Confirm Item</a> | 
+	  <a id = "add-item-clear" href = "#">Clear</a> | 
+	  <a id = "add-item-cancel" href = "#">Cancel</a>
+	</p>
+	</form>
+	
+	<form id = "add-root-item-form">
+	<p id = "rootFormTitle">Adding New Item to Root:</p>
+	<p>Title: <input type = "text" id = "new-root-item-title" size = "106"/></p>
+	<p>Body: <input type = "text" id = "new-root-item-body" size = "106"/></p>
+	<p>Enable Complete/Incomplete status?<input type = "checkbox" id = "new-root-item-active"/></p>
+	<p class = "newFormOptions">
+	  <a id = "add-root-item-confirm" href = "#">Confirm Item</a> | 
+	  <a id = "add-root-item-clear" href = "#">Clear</a> | 
+	  <a id = "add-root-item-cancel" href = "#">Cancel</a>
+	</p>
+	</form>
+  </div>
+</div>
