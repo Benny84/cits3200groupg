@@ -25,29 +25,15 @@ header {
 	overflow: hidden;
 }
 
-#logoutTab {
-	height: 30px; 
-	width: 84px; 
-	font-size: 14px;
-	background: #FFFFFF; 
-	margin-top: 55px;
-	margin-left: 865px;
-	border-top-left-radius: 7px;
-	border-top-right-radius: 7px;
-	box-shadow: rgb(0, 0, 0) 1px 1px 4px 0px;
+#indexTitleDiv {
+	height: 70px;
+	padding-top: 10px;
 }
 
-/* css for content */
-#main {
-	padding-left: 18px;
-	padding-top: 5px;
-	padding-bottom: 20px;
-	background: #FFFFFF;
-	border-bottom-left-radius: 7px;
-	border-top-left-radius: 7px;
-	border-top-right-radius: 7px;
-	border-bottom-right-radius: 7px;
-	box-shadow: rgb(0, 0, 0) 1px 1px 4px 0px;
+#itemsTitleDiv {
+	float: left;
+	width: 500px;
+	padding-top: 10px;
 }
 
 #title1 {
@@ -66,6 +52,19 @@ header {
 	margin-left: 100px
 }
 
+/* css for content formatting */
+#main {
+	padding-left: 18px;
+	padding-top: 5px;
+	padding-bottom: 20px;
+	background: #FFFFFF;
+	border-bottom-left-radius: 7px;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+	box-shadow: rgb(0, 0, 0) 1px 1px 4px 0px;
+}
+
 #centerDiv {
 	width: 400px;
 	height: 300px;
@@ -75,11 +74,6 @@ header {
 	left: 0;
 	right: 0;
 	margin: auto;
-}
-
-#indexTitleDiv {
-	height: 70px;
-	padding-top: 10px;
 }
 
 #loginTab {
@@ -96,12 +90,65 @@ header {
 	box-shadow: rgb(0, 0, 0) 1px 1px 4px 0px;
 }
 
+#logoutTab {
+	height: 30px; 
+	width: 84px; 
+	background: #FFFFFF; 
+	margin-top: 55px;
+	margin-left: 865px;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	box-shadow: rgb(0, 0, 0) 1px 1px 4px 0px;
+}
+
+#logout {
+	font-size: 14px;
+	padding-top: 5px;
+	padding-left: 15px;
+}
+
+/* new sessions form formatting */
+
 #session_email {
 	margin-left: 40px;
 }
 
 #session_password {
 	margin-left: 15px;
+}
+
+/* css formating for the heirachy - a lot of lists */
+
+#heirachyDiv {
+	float: left;
+	width: 165px;
+}
+
+ul {
+	margin-left: -25px;
+	list-style-type: circle;
+}
+
+.indent {
+	list-style-type: none;
+}
+
+.currentItemPath {
+	list-style-type: disc;
+}
+
+/* css for main content pain and forms */
+
+#contentPane {
+	text-align: left; 
+	width: 740px; 
+	margin-left: 180px; 
+	padding-left: 40px; 
+	border-left: 1px solid;
+}
+
+#currentItemChildren {
+	margin-left: 30px;
 }
 
 h1 {
@@ -114,7 +161,20 @@ h2 {
 	font-size: 160%; 
 }
 
-.add-item-forms {
+.emailReminder {
+	color: red;
+}
+
+#itemToRoot, #currentItemOptions {
+	font-size: 14px;
+	text-align: right;
+}
+
+#itemToRoot {
+	margin-top: 0px;
+}
+
+#add-item-form, #add-root-item-form {
 	background: #EFF3F6; 
 	padding: 1px 8px 1px 8px; 
 	margin-top: 15px;
@@ -126,17 +186,32 @@ h2 {
 	border-bottom-right-radius: 7px;
 }
 
-/* css formating for the heirachy - a lot of lists */
-ul {
-	margin-left: -25px;
+#new-item-title, #new-root-item-title {
+	margin-left: 10px;
 }
 
-.indent {
-	list-style-type: none;
+#new-item-body, #new-root-item-body {
+	margin-left: 6px;
 }
 
-#rootChildren {
-	list-style-type: circle; 
+.itemCheckbox {
+	margin-left: -24px;
+}
+
+.inactive {
+	visibility: hidden;
+}
+
+.newFormOptions {
+	text-align: center; 
+	font-size: 14px;
+}
+
+#rootFormTitle {
+	text-align: center;
+	font-weight: 200; 
+	font-size: 160%; 
+	letter-spacing: -1px; 
 }
 
 /* formating link hover colours */
@@ -166,6 +241,7 @@ a:hover {
 }
 
 /* css for footer */
+
 footer {
 	color: #999999;
 	text-align: center;

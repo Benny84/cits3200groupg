@@ -15,20 +15,30 @@
 //= require_tree .
 $(function () {
 	$('#add-item-form').hide();
+	$('#add-root-item-form').hide();
 	
 	$('#add-item').click(function() {
 		$('#add-item-form').show();
 	});
 	
+	$('#add-root-item').click(function() {
+		$('#add-root-item-form').show();
+		$('#currentItemOptions').hide();
+		$('#currentItem').hide();
+		$('#currentItemChildren').hide(); //and loop through all children
+		$('#add-item-form').hide();
+	});
+	
 	$('#edit').click(function() {
-		document.getElementById("hi").innerHTML = "hi";
+		document.getElementById("main").innerHTML = "hi";
 	});
 	
 	$('#add-item-confirm').click(function() {
 		var title = document.getElementById("new-item-title").value;
 		var body = document.getElementById("new-item-body").value;
-		
-		$('#currentItemChildren').append("<form style = 'margin-left: 30px'><p><b><input type = 'checkbox' style = 'margin-left: -20px'/> " + title + "</b></p><p><a href = '#'>" + body + "</a></p><p style = 'color: red'>Email Reminder set at</p></form>");
+		var active = document.getElementById("new-item-active").checked;
+
+		$('#currentItemChildren').append("<form><h2><input type = 'checkbox' class = 'itemCheckbox" + (active ? "" : " inactive") + "'/><a href = '#'> " + title + "</a></h2><p>" + body + "</p></form>");
 		
 		document.getElementById("add-item-form").reset();
 		$('#add-item-form').hide();
@@ -40,5 +50,28 @@ $(function () {
 	
 	$('#add-item-clear').click(function() {
 		document.getElementById("add-item-form").reset();
+	});
+	
+	$('#add-root-item-confirm').click(function() {
+		var title = document.getElementById("new-root-item-title").value;
+		
+		$('#rootChildren').append("<li><a href = '#'>" + title + "</a></li>");
+		
+		document.getElementById("add-root-item-form").reset();
+		$('#add-root-item-form').hide();
+		$('#currentItemOptions').show();
+		$('#currentItem').show(); 
+		$('#currentItemChildren').show();//and loop through all children
+	});
+	
+	$('#add-root-item-cancel').click(function() {
+		$('#add-root-item-form').hide();
+		$('#currentItemOptions').show();
+		$('#currentItem').show(); 
+		$('#currentItemChildren').show();//and loop through all children
+	});
+	
+	$('#add-root-item-clear').click(function() {
+		document.getElementById("add-root-item-form").reset();
 	});
 });
