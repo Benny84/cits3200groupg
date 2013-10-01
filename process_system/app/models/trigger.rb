@@ -1,5 +1,5 @@
-class email < ActiveRecord::Base
-    belongs_to :trigger
-    validates :email, presence: true
-    validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+class Trigger < ActiveRecord::Base
+    belongs_to :item
+    has_many :emails through :trigger_email
+    validates :date, presence: true
 end
