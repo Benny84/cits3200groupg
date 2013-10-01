@@ -9,6 +9,7 @@
 		<li class = "indent">
 		<ul>
 		  <li><a href = "#">Transport</a></li>
+		  
 		</ul>
 		</li>
 	  </ul></li>
@@ -42,6 +43,17 @@
 	<p>Enable Complete/Incomplete status?<input type = "checkbox" id = "new-item-active"/></p>
 	<p class = "newFormOptions">
 	  <a id = "add-item-confirm" href = "#">Confirm Item</a> | 
+	  <a id = "add-item-clear" href = "#">Clear</a> | 
+	  <a id = "add-item-cancel" href = "#">Cancel</a>
+	</p>
+	</form>
+	
+	<form id = "set-email-form">
+	<p>Date: <input type = "text" id = "datepicker"/><small> MM/DD/YYYY</small></p>
+	<p>Email To: <input type = "text" id = "email-email" size = "100"/></p>
+	<p>Send all subchildren too?<input type = "checkbox" id = "email-children"/></p>
+	<p class = "newFormOptions">
+	  <a id = "add-item-confirm" href = "#">Set Email Reminder</a> | 
 	  <a id = "add-item-clear" href = "#">Clear</a> | 
 	  <a id = "add-item-cancel" href = "#">Cancel</a>
 	</p>

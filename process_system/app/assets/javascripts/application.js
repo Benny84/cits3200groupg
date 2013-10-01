@@ -13,20 +13,35 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-$(function () {
+function hideAllForms() {
 	$('#add-item-form').hide();
 	$('#add-root-item-form').hide();
+	$('#set-email-form').hide();
+}
+
+function hideCurrentItem() {
+	$('#currentItemOptions').hide();
+	$('#currentItem').hide();
+	$('#currentItemChildren').hide();
+}
+
+$(function () {
+	hideAllForms();
 	
 	$('#add-item').click(function() {
+		hideAllForms();
 		$('#add-item-form').show();
 	});
 	
+	$('#set-email').click(function() {
+		hideAllForms();
+		$('#set-email-form').show();
+	});
+	
 	$('#add-root-item').click(function() {
+		hideAllForms();
+		hideCurrentItem();
 		$('#add-root-item-form').show();
-		$('#currentItemOptions').hide();
-		$('#currentItem').hide();
-		$('#currentItemChildren').hide(); //and loop through all children
-		$('#add-item-form').hide();
 	});
 	
 	$('#edit').click(function() {
@@ -61,17 +76,19 @@ $(function () {
 		$('#add-root-item-form').hide();
 		$('#currentItemOptions').show();
 		$('#currentItem').show(); 
-		$('#currentItemChildren').show();//and loop through all children
+		$('#currentItemChildren').show();
 	});
 	
 	$('#add-root-item-cancel').click(function() {
 		$('#add-root-item-form').hide();
 		$('#currentItemOptions').show();
 		$('#currentItem').show(); 
-		$('#currentItemChildren').show();//and loop through all children
+		$('#currentItemChildren').show();
 	});
 	
 	$('#add-root-item-clear').click(function() {
 		document.getElementById("add-root-item-form").reset();
 	});
+	
+	$('#datepicker').datepicker();
 });

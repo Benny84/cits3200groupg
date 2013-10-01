@@ -2,9 +2,19 @@
   <div id = "heirachyDiv">
 	<p id = "itemToRoot"><br/><a id = "add-root-item" href = "#"> + Add Item To Root</a></p>
 	<ul id = "rootChildren">
-		<% @items.each do |item| %>
-			<p><%= item.title %></p>
-		<% end %>
+	  <li class = "currentItemPath"><a href = "#">2013</a></li>
+	  <li class = "indent">
+	  <ul>
+		<li class = "currentItemPath"><%= link_to "Ikea Food Testing", items_path %></li>
+		<li class = "indent">
+		<ul>
+		  <li><a href = "#">Transport</a></li>
+		  
+		</ul>
+		</li>
+	  </ul></li>
+	  <li><a href = "#">2014</a></li>
+	</ul>
   </div>
   
   <div id = "contentPane">
@@ -18,6 +28,7 @@
 	  <h1><input type = "checkbox" class = "itemCheckbox"/> Ikea Food Tasting</h1>
 	  <p>The Swedish clubs annual trip to Ikea</p>
 	</form>
+	
 	<div id = "currentItemChildren">
 	  <form id = "child1">
 		<h2><input type = "checkbox" class = "itemCheckbox"/><a href = "#"> Transport</a></h2>
@@ -32,6 +43,17 @@
 	<p>Enable Complete/Incomplete status?<input type = "checkbox" id = "new-item-active"/></p>
 	<p class = "newFormOptions">
 	  <a id = "add-item-confirm" href = "#">Confirm Item</a> | 
+	  <a id = "add-item-clear" href = "#">Clear</a> | 
+	  <a id = "add-item-cancel" href = "#">Cancel</a>
+	</p>
+	</form>
+	
+	<form id = "set-email-form">
+	<p>Date: <input type = "text" id = "datepicker"/><small> MM/DD/YYYY</small></p>
+	<p>Email To: <input type = "text" id = "email-email" size = "100"/></p>
+	<p>Send all subchildren too?<input type = "checkbox" id = "email-children"/></p>
+	<p class = "newFormOptions">
+	  <a id = "add-item-confirm" href = "#">Set Email Reminder</a> | 
 	  <a id = "add-item-clear" href = "#">Clear</a> | 
 	  <a id = "add-item-cancel" href = "#">Cancel</a>
 	</p>

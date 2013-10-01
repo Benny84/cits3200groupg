@@ -17,6 +17,8 @@ development:
   database: db/development
   pool: 5
   timeout: 5000
+  username: postgres
+  password: pASSword
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -26,12 +28,16 @@ test: &test
   database: db/test
   pool: 5
   timeout: 5000
+  username: postgres
+  password: pASSword
 
 production:
   adapter: postgresql
   database: db/production
   pool: 5
   timeout: 5000
+  username: postgres
+  password: pASSword
 
 cucumber:
   <<: *test
