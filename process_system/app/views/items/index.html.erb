@@ -19,14 +19,27 @@
   
   <div id = "contentPane">
 	<p id = "currentItemOptions">
-	  <a id = "add-item" href = "#">Add Item</a> | 
-	  <a id = "set-email" href = "#">Set Email Reminder</a> | 
-	  <a id = "edit" href = "#">Edit</a>
+	  <a id = "add-item" href = "#">Add Item</a>
 	</p>
 	
 	<form id = "currentItem">
-	  <h1><input type = "checkbox" class = "itemCheckbox"/> Ikea Food Tasting</h1>
+	  <h1><input type = "checkbox" class = "itemCheckbox"/> Ikea Food Tasting </h1>
+	  <div class = "itemOptions">
+	    <a id = "edit" href = "#" title = "Edit"></a>
+	    <a id = "set-email" href = "#" title = "Set Email Reminder"></a>
+	  </div>
 	  <p>The Swedish clubs annual trip to Ikea</p>
+	</form>
+	
+	<form id = "set-email-form">
+	<p>Date: <input type = "text" id = "email-datepicker" size = "9"/><small> MM/DD/YYYY at 0:00</small></p>
+	<p>Recipient(s): <input type = "text" id = "email-recip" size = "80" placeholder = "example@swedishclubwa.com"/></p>
+	<p>Send all subchildren too? <input type = "checkbox" id = "email-children"/></p>
+	<p class = "newFormOptions">
+	  <a id = "set-email-confirm" href = "#">Set Email Reminder</a> | 
+	  <a id = "set-email-clear" href = "#">Clear</a> | 
+	  <a id = "set-email-cancel" href = "#">Cancel</a>
+	</p>
 	</form>
 	
 	<form id = "currentItemChildren">
@@ -46,17 +59,6 @@
 	  <a id = "add-item-confirm" href = "#">Confirm Item</a> | 
 	  <a id = "add-item-clear" href = "#">Clear</a> | 
 	  <a id = "add-item-cancel" href = "#">Cancel</a>
-	</p>
-	</form>
-	
-	<form id = "set-email-form">
-	<p>Date: <input type = "text" id = "email-datepicker" size = "9"/><small> MM/DD/YYYY at 0:00</small></p>
-	<p>Recipient(s): <input type = "text" id = "email-recip" size = "80" placeholder = "example@swedishclubwa.com"/></p>
-	<p>Send all subchildren too? <input type = "checkbox" id = "email-children"/></p>
-	<p class = "newFormOptions">
-	  <a id = "set-email-confirm" href = "#">Set Email Reminder</a> | 
-	  <a id = "set-email-clear" href = "#">Clear</a> | 
-	  <a id = "set-email-cancel" href = "#">Cancel</a>
 	</p>
 	</form>
 	

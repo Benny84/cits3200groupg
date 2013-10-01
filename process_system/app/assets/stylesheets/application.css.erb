@@ -107,6 +107,43 @@ header {
 	padding-left: 15px;
 }
 
+/* css for option links */
+
+#edit {
+	margin-left: 32px;
+	display: block;
+	width: 25px;
+	height: 25px;
+	background: url(<%=asset_path "edit.png"%>) bottom;
+	text-indent: -99999px;
+}
+
+#edit:hover {
+	background-position: 0 0;
+}
+
+#set-email {
+	margin-top: -25px;
+	display: block;
+	width: 25px;
+	height: 25px;
+	background: url(<%=asset_path "email.png"%>) bottom;
+	text-indent: -99999px;
+}
+
+#set-email:hover {
+	background-position: 0 0;
+}
+
+.itemOptions {
+	background: #F0F0F0;
+	padding-top: 1px;
+	padding-left: 1px;
+	width: 57px;
+	height: 27px;
+	border: 1px solid;
+}
+
 /* new sessions form formatting */
 
 #session_email {
