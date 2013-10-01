@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131001033405) do
+ActiveRecord::Schema.define(:version => 20131001043703) do
 
   create_table "emails", :force => true do |t|
     t.string "email"
@@ -21,13 +21,13 @@ ActiveRecord::Schema.define(:version => 20131001033405) do
     t.integer  "pid"
     t.string   "title"
     t.text     "body"
-    t.boolean  "task"
+    t.boolean  "task",       :default => false
     t.boolean  "complete"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
-  create_table "trigger_email", :force => true do |t|
+  create_table "trigger_emails", :force => true do |t|
     t.integer "trigger_id"
     t.integer "email_id"
   end
