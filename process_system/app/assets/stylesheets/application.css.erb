@@ -142,6 +142,11 @@ header {
 	width: 57px;
 	height: 27px;
 	border: 1px solid;
+	border-bottom-left-radius: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	box-shadow: rgb(0, 0, 0) 1px 1px 2px 0px;
 }
 
 /* new sessions form formatting */
@@ -272,15 +277,23 @@ a:visited {
 }
 
 a:hover {
-	color: #33CCCC;
+	color: #3399FF;
 }
 
-#logout  > a, #itemToRoot > a, #currentItemOptions > a {
+#title1 > a {
+	color: #FFFFFF;
+}
+
+#title2 > i > a {
+	color: #000000;
+}
+
+#logout  > a, #itemToRoot > a, #currentItemOptions > a, .newFormOptions > a {
 	color: #3366FF;
 	text-decoration: none;
 }
 
-#logout  > a:hover, #itemToRoot > a:hover, #currentItemOptions > a:hover {
+#logout  > a:hover, #itemToRoot > a:hover, #currentItemOptions > a:hover , .newFormOptions > a:hover {
 	color: #CC66FF;
 	text-decoration: underline;
 }

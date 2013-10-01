@@ -14,8 +14,8 @@
 	<div id = "container">
 		<header>
 			<div id = "itemsTitleDiv">
-				<p id = "title1">Swedish Club of WA</p>
-				<p id = "title2"><i>Club Process System</i></p>
+				<p id = "title1"><%= link_to "Swedish Club of WA", items_path %></p>
+				<p id = "title2"><i><%= link_to "Club Process System", items_path %></i></p>
 			</div>
 			<div id = "logoutTab">
 				<p id = "logout"><%= link_to "Log Out", signout_path, method: "delete" %></p>
