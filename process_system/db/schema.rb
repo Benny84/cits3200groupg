@@ -11,7 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130926124042) do
+ActiveRecord::Schema.define(:version => 20130930165200) do
+
+  create_table "emails", :force => true do |t|
+    t.string "email"
+  end
+
+  create_table "items", :force => true do |t|
+    t.integer  "pid"
+    t.string   "title"
+    t.text     "body"
+    t.boolean  "task"
+    t.boolean  "complete"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "triggers", :force => true do |t|
+    t.integer  "item_id"
+    t.integer  "email_id"
+    t.datetime "date_trigger"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"
