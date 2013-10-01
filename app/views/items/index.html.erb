@@ -1,0 +1,52 @@
+<div id = "main">
+  <div id = "heirachyDiv">
+	<p id = "itemToRoot"><br/><a id = "add-root-item" href = "#"> + Add Item To Root</a></p>
+	<ul id = "rootChildren">
+		<% @items.each do |item| %>
+			<p><%= item.title %></p>
+		<% end %>
+  </div>
+  
+  <div id = "contentPane">
+	<p id = "currentItemOptions">
+	  <a id = "add-item" href = "#">Add Item</a> | 
+	  <a id = "set-email" href = "#">Set Email Reminder</a> | 
+	  <a id = "edit" href = "#">Edit</a>
+	</p>
+	
+	<form id = "currentItem">
+	  <h1><input type = "checkbox" class = "itemCheckbox"/> Ikea Food Tasting</h1>
+	  <p>The Swedish clubs annual trip to Ikea</p>
+	</form>
+	<div id = "currentItemChildren">
+	  <form id = "child1">
+		<h2><input type = "checkbox" class = "itemCheckbox"/><a href = "#"> Transport</a></h2>
+		<p>A bus needs to be hired from Hireabus.com</p>
+		<p class = "emailReminder">Email to peterthonnel@swedishclub.com at 18:00 12/12/2013</p>
+	  </form>
+	</div>
+	
+	<form id = "add-item-form">
+	<p>Title: <input type = "text" id = "new-item-title" size = "103"/></p>
+	<p>Body: <input type = "text" id = "new-item-body" size = "103"/></p>
+	<p>Enable Complete/Incomplete status?<input type = "checkbox" id = "new-item-active"/></p>
+	<p class = "newFormOptions">
+	  <a id = "add-item-confirm" href = "#">Confirm Item</a> | 
+	  <a id = "add-item-clear" href = "#">Clear</a> | 
+	  <a id = "add-item-cancel" href = "#">Cancel</a>
+	</p>
+	</form>
+	
+	<form id = "add-root-item-form">
+	<p id = "rootFormTitle">Adding New Item to Root:</p>
+	<p>Title: <input type = "text" id = "new-root-item-title" size = "103"/></p>
+	<p>Body: <input type = "text" id = "new-root-item-body" size = "103"/></p>
+	<p>Enable Complete/Incomplete status?<input type = "checkbox" id = "new-root-item-active"/></p>
+	<p class = "newFormOptions">
+	  <a id = "add-root-item-confirm" href = "#">Confirm Item</a> | 
+	  <a id = "add-root-item-clear" href = "#">Clear</a> | 
+	  <a id = "add-root-item-cancel" href = "#">Cancel</a>
+	</p>
+	</form>
+  </div>
+</div>
