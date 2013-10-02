@@ -7581,3 +7581,1747 @@ Served asset /application.js - 304 Not Modified (1ms)
 
 Started GET "/assets/back.png" for 127.0.0.1 at 2013-10-01 15:18:20 +0800
 Served asset /back.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-01 22:16:03 +0800
+Connecting to database specified by database.yml
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/sessions (65.5ms)
+Compiled application.css  (12ms)  (pid 10911)
+Completed 200 OK in 232ms (Views: 230.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-01 22:16:06 +0800
+Served asset /application.css - 200 OK (8ms)
+
+
+Started GET "/assets/back.png" for 127.0.0.1 at 2013-10-01 22:16:06 +0800
+Served asset /back.png - 304 Not Modified (133ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2013-10-01 22:16:09 +0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QG+AFO61Y5ThWdqNWxhl3+1zXTS6OnQGdwziDtLRmk0=", "session"=>{"email"=>"swedishclubwa@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (94.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'swedishclubwa@gmail.com' LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/sessions (7.8ms)
+Completed 200 OK in 1853ms (Views: 18.2ms | ActiveRecord: 1384.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-01 22:16:11 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/back.png" for 127.0.0.1 at 2013-10-01 22:16:11 +0800
+Served asset /back.png - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (418.5ms)[0m  INSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", Tue, 01 Oct 2013 14:16:45 UTC +00:00], ["email", "swedishclubwa@gmail.com"], ["name", nil], ["password_digest", "$2a$10$LLPeq2Ipwkd.y6wDBsAuruf8P7lsyfI8uPcEz8XLokVNzWvyb..lC"], ["remember_token", "83MAH44ZtW-s9xtSlU4g1Q"], ["updated_at", Tue, 01 Oct 2013 14:16:45 UTC +00:00]]
+  [1m[36m (78.8ms)[0m  [1mCOMMIT[0m
+
+
+Started POST "/sessions" for 127.0.0.1 at 2013-10-01 22:16:48 +0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QG+AFO61Y5ThWdqNWxhl3+1zXTS6OnQGdwziDtLRmk0=", "session"=>{"email"=>"swedishclubwa@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'swedishclubwa@gmail.com' LIMIT 1
+Redirected to http://0.0.0.0:3000/items
+Completed 302 Found in 172ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-10-01 22:16:49 +0800
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (2.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = '83MAH44ZtW-s9xtSlU4g1Q' LIMIT 1[0m
+  [1m[35mItem Load (0.6ms)[0m  SELECT "items".* FROM "items" 
+  Rendered items/index.html.erb within layouts/application (1.9ms)
+Compiled jquery.js  (15ms)  (pid 10911)
+Compiled jquery_ujs.js  (0ms)  (pid 10911)
+Compiled application.js  (303ms)  (pid 10911)
+Completed 200 OK in 387ms (Views: 354.6ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-01 22:16:49 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-01 22:16:49 +0800
+Served asset /jquery.js - 304 Not Modified (28ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-01 22:16:49 +0800
+Served asset /application.js - 200 OK (46ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-10-01 22:16:50 +0800
+Served asset /sessions.js - 304 Not Modified (20ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-01 22:16:50 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2013-10-01 22:16:50 +0800
+Served asset /items.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/back.png" for 127.0.0.1 at 2013-10-01 22:16:51 +0800
+Served asset /back.png - 304 Not Modified (0ms)
+
+
+Started GET "/items/show/1" for 127.0.0.1 at 2013-10-01 22:17:00 +0800
+
+ActionController::RoutingError (No route matches [GET] "/items/show/1"):
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/items/show" for 127.0.0.1 at 2013-10-01 22:17:05 +0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (5.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = '83MAH44ZtW-s9xtSlU4g1Q' LIMIT 1[0m
+  [1m[35mItem Load (10.5ms)[0m  SELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", "show"]]
+Completed 404 Not Found in 19ms
+
+ActiveRecord::RecordNotFound (Couldn't find Item with id=show):
+  app/controllers/items_controller.rb:10:in `show'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.1ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-01 22:17:09 +0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (5.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = '83MAH44ZtW-s9xtSlU4g1Q' LIMIT 1[0m
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mItem Load (0.5ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."pid" = 1[0m
+  Rendered items/show.html.erb within layouts/application (64.1ms)
+Completed 200 OK in 177ms (Views: 81.0ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-01 22:17:10 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-01 22:17:10 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-01 22:17:10 +0800
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-10-01 22:17:10 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2013-10-01 22:17:10 +0800
+Served asset /items.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-01 22:17:10 +0800
+Served asset /application.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/back.png" for 127.0.0.1 at 2013-10-01 22:17:10 +0800
+Served asset /back.png - 304 Not Modified (0ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-01 22:18:34 +0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (4.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = '83MAH44ZtW-s9xtSlU4g1Q' LIMIT 1
+  [1m[36mItem Load (5.8ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mItem Load (1.6ms)[0m  SELECT "items".* FROM "items" WHERE "items"."pid" = 1
+  Rendered items/show.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 44ms (Views: 28.7ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-01 22:18:34 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-01 22:18:34 +0800
+Served asset /jquery.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-01 22:18:34 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2013-10-01 22:18:34 +0800
+Served asset /items.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-01 22:18:34 +0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-10-01 22:18:34 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/back.png" for 127.0.0.1 at 2013-10-01 22:18:35 +0800
+Served asset /back.png - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+  [1m[36m (5045.7ms)[0m  [1mDROP DATABASE IF EXISTS "db/development"[0m
+PG::ObjectInUse: ERROR:  database "db/development" is being accessed by other users
+DETAIL:  There are 1 other session(s) using the database.
+: DROP DATABASE IF EXISTS "db/development"
+  [1m[35m (522.1ms)[0m  DROP DATABASE IF EXISTS "db/test"
+  [1m[36m (6018.4ms)[0m  [1mCREATE DATABASE "db/test" ENCODING = 'utf8'[0m
+  [1m[35m (584.0ms)[0m  DROP TABLE "emails"
+  [1m[36m (548.2ms)[0m  [1mCREATE TABLE "emails" ("id" serial primary key, "email" character varying(255)) [0m
+  [1m[35m (55.3ms)[0m  DROP TABLE "items"
+  [1m[36m (297.9ms)[0m  [1mCREATE TABLE "items" ("id" serial primary key, "pid" integer, "title" character varying(255), "body" text, "task" boolean DEFAULT 'f', "complete" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (3.1ms)[0m  DROP TABLE "trigger_emails"
+  [1m[36m (105.3ms)[0m  [1mCREATE TABLE "trigger_emails" ("id" serial primary key, "trigger_id" integer, "email_id" integer) [0m
+  [1m[35m (3.6ms)[0m  DROP TABLE "triggers"
+  [1m[36m (179.2ms)[0m  [1mCREATE TABLE "triggers" ("id" serial primary key, "item_id" integer, "date_trigger" timestamp) [0m
+  [1m[35m (135.6ms)[0m  DROP TABLE "users"
+  [1m[36m (125.5ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying(255), "email" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "password_digest" character varying(255), "remember_token" character varying(255)) [0m
+  [1m[35m (82.5ms)[0m  CREATE INDEX "index_users_on_remember_token" ON "users" ("remember_token")
+  [1m[36m (2.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (4.6ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (83.8ms)[0m  INSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", Tue, 01 Oct 2013 14:30:35 UTC +00:00], ["email", "swedishclubwa@gmail.com"], ["name", nil], ["password_digest", "$2a$10$5yKIkvhAuFrI/O2bkSIc4ue9WRVrqGf/H1N4mJWTOu84wHYHonSyO"], ["remember_token", "n60SizTEAqEpurivOHogvg"], ["updated_at", Tue, 01 Oct 2013 14:30:35 UTC +00:00]]
+  [1m[36m (6.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (57.3ms)[0m  [1mINSERT INTO "items" ("body", "complete", "created_at", "pid", "task", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["body", "Off to IKEA to taste delicious Swedish foods!"], ["complete", nil], ["created_at", Tue, 01 Oct 2013 14:30:35 UTC +00:00], ["pid", nil], ["task", false], ["title", "Ikea Food Tasting"], ["updated_at", Tue, 01 Oct 2013 14:30:35 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (7.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (154.2ms)[0m  INSERT INTO "emails" ("email") VALUES ($1) RETURNING "id"  [["email", "swedishclubwa@gmail.com"]]
+  [1m[36m (5.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "items" ("body", "complete", "created_at", "pid", "task", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["body", "A bus needs to be hired from Hireabus.com"], ["complete", false], ["created_at", Tue, 01 Oct 2013 14:30:36 UTC +00:00], ["pid", 1], ["task", true], ["title", "Transport"], ["updated_at", Tue, 01 Oct 2013 14:30:36 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (7.0ms)[0m  INSERT INTO "items" ("body", "complete", "created_at", "pid", "task", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["body", "These people have been banned from the event due to excessive meatball consumption:<br /><ul><li>Foodie McFood</li><li>Bobby Bigtum</li></ul>"], ["complete", nil], ["created_at", Tue, 01 Oct 2013 14:30:36 UTC +00:00], ["pid", 1], ["task", false], ["title", "Blacklist"], ["updated_at", Tue, 01 Oct 2013 14:30:36 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (2.7ms)[0m  BEGIN
+  [1m[36mSQL (82.9ms)[0m  [1mINSERT INTO "triggers" ("date_trigger", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["date_trigger", Thu, 12 Dec 2013 18:00:00 UTC +00:00], ["item_id", 2]]
+  [1m[35m (4.5ms)[0m  COMMIT
+  [1m[36m (2.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (138.1ms)[0m  INSERT INTO "trigger_emails" ("email_id", "trigger_id") VALUES ($1, $2) RETURNING "id"  [["email_id", 1], ["trigger_id", 1]]
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-01 22:30:46 +0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = '83MAH44ZtW-s9xtSlU4g1Q' LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/signin
+Filter chain halted as :signed_in_user rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2013-10-01 22:30:46 +0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/sessions (7.3ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-01 22:30:46 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/back.png" for 127.0.0.1 at 2013-10-01 22:30:46 +0800
+Served asset /back.png - 304 Not Modified (0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2013-10-01 22:30:48 +0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QG+AFO61Y5ThWdqNWxhl3+1zXTS6OnQGdwziDtLRmk0=", "session"=>{"email"=>"swedishclubwa@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[35mUser Load (3.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'swedishclubwa@gmail.com' LIMIT 1
+Redirected to http://0.0.0.0:3000/items
+Completed 302 Found in 302ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-10-01 22:30:48 +0800
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (7.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1[0m
+  [1m[35mItem Load (5.1ms)[0m  SELECT "items".* FROM "items" 
+  Rendered items/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 33ms (Views: 17.9ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-01 22:30:48 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-01 22:30:49 +0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2013-10-01 22:30:49 +0800
+Served asset /items.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-01 22:30:49 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-01 22:30:49 +0800
+Served asset /application.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-10-01 22:30:49 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/back.png" for 127.0.0.1 at 2013-10-01 22:30:49 +0800
+Served asset /back.png - 304 Not Modified (0ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-01 22:30:54 +0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (4.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1[0m
+  [1m[35mItem Load (7.4ms)[0m  SELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mItem Load (5.6ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."pid" = 1[0m
+  Rendered items/show.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 51ms (Views: 30.2ms | ActiveRecord: 17.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-01 22:30:54 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-01 22:30:54 +0800
+Served asset /jquery.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-01 22:30:54 +0800
+Served asset /application.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-10-01 22:30:54 +0800
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2013-10-01 22:30:54 +0800
+Served asset /items.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-01 22:30:54 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/back.png" for 127.0.0.1 at 2013-10-01 22:30:55 +0800
+Served asset /back.png - 304 Not Modified (0ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-01 22:32:22 +0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (12.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1
+  [1m[36mItem Load (0.5ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mItem Load (4.6ms)[0m  SELECT "items".* FROM "items" WHERE "items"."pid" = 1
+  Rendered items/show.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 59ms (Views: 36.9ms | ActiveRecord: 17.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-01 22:32:22 +0800
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-01 22:32:22 +0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-01 22:32:22 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-10-01 22:32:22 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2013-10-01 22:32:22 +0800
+Served asset /items.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-01 22:32:22 +0800
+Served asset /application.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/back.png" for 127.0.0.1 at 2013-10-01 22:32:23 +0800
+Served asset /back.png - 304 Not Modified (0ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-01 22:33:11 +0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (8.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1[0m
+  [1m[35mItem Load (0.5ms)[0m  SELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mItem Load (0.7ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."pid" = 1[0m
+  Rendered items/show.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 47ms (Views: 28.4ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-01 22:33:11 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-01 22:33:11 +0800
+Served asset /jquery.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-01 22:33:11 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2013-10-01 22:33:11 +0800
+Served asset /items.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-10-01 22:33:11 +0800
+Served asset /sessions.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-01 22:33:11 +0800
+Served asset /application.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/back.png" for 127.0.0.1 at 2013-10-01 22:33:12 +0800
+Served asset /back.png - 304 Not Modified (6ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-01 22:34:12 +0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (7.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mItem Load (4.3ms)[0m  SELECT "items".* FROM "items" WHERE "items"."pid" = 1
+  Rendered items/show.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 49ms (Views: 24.2ms | ActiveRecord: 12.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-01 22:34:13 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-01 22:34:13 +0800
+Served asset /application.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-01 22:34:13 +0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-01 22:34:13 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-10-01 22:34:13 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2013-10-01 22:34:13 +0800
+Served asset /items.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/back.png" for 127.0.0.1 at 2013-10-01 22:34:14 +0800
+Served asset /back.png - 304 Not Modified (0ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-01 22:34:22 +0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1[0m
+  [1m[35mItem Load (6.3ms)[0m  SELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mItem Load (8.6ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."pid" = 1[0m
+  Rendered items/show.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 29ms (Views: 8.3ms | ActiveRecord: 17.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-01 22:34:22 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-01 22:34:22 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-01 22:34:22 +0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-10-01 22:34:22 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2013-10-01 22:34:22 +0800
+Served asset /items.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-01 22:34:22 +0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/back.png" for 127.0.0.1 at 2013-10-01 22:34:23 +0800
+Served asset /back.png - 304 Not Modified (0ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-01 22:34:25 +0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (4.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1
+  [1m[36mItem Load (2.2ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mItem Load (0.5ms)[0m  SELECT "items".* FROM "items" WHERE "items"."pid" = 1
+  Rendered items/show.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 47ms (Views: 36.0ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-01 22:34:25 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-01 22:34:25 +0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-10-01 22:34:25 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-01 22:34:25 +0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2013-10-01 22:34:25 +0800
+Served asset /items.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-01 22:34:25 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/back.png" for 127.0.0.1 at 2013-10-01 22:34:26 +0800
+Served asset /back.png - 304 Not Modified (0ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-01 22:34:39 +0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (6.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1[0m
+  [1m[35mItem Load (5.3ms)[0m  SELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mItem Load (4.3ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."pid" = 1[0m
+  Rendered items/show.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 45ms (Views: 26.5ms | ActiveRecord: 15.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-01 22:34:39 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-01 22:34:39 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2013-10-01 22:34:39 +0800
+Served asset /items.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-01 22:34:39 +0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-01 22:34:39 +0800
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-10-01 22:34:39 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/back.png" for 127.0.0.1 at 2013-10-01 22:34:40 +0800
+Served asset /back.png - 304 Not Modified (0ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-01 22:35:17 +0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (7.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1
+  [1m[36mItem Load (0.5ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mItem Load (4.0ms)[0m  SELECT "items".* FROM "items" WHERE "items"."pid" = 1
+  Rendered items/show.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 47ms (Views: 19.6ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-01 22:35:18 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-01 22:35:18 +0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-01 22:35:18 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2013-10-01 22:35:18 +0800
+Served asset /items.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-10-01 22:35:18 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-01 22:35:18 +0800
+Served asset /application.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/back.png" for 127.0.0.1 at 2013-10-01 22:35:19 +0800
+Served asset /back.png - 304 Not Modified (0ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-01 22:37:17 +0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (6.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1[0m
+  [1m[35mItem Load (8.3ms)[0m  SELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mItem Load (0.6ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."pid" = 1[0m
+  Rendered items/show.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 56ms (Views: 28.5ms | ActiveRecord: 15.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-01 22:37:17 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-01 22:37:17 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-01 22:37:17 +0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2013-10-01 22:37:17 +0800
+Served asset /items.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-01 22:37:17 +0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-10-01 22:37:17 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/back.png" for 127.0.0.1 at 2013-10-01 22:37:18 +0800
+Served asset /back.png - 304 Not Modified (0ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-01 22:37:29 +0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (6.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mItem Load (11.5ms)[0m  SELECT "items".* FROM "items" WHERE "items"."pid" = 1
+  Rendered items/show.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 33ms (Views: 11.9ms | ActiveRecord: 18.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-01 22:37:29 +0800
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2013-10-01 22:37:29 +0800
+Served asset /items.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-01 22:37:29 +0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-01 22:37:29 +0800
+Served asset /application.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-10-01 22:37:29 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-01 22:37:29 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/back.png" for 127.0.0.1 at 2013-10-01 22:37:30 +0800
+Served asset /back.png - 304 Not Modified (0ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-01 22:38:03 +0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (6.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1[0m
+  [1m[35mItem Load (6.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", "1"]]
+ERROR: compiling _app_views_items_show_html_erb___83355332_74271940 RAISED /home/rai/cits3200groupg/app/views/items/show.html.erb:31: syntax error, unexpected tREGEXP_BEG, expecting keyword_do or '{' or '('
+');@output_buffer.safe_concat('        <hr />
+                                            ^
+/home/rai/cits3200groupg/app/views/items/show.html.erb:33: unknown regexp options - dv
+unmatched close parenthesis: />
+');     end 
+@output_buffer.safe_concat('    </i
+/home/rai/cits3200groupg/app/views/items/show.html.erb:34: syntax error, unexpected '<'
+  </div>
+   ^
+/home/rai/cits3200groupg/app/views/items/show.html.erb:35: unknown regexp options - dv
+/home/rai/cits3200groupg/app/views/items/show.html.erb:36: unterminated string meets end of file
+/home/rai/cits3200groupg/app/views/items/show.html.erb:36: syntax error, unexpected $end, expecting ')'
+Function body:           def _app_views_items_show_html_erb___83355332_74271940(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "items/show";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('<div id = "main">
+  <div id = "heirachyDiv">
+	<p id = "itemToRoot"><br/><a id = "add-root-item" href = "#"> + Add Item To Root</a></p>
+	<ul id = "rootChildren">
+	  <li class = "currentItemPath"><a href = "#">2013</a></li>
+	  <li class = "indent">
+	  <ul>
+		<li class = "currentItemPath">');@output_buffer.append= ( link_to "Ikea Food Testing", items_path );@output_buffer.safe_concat('</li>
+		<li class = "indent">
+		<ul>
+		  <li><a href = "#">Transport</a></li>
+		  
+		</ul>
+		</li>
+	  </ul></li>
+	  <li><a href = "#">2014</a></li>
+	</ul>
+  </div>
+  
+  <div id = "contentPane">
+    <strong>');@output_buffer.append= ( @main_item.title );@output_buffer.safe_concat('</strong>
+    <br />
+    ');@output_buffer.append= ( @main_item.body );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    <br />
+    <hr />
+    <div style="padding-left: 20px;">
+');     @children.each do |child| 
+@output_buffer.safe_concat('        ');@output_buffer.append= ( child.title );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('        <br />
+        ');@output_buffer.append= ( raw(child.body) #needed to display html properly );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('        <hr />
+');     end 
+@output_buffer.safe_concat('    </div>
+  </div>
+</div>
+');@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_view/template.rb:297:in `module_eval'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_view/template.rb:297:in `compile'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_view/template.rb:244:in `block in compile!'
+<internal:prelude>:10:in `synchronize'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_view/template.rb:232:in `compile!'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_view/template.rb:144:in `block in render'
+/var/lib/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/notifications.rb:125:in `instrument'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_view/template.rb:143:in `render'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:48:in `block (2 levels) in render_template'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/var/lib/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `block in instrument'
+/var/lib/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/var/lib/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `instrument'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:47:in `block in render_template'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:55:in `render_with_layout'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:46:in `render_template'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:19:in `render'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_view/renderer/renderer.rb:17:in `render'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:88:in `render'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal/rendering.rb:16:in `render'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/var/lib/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/usr/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+/var/lib/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/var/lib/gems/1.9.1/gems/activerecord-3.2.14/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/abstract_controller/base.rb:167:in `process_action'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/var/lib/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:425:in `_run__581137796__process_action__154017417__callbacks'
+/var/lib/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:405:in `__run_callback'
+/var/lib/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/var/lib/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/var/lib/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `block in instrument'
+/var/lib/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/var/lib/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `instrument'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+/var/lib/gems/1.9.1/gems/activerecord-3.2.14/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/abstract_controller/base.rb:121:in `process'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:45:in `process'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal.rb:203:in `dispatch'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal.rb:246:in `block in action'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/var/lib/gems/1.9.1/gems/journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+/var/lib/gems/1.9.1/gems/journey-1.0.4/lib/journey/router.rb:56:in `each'
+/var/lib/gems/1.9.1/gems/journey-1.0.4/lib/journey/router.rb:56:in `call'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:608:in `call'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/var/lib/gems/1.9.1/gems/rack-1.4.5/lib/rack/etag.rb:23:in `call'
+/var/lib/gems/1.9.1/gems/rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/head.rb:14:in `call'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/var/lib/gems/1.9.1/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+/var/lib/gems/1.9.1/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+/var/lib/gems/1.9.1/gems/activerecord-3.2.14/lib/active_record/query_cache.rb:64:in `call'
+/var/lib/gems/1.9.1/gems/activerecord-3.2.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/var/lib/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:405:in `_run__177811559__call__662910518__callbacks'
+/var/lib/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:405:in `__run_callback'
+/var/lib/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/var/lib/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/var/lib/gems/1.9.1/gems/railties-3.2.14/lib/rails/rack/logger.rb:32:in `call_app'
+/var/lib/gems/1.9.1/gems/railties-3.2.14/lib/rails/rack/logger.rb:16:in `block in call'
+/var/lib/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/tagged_logging.rb:22:in `tagged'
+/var/lib/gems/1.9.1/gems/railties-3.2.14/lib/rails/rack/logger.rb:16:in `call'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/var/lib/gems/1.9.1/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+/var/lib/gems/1.9.1/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+/var/lib/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/var/lib/gems/1.9.1/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+/var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/static.rb:63:in `call'
+/var/lib/gems/1.9.1/gems/railties-3.2.14/lib/rails/engine.rb:484:in `call'
+/var/lib/gems/1.9.1/gems/railties-3.2.14/lib/rails/application.rb:231:in `call'
+/var/lib/gems/1.9.1/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+/var/lib/gems/1.9.1/gems/railties-3.2.14/lib/rails/rack/log_tailer.rb:17:in `call'
+/var/lib/gems/1.9.1/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+/usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+/usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+/usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+  Rendered items/show.html.erb within layouts/application (159.9ms)
+Completed 500 Internal Server Error in 179ms
+
+ActionView::Template::Error (/home/rai/cits3200groupg/app/views/items/show.html.erb:31: syntax error, unexpected tREGEXP_BEG, expecting keyword_do or '{' or '('
+');@output_buffer.safe_concat('        <hr />
+                                            ^
+/home/rai/cits3200groupg/app/views/items/show.html.erb:33: unknown regexp options - dv
+unmatched close parenthesis: />
+');     end 
+@output_buffer.safe_concat('    </i
+/home/rai/cits3200groupg/app/views/items/show.html.erb:34: syntax error, unexpected '<'
+  </div>
+   ^
+/home/rai/cits3200groupg/app/views/items/show.html.erb:35: unknown regexp options - dv
+/home/rai/cits3200groupg/app/views/items/show.html.erb:36: unterminated string meets end of file
+/home/rai/cits3200groupg/app/views/items/show.html.erb:36: syntax error, unexpected $end, expecting ')'):
+    28:         <%= child.title %>
+    29:         <br />
+    30:         <%= raw(child.body) #needed to display html properly %>
+    31:         <hr />
+    32:     <% end %>
+    33:     </div>
+    34:   </div>
+  actionpack (3.2.14) lib/action_view/template.rb:297:in `module_eval'
+  actionpack (3.2.14) lib/action_view/template.rb:297:in `compile'
+  actionpack (3.2.14) lib/action_view/template.rb:244:in `block in compile!'
+  <internal:prelude>:10:in `synchronize'
+  actionpack (3.2.14) lib/action_view/template.rb:232:in `compile!'
+  actionpack (3.2.14) lib/action_view/template.rb:144:in `block in render'
+  activesupport (3.2.14) lib/active_support/notifications.rb:125:in `instrument'
+  actionpack (3.2.14) lib/action_view/template.rb:143:in `render'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:48:in `block (2 levels) in render_template'
+  actionpack (3.2.14) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.14) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:47:in `block in render_template'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:55:in `render_with_layout'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:46:in `render_template'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:19:in `render'
+  actionpack (3.2.14) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.14) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.14) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.14) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.14) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.14) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /usr/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (3.2.14) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:425:in `_run__581137796__process_action__154017417__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.14) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.14) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.14) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__177811559__call__662910518__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (21.0ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-01 22:38:22 +0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1[0m
+  [1m[35mItem Load (5.8ms)[0m  SELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mItem Load (4.0ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."pid" = 1[0m
+  Rendered items/show.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 42ms (Views: 25.3ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-01 22:38:23 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-01 22:38:23 +0800
+Served asset /jquery.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-01 22:38:23 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-01 22:38:23 +0800
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2013-10-01 22:38:23 +0800
+Served asset /items.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-10-01 22:38:23 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/back.png" for 127.0.0.1 at 2013-10-01 22:38:23 +0800
+Served asset /back.png - 304 Not Modified (0ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-01 22:39:37 +0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (1.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1
+  [1m[36mItem Load (1.9ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mItem Load (1.6ms)[0m  SELECT "items".* FROM "items" WHERE "items"."pid" = 1
+  Rendered items/show.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 45ms (Views: 31.5ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-01 22:39:37 +0800
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-01 22:39:37 +0800
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-01 22:39:37 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-01 22:39:37 +0800
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-10-01 22:39:37 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2013-10-01 22:39:37 +0800
+Served asset /items.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/back.png" for 127.0.0.1 at 2013-10-01 22:39:38 +0800
+Served asset /back.png - 304 Not Modified (0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-10-01 22:40:03 +0800
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1[0m
+  [1m[35mItem Load (8.7ms)[0m  SELECT "items".* FROM "items" 
+  Rendered items/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 36ms (Views: 23.9ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-01 22:40:03 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-10-01 22:40:03 +0800
+Served asset /sessions.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-01 22:40:03 +0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-01 22:40:03 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2013-10-01 22:40:03 +0800
+Served asset /items.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-01 22:40:03 +0800
+Served asset /application.js - 304 Not Modified (63ms)
+
+
+Started GET "/assets/back.png" for 127.0.0.1 at 2013-10-01 22:40:04 +0800
+Served asset /back.png - 304 Not Modified (0ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-01 22:52:23 +0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1[0m
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mTrigger Load (0.9ms)[0m  [1mSELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 1[0m
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" WHERE "items"."pid" = 1
+  [1m[36mTrigger Load (0.3ms)[0m  [1mSELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 2[0m
+  Rendered items/show.html.erb within layouts/application (57.1ms)
+Completed 500 Internal Server Error in 174ms
+
+ActionView::Template::Error (Could not find the association :trigger_email in model Trigger):
+    40:         <% child.triggers.each do |trigger| %>
+    41:         Send on <span style="color: red"><%= trigger.date_trigger %></span> to
+    42:         <br />
+    43:         <%= trigger.emails.join(", ") %>
+    44:     <% end %>
+    45:     <hr />
+    46:     <% end %>
+  app/views/items/show.html.erb:43:in `block (2 levels) in _app_views_items_show_html_erb___83355332__621799338'
+  app/views/items/show.html.erb:40:in `block in _app_views_items_show_html_erb___83355332__621799338'
+  app/views/items/show.html.erb:33:in `_app_views_items_show_html_erb___83355332__621799338'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (33.2ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-01 22:55:47 +0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered items/show.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 126ms
+
+ActionView::Template::Error (/home/rai/cits3200groupg/app/models/trigger.rb:4: syntax error, unexpected tASSOC
+    has_many :emails, through: => :trigger_email
+                                 ^):
+    23:     <%= @main_item.body %>
+    24:     <br />
+    25:     <br />
+    26:     <% @main_item.triggers.each do |trigger| %>
+    27:         Send on <span style="color: red"><%= trigger.date_trigger %></span> to
+    28:         <br />
+    29:         <%= trigger.emails.join(", ") %>
+  app/views/items/show.html.erb:26:in `_app_views_items_show_html_erb___83355332__621799338'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.0ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-01 22:56:25 +0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mTrigger Load (0.3ms)[0m  SELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 1
+  [1m[36mItem Load (0.6ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."pid" = 1[0m
+  [1m[35mTrigger Load (0.5ms)[0m  SELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 2
+  Rendered items/show.html.erb within layouts/application (42.8ms)
+Completed 500 Internal Server Error in 115ms
+
+ActionView::Template::Error (Could not find the association :trigger_email in model Trigger):
+    40:         <% child.triggers.each do |trigger| %>
+    41:         Send on <span style="color: red"><%= trigger.date_trigger %></span> to
+    42:         <br />
+    43:         <%= trigger.emails.join(", ") %>
+    44:     <% end %>
+    45:     <hr />
+    46:     <% end %>
+  app/views/items/show.html.erb:43:in `block (2 levels) in _app_views_items_show_html_erb___83355332__621799338'
+  app/views/items/show.html.erb:40:in `block in _app_views_items_show_html_erb___83355332__621799338'
+  app/views/items/show.html.erb:33:in `_app_views_items_show_html_erb___83355332__621799338'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (24.9ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-01 22:58:09 +0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1[0m
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered items/show.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 147ms
+
+ActionView::Template::Error (Could not find the association :trigger_email in model Item):
+    23:     <%= @main_item.body %>
+    24:     <br />
+    25:     <br />
+    26:     <% @main_item.triggers.each do |trigger| %>
+    27:         Send on <span style="color: red"><%= trigger.date_trigger %></span> to
+    28:         <br />
+    29:         <%= trigger.emails.join(", ") %>
+  app/views/items/show.html.erb:26:in `_app_views_items_show_html_erb___83355332__621799338'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.9ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-01 22:58:58 +0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1[0m
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mTrigger Load (0.4ms)[0m  [1mSELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 1[0m
+  [1m[35mItem Load (1.0ms)[0m  SELECT "items".* FROM "items" WHERE "items"."pid" = 1
+  [1m[36mTrigger Load (0.4ms)[0m  [1mSELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 2[0m
+  Rendered items/show.html.erb within layouts/application (36.6ms)
+Completed 500 Internal Server Error in 104ms
+
+ActionView::Template::Error (Could not find the association :trigger_email in model Trigger):
+    40:         <% child.triggers.each do |trigger| %>
+    41:         Send on <span style="color: red"><%= trigger.date_trigger %></span> to
+    42:         <br />
+    43:         <%= trigger.emails.join(", ") %>
+    44:     <% end %>
+    45:     <hr />
+    46:     <% end %>
+  app/views/items/show.html.erb:43:in `block (2 levels) in _app_views_items_show_html_erb___83355332__621799338'
+  app/views/items/show.html.erb:40:in `block in _app_views_items_show_html_erb___83355332__621799338'
+  app/views/items/show.html.erb:33:in `_app_views_items_show_html_erb___83355332__621799338'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.9ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-01 22:59:35 +0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mTrigger Load (0.2ms)[0m  SELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 1
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."pid" = 1[0m
+  [1m[35mTrigger Load (0.3ms)[0m  SELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 2
+  Rendered items/show.html.erb within layouts/application (36.1ms)
+Completed 500 Internal Server Error in 90ms
+
+ActionView::Template::Error (Could not find the association :trigger_emails in model Trigger):
+    40:         <% child.triggers.each do |trigger| %>
+    41:         Send on <span style="color: red"><%= trigger.date_trigger %></span> to
+    42:         <br />
+    43:         <%= trigger.emails.join(", ") %>
+    44:     <% end %>
+    45:     <hr />
+    46:     <% end %>
+  app/views/items/show.html.erb:43:in `block (2 levels) in _app_views_items_show_html_erb___83355332__621799338'
+  app/views/items/show.html.erb:40:in `block in _app_views_items_show_html_erb___83355332__621799338'
+  app/views/items/show.html.erb:33:in `_app_views_items_show_html_erb___83355332__621799338'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.5ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-01 23:02:07 +0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1[0m
+  [1m[35mItem Load (1.9ms)[0m  SELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mTrigger Load (1.3ms)[0m  [1mSELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 1[0m
+  [1m[35mItem Load (1.0ms)[0m  SELECT "items".* FROM "items" WHERE "items"."pid" = 1
+  [1m[36mTrigger Load (0.4ms)[0m  [1mSELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 2[0m
+  Rendered items/show.html.erb within layouts/application (90.4ms)
+Completed 500 Internal Server Error in 153ms
+
+ActionView::Template::Error (Could not find the association :trigger_email in model Trigger):
+    40:         <% child.triggers.each do |trigger| %>
+    41:         Send on <span style="color: red"><%= trigger.date_trigger %></span> to
+    42:         <br />
+    43:         <%= trigger.emails.join(", ") %>
+    44:     <% end %>
+    45:     <hr />
+    46:     <% end %>
+  app/views/items/show.html.erb:43:in `block (2 levels) in _app_views_items_show_html_erb___83355332__621799338'
+  app/views/items/show.html.erb:40:in `block in _app_views_items_show_html_erb___83355332__621799338'
+  app/views/items/show.html.erb:33:in `_app_views_items_show_html_erb___83355332__621799338'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.1ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-01 23:03:00 +0800
+Connecting to database specified by database.yml
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1[0m
+  [1m[35mItem Load (8.5ms)[0m  SELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mTrigger Load (0.4ms)[0m  [1mSELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 1[0m
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" WHERE "items"."pid" = 1
+  [1m[36mTrigger Load (0.4ms)[0m  [1mSELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 2[0m
+  Rendered items/show.html.erb within layouts/application (129.8ms)
+Completed 500 Internal Server Error in 454ms
+
+ActionView::Template::Error (Could not find the association :trigger_email in model Trigger):
+    40:         <% child.triggers.each do |trigger| %>
+    41:         Send on <span style="color: red"><%= trigger.date_trigger %></span> to
+    42:         <br />
+    43:         <%= trigger.emails.join(", ") %>
+    44:     <% end %>
+    45:     <hr />
+    46:     <% end %>
+  app/views/items/show.html.erb:43:in `block (2 levels) in _app_views_items_show_html_erb__471153950_90455770'
+  app/views/items/show.html.erb:40:in `block in _app_views_items_show_html_erb__471153950_90455770'
+  app/views/items/show.html.erb:33:in `_app_views_items_show_html_erb__471153950_90455770'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.5ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-01 23:03:22 +0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1
+  [1m[36mItem Load (2.2ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mTrigger Load (16.4ms)[0m  SELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 1
+  [1m[36mItem Load (0.5ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."pid" = 1[0m
+  [1m[35mTrigger Load (0.5ms)[0m  SELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 2
+  Rendered items/show.html.erb within layouts/application (23.5ms)
+Completed 500 Internal Server Error in 34ms
+
+ActionView::Template::Error (Could not find the association :trigger_email in model Trigger):
+    40:         <% child.triggers.each do |trigger| %>
+    41:         Send on <span style="color: red"><%= trigger.date_trigger %></span> to
+    42:         <br />
+    43:         <%= trigger.emails.join(", ") %>
+    44:     <% end %>
+    45:     <hr />
+    46:     <% end %>
+  app/views/items/show.html.erb:43:in `block (2 levels) in _app_views_items_show_html_erb__471153950_90455770'
+  app/views/items/show.html.erb:40:in `block in _app_views_items_show_html_erb__471153950_90455770'
+  app/views/items/show.html.erb:33:in `_app_views_items_show_html_erb__471153950_90455770'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (37.2ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-02 12:51:06 +0800
+Connecting to database specified by database.yml
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (48.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1[0m
+  [1m[35mItem Load (4.9ms)[0m  SELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mTrigger Load (14.8ms)[0m  [1mSELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 1[0m
+  [1m[35mItem Load (4.5ms)[0m  SELECT "items".* FROM "items" WHERE "items"."pid" = 1
+  [1m[36mTrigger Load (0.6ms)[0m  [1mSELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 2[0m
+  Rendered items/show.html.erb within layouts/application (165.7ms)
+Completed 500 Internal Server Error in 1009ms
+
+ActionView::Template::Error (Could not find the association :trigger_email in model Trigger):
+    40:         <% child.triggers.each do |trigger| %>
+    41:         Send on <span style="color: red"><%= trigger.date_trigger %></span> to
+    42:         <br />
+    43:         <%= trigger.emails.join(", ") %>
+    44:     <% end %>
+    45:     <hr />
+    46:     <% end %>
+  app/views/items/show.html.erb:43:in `block (2 levels) in _app_views_items_show_html_erb__242964923_78409270'
+  app/views/items/show.html.erb:40:in `block in _app_views_items_show_html_erb__242964923_78409270'
+  app/views/items/show.html.erb:33:in `_app_views_items_show_html_erb__242964923_78409270'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (15.0ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-02 12:55:43 +0800
+Connecting to database specified by database.yml
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1[0m
+  [1m[35mItem Load (1.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mTrigger Load (0.4ms)[0m  [1mSELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 1[0m
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" WHERE "items"."pid" = 1
+  [1m[36mTrigger Load (0.3ms)[0m  [1mSELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 2[0m
+  Rendered items/show.html.erb within layouts/application (119.6ms)
+Completed 500 Internal Server Error in 392ms
+
+ActionView::Template::Error (Could not find the association :trigger_email in model Trigger):
+    40:         <% child.triggers.each do |trigger| %>
+    41:         Send on <span style="color: red"><%= trigger.date_trigger %></span> to
+    42:         <br />
+    43:         <%= trigger.emails.join(", ") %>
+    44:     <% end %>
+    45:     <hr />
+    46:     <% end %>
+  app/views/items/show.html.erb:43:in `block (2 levels) in _app_views_items_show_html_erb__378171806_81821180'
+  app/views/items/show.html.erb:40:in `block in _app_views_items_show_html_erb__378171806_81821180'
+  app/views/items/show.html.erb:33:in `_app_views_items_show_html_erb__378171806_81821180'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.7ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-02 12:57:01 +0800
+Connecting to database specified by database.yml
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1[0m
+  [1m[35mItem Load (1.1ms)[0m  SELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mTrigger Load (0.4ms)[0m  [1mSELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 1[0m
+  [1m[35mItem Load (0.6ms)[0m  SELECT "items".* FROM "items" WHERE "items"."pid" = 1
+  [1m[36mTrigger Load (0.3ms)[0m  [1mSELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 2[0m
+  [1m[35mEmail Load (25.2ms)[0m  SELECT "emails".* FROM "emails" INNER JOIN "trigger_emails" ON "emails"."id" = "trigger_emails"."email_id" WHERE "trigger_emails"."trigger_id" = 1
+  [1m[36mTrigger Load (0.5ms)[0m  [1mSELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 3[0m
+  Rendered items/show.html.erb within layouts/application (286.0ms)
+Completed 200 OK in 682ms (Views: 432.4ms | ActiveRecord: 89.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-02 12:57:02 +0800
+Served asset /application.css - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-02 12:57:02 +0800
+Served asset /application.js - 200 OK (112ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-10-02 12:57:03 +0800
+Served asset /sessions.js - 200 OK (15ms)
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2013-10-02 12:57:03 +0800
+Served asset /items.js - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-02 12:57:03 +0800
+Served asset /jquery_ujs.js - 200 OK (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-02 12:57:03 +0800
+Served asset /jquery.js - 200 OK (15ms)
+
+
+Started GET "/assets/back.png" for 127.0.0.1 at 2013-10-02 12:57:04 +0800
+Served asset /back.png - 200 OK (6ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-02 13:00:08 +0800
+Connecting to database specified by database.yml
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1[0m
+  [1m[35mItem Load (1.3ms)[0m  SELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mTrigger Load (4.9ms)[0m  [1mSELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 1[0m
+  [1m[35mItem Load (0.6ms)[0m  SELECT "items".* FROM "items" WHERE "items"."pid" = 1
+  [1m[36mTrigger Load (0.3ms)[0m  [1mSELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 2[0m
+  [1m[35mEmail Load (0.8ms)[0m  SELECT "emails".* FROM "emails" INNER JOIN "trigger_emails" ON "emails"."id" = "trigger_emails"."email_id" WHERE "trigger_emails"."trigger_id" = 1
+  [1m[36mTrigger Load (0.4ms)[0m  [1mSELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 3[0m
+  Rendered items/show.html.erb within layouts/application (164.5ms)
+Completed 200 OK in 447ms (Views: 228.2ms | ActiveRecord: 56.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-02 13:00:09 +0800
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-02 13:00:09 +0800
+Served asset /application.js - 304 Not Modified (111ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-10-02 13:00:10 +0800
+Served asset /sessions.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2013-10-02 13:00:10 +0800
+Served asset /items.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-02 13:00:10 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-02 13:00:10 +0800
+Served asset /jquery.js - 304 Not Modified (9ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-02 13:00:53 +0800
+Connecting to database specified by database.yml
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1[0m
+  [1m[35mItem Load (1.1ms)[0m  SELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mTrigger Load (0.4ms)[0m  [1mSELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 1[0m
+  [1m[35mItem Load (3.4ms)[0m  SELECT "items".* FROM "items" WHERE "items"."pid" = 1
+  [1m[36mTrigger Load (0.4ms)[0m  [1mSELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 2[0m
+  [1m[35mEmail Load (0.7ms)[0m  SELECT "emails".* FROM "emails" INNER JOIN "trigger_emails" ON "emails"."id" = "trigger_emails"."email_id" WHERE "trigger_emails"."trigger_id" = 1
+  [1m[36mTrigger Load (0.3ms)[0m  [1mSELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 3[0m
+  Rendered items/show.html.erb within layouts/application (155.7ms)
+Completed 200 OK in 423ms (Views: 217.9ms | ActiveRecord: 54.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-02 13:00:54 +0800
+Served asset /application.css - 304 Not Modified (35ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-02 13:00:54 +0800
+Served asset /application.js - 304 Not Modified (100ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-10-02 13:00:55 +0800
+Served asset /sessions.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2013-10-02 13:00:55 +0800
+Served asset /items.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-02 13:00:55 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-02 13:00:55 +0800
+Served asset /jquery.js - 304 Not Modified (13ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-02 13:05:51 +0800
+Connecting to database specified by database.yml
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1[0m
+  [1m[35mItem Load (1.9ms)[0m  SELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mTrigger Load (0.7ms)[0m  [1mSELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 1[0m
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" WHERE "items"."pid" = 1
+  [1m[36mTrigger Load (0.2ms)[0m  [1mSELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 2[0m
+  Rendered items/show.html.erb within layouts/application (100.4ms)
+Completed 500 Internal Server Error in 353ms
+
+ActionView::Template::Error (undefined local variable or method `emails' for #<#<Class:0x916c4f8>:0xa00e7b8>):
+    42:         <% child.triggers.each do |trigger| %>
+    43:         Send on <span style="color: red"><%= trigger.date_trigger %></span> to
+    44:         <br />
+    45:         <%= emails.email.join(", ") %>
+    46:     <% end %>
+    47:     <hr />
+    48:     <% end %>
+  app/views/items/show.html.erb:45:in `block (2 levels) in _app_views_items_show_html_erb__622325041_76482000'
+  app/views/items/show.html.erb:42:in `block in _app_views_items_show_html_erb__622325041_76482000'
+  app/views/items/show.html.erb:35:in `_app_views_items_show_html_erb__622325041_76482000'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.6ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-02 13:06:42 +0800
+Connecting to database specified by database.yml
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1[0m
+  [1m[35mItem Load (1.1ms)[0m  SELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mTrigger Load (0.4ms)[0m  [1mSELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 1[0m
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" WHERE "items"."pid" = 1
+  [1m[36mTrigger Load (0.3ms)[0m  [1mSELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 2[0m
+  [1m[35mEmail Load (0.8ms)[0m  SELECT "emails".* FROM "emails" INNER JOIN "trigger_emails" ON "emails"."id" = "trigger_emails"."email_id" WHERE "trigger_emails"."trigger_id" = 1
+  Rendered items/show.html.erb within layouts/application (170.3ms)
+Completed 500 Internal Server Error in 440ms
+
+ActionView::Template::Error (undefined method `email' for [#<Email id: 1, email: "swedishclubwa@gmail.com">]:ActiveRecord::Relation):
+    42:         <% child.triggers.each do |trigger| %>
+    43:         Send on <span style="color: red"><%= trigger.date_trigger %></span> to
+    44:         <br />
+    45:         <%= trigger.emails.email.join(", ") %>
+    46:     <% end %>
+    47:     <hr />
+    48:     <% end %>
+  app/views/items/show.html.erb:45:in `block (2 levels) in _app_views_items_show_html_erb___796171809_82227050'
+  app/views/items/show.html.erb:42:in `block in _app_views_items_show_html_erb___796171809_82227050'
+  app/views/items/show.html.erb:35:in `_app_views_items_show_html_erb___796171809_82227050'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (31.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (46.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-02 13:34:30 +0800
+Connecting to database specified by database.yml
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/sessions (57.6ms)
+Compiled application.css  (17ms)  (pid 3203)
+Completed 200 OK in 271ms (Views: 270.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-02 13:34:32 +0800
+Served asset /application.css - 200 OK (7ms)
+
+
+Started GET "/assets/back.png" for 127.0.0.1 at 2013-10-02 13:34:32 +0800
+Served asset /back.png - 200 OK (21ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2013-10-02 13:34:42 +0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CH0HQUTRAQKk0rmCPd2ChHMlTwrDcuEcQJ6cJKmkV0Y=", "session"=>{"email"=>"swedishclubwa@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (23.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'swedishclubwa@gmail.com' LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/items
+Completed 302 Found in 1203ms (ActiveRecord: 383.7ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-10-02 13:34:43 +0800
+Processing by ItemsController#index as HTML
+  [1m[35mUser Load (14.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1
+  [1m[36mItem Load (6.1ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  Rendered items/index.html.erb within layouts/application (1.1ms)
+Compiled jquery.js  (14ms)  (pid 3203)
+Compiled jquery_ujs.js  (5ms)  (pid 3203)
+Compiled items.js  (998ms)  (pid 3203)
+Compiled sessions.js  (248ms)  (pid 3203)
+Compiled application.js  (1526ms)  (pid 3203)
+Completed 200 OK in 1682ms (Views: 1629.7ms | ActiveRecord: 24.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-02 13:34:45 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-02 13:34:45 +0800
+Served asset /application.js - 200 OK (32ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-10-02 13:34:45 +0800
+Served asset /sessions.js - 200 OK (7ms)
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2013-10-02 13:34:45 +0800
+Served asset /items.js - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-02 13:34:45 +0800
+Served asset /jquery_ujs.js - 200 OK (9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-02 13:34:45 +0800
+Served asset /jquery.js - 200 OK (12ms)
+
+
+Started GET "/assets/edit.png" for 127.0.0.1 at 2013-10-02 13:34:48 +0800
+Served asset /edit.png - 200 OK (12ms)
+
+
+Started GET "/assets/email.png" for 127.0.0.1 at 2013-10-02 13:34:48 +0800
+Served asset /email.png - 200 OK (14ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-02 13:34:51 +0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1
+  [1m[36mItem Load (76.4ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mTrigger Load (15.1ms)[0m  SELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 1
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."pid" = 1[0m
+  [1m[35mTrigger Load (0.3ms)[0m  SELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 2
+  [1m[36mEmail Load (19.1ms)[0m  [1mSELECT "emails".* FROM "emails" INNER JOIN "trigger_emails" ON "emails"."id" = "trigger_emails"."email_id" WHERE "trigger_emails"."trigger_id" = 1[0m
+  [1m[35mTrigger Load (0.5ms)[0m  SELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 3
+  Rendered items/show.html.erb within layouts/application (253.5ms)
+Completed 200 OK in 446ms (Views: 233.0ms | ActiveRecord: 125.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-02 13:34:52 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-02 13:34:52 +0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-02 13:34:52 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2013-10-02 13:34:52 +0800
+Served asset /items.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-10-02 13:34:52 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-02 13:34:52 +0800
+Served asset /application.js - 304 Not Modified (10ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-10-02 13:35:05 +0800
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (7.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'n60SizTEAqEpurivOHogvg' LIMIT 1[0m
+  [1m[35mItem Load (1.2ms)[0m  SELECT "items".* FROM "items" 
+  Rendered items/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 33ms (Views: 17.6ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-02 13:35:05 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-02 13:35:05 +0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-10-02 13:35:05 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2013-10-02 13:35:05 +0800
+Served asset /items.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-02 13:35:05 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-02 13:35:05 +0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/edit.png" for 127.0.0.1 at 2013-10-02 13:35:06 +0800
+Served asset /edit.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/email.png" for 127.0.0.1 at 2013-10-02 13:35:06 +0800
+Served asset /email.png - 304 Not Modified (0ms)

@@ -1,21 +1,4 @@
-<div id = "main">
-  <div id = "heirachyDiv">
-	<p id = "itemToRoot"><br/><a id = "add-root-item" href = "#"> + Add Item To Root</a></p>
-	<ul id = "rootChildren">
-	  <li class = "currentItemPath"><a href = "#">2013</a></li>
-	  <li class = "indent">
-	  <ul>
-		<li class = "currentItemPath"><%= link_to "Ikea Food Testing", items_path %></li>
-		<li class = "indent">
-		<ul>
-		  <li><a href = "#">Transport</a></li>
-		  
-		</ul>
-		</li>
-	  </ul></li>
-	  <li><a href = "#">2014</a></li>
-	</ul>
-  </div>
+<%= render 'hierachy' %>
   
   <div id = "contentPane">
     <strong><%= @main_item.title %></strong>
@@ -47,5 +30,33 @@
     <hr />
     <% end %>
     </div>
+<div id = "contentPane">
+  <p id = "currentItemOptions">
+    <%= link_to "+ Add Item", new_item_path(:pid =>  @item.id) %>
+  </p>
+
+  <h1><%= @item.title %></h1>
+  <div class = "itemOptions">
+	<a id = "edit" href = "#" title = "Edit"></a>
+	<a id = "set-email" href = "#" title = "Set Email Reminder"></a>
   </div>
+  <p><%= @item.body %></p>
+  <% @item.triggers.each do |trigger| %>
+    <p class = "emailReminder">Email to <% trigger.emails.each do |email| %><%= email.email %> at <%= trigger.date_trigger %></p>
+    <% end %>
+  <% end %>
+  
+  <form id = "currentItemChildren">
+  <% @children.each do |child| %>
+      <h2><%= child.title %></h2>
+	  <p>
+      <% #raw() needed to display html %>
+      <%= raw(child.body) %>
+      </p>
+	  <% child.triggers.each do |trigger| %>
+      <p class = "emailReminder">Email to <% trigger.emails.each do |email| %><%= email.email %> at <%= trigger.date_trigger %></p>
+      <% end %>
+  <% end %>
+  <% end %>
+  </form>
 </div>

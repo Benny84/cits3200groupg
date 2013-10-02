@@ -5,25 +5,28 @@
 	<title> Club Process System - Swedish Club of WA </title>
 	<%= stylesheet_link_tag "application" %>
 	<%= stylesheet_link_tag "http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" %>
-	<%= javascript_include_tag 'application' %>
-	<%= javascript_include_tag 'http://code.jquery.com/jquery-1.10.1.min.js' %>
-	<%= javascript_include_tag 'http://code.jquery.com/ui/1.10.3/jquery-ui.js' %>
+	<%= javascript_include_tag "application" %>
+	<%= javascript_include_tag "http://code.jquery.com/jquery-1.10.1.min.js" %>
+	<%= javascript_include_tag "http://code.jquery.com/ui/1.10.3/jquery-ui.js" %>
 	
 </head>
 <body>
 	<div id = "container">
 		<header>
 			<div id = "itemsTitleDiv">
-				<p id = "title1"><%= link_to "Swedish Club of WA", items_path %></p>
-				<p id = "title2"><i><%= link_to "Club Process System", items_path %></i></p>
+				<%= link_to items_path do %>
+					<p id = "title1">Swedish Club of WA</p>
+					<p id = "title2"><i>Club Process System</i></p>
+				<% end %>
 			</div>
 			<div id = "logoutTab">
 				<p id = "logout"><%= link_to "Log Out", signout_path, method: "delete" %></p>
 			</div>
 		</header>
 
-	<%= yield %>
-
+		<div id = "main">
+			<%= yield %>
+		</div>
 	</div>
 	<footer>
 		<p>&copy; 2013 Swedish Club of WA - Website Created by CITS3200 Group G</p>
