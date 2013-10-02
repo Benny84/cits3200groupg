@@ -2,11 +2,15 @@
 
 <div id = "contentPane">
   <p id = "currentItemOptions">
-    <%= link_to "+ Add Item", new_item_path(:pid =>  @items.last.id) %>
+    <%= link_to "+ Add Item (To Root)", new_item_path(:pid =>  @items.last.id) %>
   </p>
 
+<!-- access root children, list children (root children) like in show.html.erb -->
+  
 <%= @items.last.title %>
 <%= @items.last.body %>
+
+</div>
 
 <!--
 <form id = "currentItem">

@@ -45,7 +45,7 @@ $(function () {
 	});
 	
 	$('#edit').click(function() {
-		document.getElementById("main").innerHTML = "hi";
+		document.getElementById("currentItem").innerHTML = "you shouldnt have clicked that";
 	});
 	
 	// Add Item Form Options
@@ -97,7 +97,7 @@ $(function () {
 		var date = document.getElementById("email-datepicker").value;
 		var recip = document.getElementById("email-recip").value;
 		
-		$('#currentItem').append("<p class = 'emailReminder'>Email to " + recip + " at 0:00 " + date + "</p>");
+		$('#currentItem').append("<p class = 'emailReminder'>Email to " + recip + " at " + date + " 00:00:00 UTC</p>");
 		
 		document.getElementById("set-email-form").reset();
 		$('#set-email-form').hide();

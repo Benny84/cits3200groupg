@@ -8,7 +8,7 @@
     <p id = "rootFormTitle">Adding New Item:</p>
   <% end %>
 
-  <%= form_for(:item, url: items_path) do |f| %>
+  <%= form_for(:item, url: items_path, html: {id: "thisIdbreaksit"}) do |f| %>
     <p><%= f.label :title %><%= f.text_field :title, size: 103, required: true %></p>
     <p><%= f.label :body %><%= f.text_field :body, size: 103, required: true %></p>
     <p><%= f.label :task%>Enable Complete/Incomplete status?<%= f.check_box :task %></p>

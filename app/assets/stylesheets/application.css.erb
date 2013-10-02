@@ -59,6 +59,7 @@ header {
 	padding-top: 5px;
 	padding-bottom: 20px;
 	background: #FFFFFF;
+	overflow: auto;
 	border-bottom-left-radius: 7px;
 	border-top-left-radius: 7px;
 	border-top-right-radius: 7px;
@@ -137,17 +138,30 @@ header {
 }
 
 .itemOptions {
+	display: none;
+
+	margin-top: -20px;
+	margin-left: 40px;
 	background: #F0F0F0;
 	padding-top: 1px;
 	padding-left: 1px;
 	width: 57px;
 	height: 27px;
+	
 	border: 1px solid;
 	border-bottom-left-radius: 5px;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
 	box-shadow: rgb(0, 0, 0) 1px 1px 2px 0px;
+}
+
+h1:hover + .itemOptions {
+	display: block;
+}
+
+.itemOptions:hover {
+	display: block;
 }
 
 /* new sessions form formatting */
@@ -229,11 +243,11 @@ h2 {
 	border-bottom-right-radius: 7px;
 }
 
-#new-item-title, #new-root-item-title {
+#item_title, #new-root-item-title {
 	margin-left: 10px;
 }
 
-#new-item-body, #new-root-item-body {
+#item_body, #new-root-item-body {
 	margin-left: 6px;
 }
 
