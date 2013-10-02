@@ -42,9 +42,7 @@
         <% child.triggers.each do |trigger| %>
         Send on <span style="color: red"><%= trigger.date_trigger %></span> to
         <br />
-        <% trigger.emails.each do |email| %>
-        <%= email.email %>
-        <% end %>
+        <%= trigger.emails.join(", ") %>
     <% end %>
     <hr />
     <% end %>
