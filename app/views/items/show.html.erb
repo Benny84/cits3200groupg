@@ -1,0 +1,49 @@
+<div id = "main">
+  <div id = "heirachyDiv">
+	<p id = "itemToRoot"><br/><a id = "add-root-item" href = "#"> + Add Item To Root</a></p>
+	<ul id = "rootChildren">
+	  <li class = "currentItemPath"><a href = "#">2013</a></li>
+	  <li class = "indent">
+	  <ul>
+		<li class = "currentItemPath"><%= link_to "Ikea Food Testing", items_path %></li>
+		<li class = "indent">
+		<ul>
+		  <li><a href = "#">Transport</a></li>
+		  
+		</ul>
+		</li>
+	  </ul></li>
+	  <li><a href = "#">2014</a></li>
+	</ul>
+  </div>
+  
+  <div id = "contentPane">
+    <strong><%= @main_item.title %></strong>
+    <br />
+    <%= @main_item.body %>
+    <br />
+    <br />
+    <% @main_item.triggers.each do |trigger| %>
+        Send on <span style="color: red"><%= trigger.date_trigger %></span> to
+        <br />
+        <%= trigger.emails.join(", ") %>
+    <% end %>
+    <hr />
+    <div style="padding-left: 20px">
+    <% @children.each do |child| %>
+        <%= child.title %>
+        <br />
+        <% #raw() needed to display html %>
+        <%= raw(child.body) %>
+        <br />
+        <br />
+        <% child.triggers.each do |trigger| %>
+        Send on <span style="color: red"><%= trigger.date_trigger %></span> to
+        <br />
+        <%= trigger.emails.join(", ") %>
+    <% end %>
+    <hr />
+    <% end %>
+    </div>
+  </div>
+</div>
