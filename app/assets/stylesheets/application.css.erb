@@ -80,8 +80,8 @@ header {
 	width: 280px;
 	margin: auto;
 	background: #FFFFFF;
-	padding-top: 5px;
-	padding-bottom: 15px;
+	padding-top: 10px;
+	padding-bottom: 17px;
 	text-align: center;
 	border-bottom-left-radius: 7px;
 	border-top-left-radius: 7px;
@@ -105,6 +105,48 @@ header {
 	font-size: 14px;
 	padding-top: 5px;
 	padding-left: 15px;
+}
+
+/* css for option links */
+
+#edit {
+	margin-left: 32px;
+	display: block;
+	width: 25px;
+	height: 25px;
+	background: url(<%=asset_path "edit.png"%>) bottom;
+	text-indent: -99999px;
+}
+
+#edit:hover {
+	background-position: 0 0;
+}
+
+#set-email {
+	margin-top: -25px;
+	display: block;
+	width: 25px;
+	height: 25px;
+	background: url(<%=asset_path "email.png"%>) bottom;
+	text-indent: -99999px;
+}
+
+#set-email:hover {
+	background-position: 0 0;
+}
+
+.itemOptions {
+	background: #F0F0F0;
+	padding-top: 1px;
+	padding-left: 1px;
+	width: 57px;
+	height: 27px;
+	border: 1px solid;
+	border-bottom-left-radius: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	box-shadow: rgb(0, 0, 0) 1px 1px 2px 0px;
 }
 
 /* new sessions form formatting */
@@ -194,6 +236,14 @@ h2 {
 	margin-left: 6px;
 }
 
+#email-datepicker {
+	margin-left: 47px;
+}
+
+#email-recip {
+	margin-left: 6px;
+}
+
 .itemCheckbox {
 	margin-left: -24px;
 }
@@ -227,15 +277,23 @@ a:visited {
 }
 
 a:hover {
-	color: #33CCCC;
+	color: #3399FF;
 }
 
-#logout  > a, #itemToRoot > a, #currentItemOptions > a {
+#title1 > a {
+	color: #FFFFFF;
+}
+
+#title2 > i > a {
+	color: #000000;
+}
+
+#logout  > a, #itemToRoot > a, #currentItemOptions > a, .newFormOptions > a {
 	color: #3366FF;
 	text-decoration: none;
 }
 
-#logout  > a:hover, #itemToRoot > a:hover, #currentItemOptions > a:hover {
+#logout  > a:hover, #itemToRoot > a:hover, #currentItemOptions > a:hover , .newFormOptions > a:hover {
 	color: #CC66FF;
 	text-decoration: underline;
 }

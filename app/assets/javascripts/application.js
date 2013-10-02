@@ -48,12 +48,13 @@ $(function () {
 		document.getElementById("main").innerHTML = "hi";
 	});
 	
+	// Add Item Form Options
 	$('#add-item-confirm').click(function() {
 		var title = document.getElementById("new-item-title").value;
 		var body = document.getElementById("new-item-body").value;
 		var active = document.getElementById("new-item-active").checked;
 
-		$('#currentItemChildren').append("<form><h2><input type = 'checkbox' class = 'itemCheckbox" + (active ? "" : " inactive") + "'/><a href = '#'> " + title + "</a></h2><p>" + body + "</p></form>");
+		$('#currentItemChildren').append("<h2><input type = 'checkbox' class = 'itemCheckbox" + (active ? "" : " inactive") + "'/><a href = '#'> " + title + "</a></h2><p>" + body + "</p>");
 		
 		document.getElementById("add-item-form").reset();
 		$('#add-item-form').hide();
@@ -67,6 +68,7 @@ $(function () {
 		document.getElementById("add-item-form").reset();
 	});
 	
+	// Add Root Item Form Options
 	$('#add-root-item-confirm').click(function() {
 		var title = document.getElementById("new-root-item-title").value;
 		
@@ -90,5 +92,25 @@ $(function () {
 		document.getElementById("add-root-item-form").reset();
 	});
 	
-	$('#datepicker').datepicker();
+	// Add Email Reminder Form Options
+	$('#set-email-confirm').click(function() {
+		var date = document.getElementById("email-datepicker").value;
+		var recip = document.getElementById("email-recip").value;
+		
+		$('#currentItem').append("<p class = 'emailReminder'>Email to " + recip + " at 0:00 " + date + "</p>");
+		
+		document.getElementById("set-email-form").reset();
+		$('#set-email-form').hide();
+	});
+	
+	$('#set-email-cancel').click(function() {
+		$('#set-email-form').hide();
+	});
+	
+	$('#set-email-clear').click(function() {
+		document.getElementById("set-email-form").reset();
+	});
+	
+	//Date picker jQuery
+	$('#email-datepicker').datepicker();
 });
