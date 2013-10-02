@@ -7,7 +7,22 @@ class ItemsController < ApplicationController
 
   #for an item at the top
   def show
-    @main_item = Item.find(params[:id]) #top item
-    @children = @main_item.children
+    @items = Item.all
+    @item = Item.find(params[:id]) #top item
+    @children = @item.children
+  end
+
+  def new
+    @items = Item.all
+  end
+
+  def create
+    @item = Item.new(params[:item])
+
+    if @item.save
+      redirect_to item_path(@item.id)
+    else
+      render 'index'
+    end
   end
 end

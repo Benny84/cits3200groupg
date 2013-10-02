@@ -1,0 +1,23 @@
+<%= render 'hierachy' %>
+
+<div id = "contentPane">
+
+  <% if params[:pid].nil? %>
+    <p id = "rootFormTitle">Adding New Item to Root:</p>
+  <% else %>
+    <p id = "rootFormTitle">Adding New Item:</p>
+  <% end %>
+
+  <%= form_for(:item, url: items_path) do |f| %>
+    <p><%= f.label :title %><%= f.text_field :title, size: 103, required: true %></p>
+    <p><%= f.label :body %><%= f.text_field :body, size: 103, required: true %></p>
+    <p><%= f.label :task%>Enable Complete/Incomplete status?<%= f.check_box :task %></p>
+    <%= hidden_field_tag 'item[pid]', params[:pid] %>
+    <p class = "newFormOptions">
+      <%= f.submit "Confirm item" %>
+      <a id = "add-root-item-clear" href = "#">Clear</a> | 
+      <%= link_to "Cancel", items_path %>
+    </p>
+  <% end %>
+
+</div>

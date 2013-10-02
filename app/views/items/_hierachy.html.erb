@@ -1,0 +1,8 @@
+<div id = "hierachyDiv">
+  <p id = "itemToRoot"><br/><%= link_to "+ Add Item To Root", new_item_path %></p>
+  <ul>
+    <% @items.each do |item| %>
+      <li><%= link_to "#{item.title}", item %></li>
+    <% end %>
+  </ul>
+</div>
