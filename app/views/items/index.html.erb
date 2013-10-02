@@ -1,9 +1,9 @@
 <%= render 'hierachy' %>
 
 <div id = "contentPane">
-<p id = "currentItemOptions">
-  <%= link_to "+ Add Item", new_item_path(:pid =>  @items.last.id) %>
-</p>
+  <p id = "currentItemOptions">
+    <%= link_to "+ Add Item", new_item_path(:pid =>  @items.last.id) %>
+  </p>
 
 <%= @items.last.title %>
 <%= @items.last.body %>

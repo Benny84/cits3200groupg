@@ -1,38 +1,32 @@
 <%= render 'hierachy' %>
   
 <div id = "contentPane">
-  <%= link_to "+ Add Item", new_item_path(:pid =>  @item.id) %>
-  <br />
+  <p id = "currentItemOptions">
+    <%= link_to "+ Add Item", new_item_path(:pid =>  @item.id) %>
+  </p>
 
-  <strong><%= @item.title %></strong>
-  <br />
-  <%= @item.body %>
-  <br />
-  <br />
+  <h1><%= @item.title %></h1>
+  <div class = "itemOptions">
+	<a id = "edit" href = "#" title = "Edit"></a>
+	<a id = "set-email" href = "#" title = "Set Email Reminder"></a>
+  </div>
+  <p><%= @item.body %></p>
   <% @item.triggers.each do |trigger| %>
-      Send on <span style="color: red"><%= trigger.date_trigger %></span> to
-      <br />
-      <% trigger.emails.each do |email| %>
-      <%= email.email %>
-      <% end %>
+    <p class = "emailReminder">Email to <% trigger.emails.each do |email| %><%= email.email %> at <%= trigger.date_trigger %></p>
+    <% end %>
   <% end %>
-  <hr />
-  <div style="padding-left: 20px">
+  
+  <form id = "currentItemChildren">
   <% @children.each do |child| %>
-      <%= child.title %>
-      <br />
+      <h2><%= child.title %></h2>
+	  <p>
       <% #raw() needed to display html %>
       <%= raw(child.body) %>
-      <br />
-      <br />
-      <% child.triggers.each do |trigger| %>
-      Send on <span style="color: red"><%= trigger.date_trigger %></span> to
-      <br />
-      <% trigger.emails.each do |email| %>
-      <%= email.email %>
+      </p>
+	  <% child.triggers.each do |trigger| %>
+      <p class = "emailReminder">Email to <% trigger.emails.each do |email| %><%= email.email %> at <%= trigger.date_trigger %></p>
       <% end %>
   <% end %>
-  <hr />
   <% end %>
-  </div>
+  </form>
 </div>
