@@ -166,14 +166,23 @@ header {
 }
 
 .itemOptions {
-	display: none;
-
+	opacity: 0;
+	
+	-webkit-transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+	-moz-transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+	-o-transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+	transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+	
+	position: relative;
 	margin-left: 20px;
+	margin-top: -2px;
+	margin-bottom: -10px;
 	background: #F0F0F0;
 	padding-top: 1px;
 	padding-left: 1px;
 	width: 86px;
 	height: 27px;
+	z-index: 1;
 	
 	border: 1px solid;
 	border-bottom-left-radius: 5px;
@@ -183,28 +192,31 @@ header {
 	box-shadow: rgb(0, 0, 0) 1px 1px 2px 0px;
 }
 
-h1:hover + .itemOptions {
-	display: block;
+h1:hover + .itemOptions, .itemOptions:hover{
+	opacity: 1;
 }
 
-h2:hover + .itemOptions {
-	display: block;
-}
-
-.itemOptions:hover {
-	display: block;
+h2:hover + .itemOptions, .itemOptions:hover {
+	opacity: 1;
 }
 
 .emailOptions {
-	display: none;
+	opacity: 0;
+	
+	-webkit-transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+	-moz-transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+	-o-transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+	transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+	
 	float: right;
-
+	position: relative;
 	margin-top: -37px;
 	background: #F0F0F0;
 	padding-top: 1px;
 	padding-left: 1px;
 	width: 55px;
 	height: 27px;
+	z-index: 1;
 	
 	border: 1px solid;
 	border-bottom-left-radius: 5px;
@@ -215,10 +227,10 @@ h2:hover + .itemOptions {
 }
 
 p:hover + .emailOptions {
-	display: block;
+	opacity: 1;
 }
 .emailOptions:hover {
-	display: block;
+	opacity: 1;
 }
 
 /* new sessions form formatting */
@@ -276,6 +288,7 @@ h2 {
 	font-weight: 700; 
 	font-size: 160%; 
 	display: inline-block;
+	margin-top: 1px;
 	margin-bottom: -20px;
 }
 
