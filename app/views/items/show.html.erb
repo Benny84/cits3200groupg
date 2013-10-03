@@ -58,7 +58,7 @@
 <%= form_for(:item, url: items_path, html: {id: "add-item-form"}) do |f| %>
   <p><%= f.label :title, 'Title:' %><%= f.text_field :title, size: 95, required: true, value: '' %></p>
   <p><%= f.label :body, 'Body:' %><%= f.text_field :body, size: 95, required: true, value: '' %></p>
-  <p><%= f.label :task, 'Enable Complete/Incomplete status?' %><%= f.check_box :task, value: '' %></p>
+  <p><%= f.label :task, 'Enable Complete/Incomplete status? ' %><%= f.check_box :task, value: '' %></p>
   <%= hidden_field_tag 'item[pid]', @item.id %>
   <p class = "newFormOptions">
     <%= f.submit "Confirm item" %>
