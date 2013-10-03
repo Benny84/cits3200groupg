@@ -7,7 +7,7 @@
 <form id = "currentItem">
   <h1><%= @item.title %></h1> <!-- put checkbox here, class: inactive when inactive -->
   <div class = "itemOptions">
-    <%= link_to '', edit_item_path(@item.id), class: 'edit', title: 'Edit' %>
+    <%= link_to '', edit_item_path(@item.id), class: 'edit itemEdit', title: 'Edit' %>
 	<a id = "set-email" class = "set-email" href = "#" title = "Set Email Reminder"></a>
 	<a id = "delete" class = "delete itemDelete" href = "#" title = "Delete" %></a> <!-- trigger for deleting item -->
   </div>
@@ -15,7 +15,8 @@
   <% @item.triggers.each do |trigger| %>
     <p class = "emailReminder">Email to <% trigger.emails.each do |email| %><%= email.email %> at <%= trigger.date_trigger %></p>
     <div class = "emailOptions">
-	  <a class = "delete" href = "#" title = "Delete" %></a>
+	  <a class = "edit emailEdit" href = "#" title = "Edit"></a>
+	  <a class = "delete emailDelete" href = "#" title = "Delete"></a>
 	</div>
 	<% end %>
   <% end %>
@@ -37,7 +38,7 @@
   <% @children.each do |child| %>
   <h2><%= link_to child.title, child %></h2> <!-- put checkbox here, class: inactive when inactive -->
   <div class = "itemOptions">
-  	<%= link_to '', edit_item_path(child), class: 'edit', title: 'Edit' %>
+  	<%= link_to '', edit_item_path(child), class: 'edit itemEdit', title: 'Edit' %>
 	<a class = "set-email" href = "#" title = "Set Email Reminder"></a> <!--todo umm do we need to put a hidden form for every child item? im sure theres a better way-->
 	<a class = "delete itemDelete" href = "#" title = "Delete" %></a>
   </div>
@@ -48,8 +49,9 @@
   <% child.triggers.each do |trigger| %>
   <p class = "emailReminder">Email to <% trigger.emails.each do |email| %><%= email.email %> at <%= trigger.date_trigger %></p>
   <div class = "emailOptions">
-	<a class = "delete" href = "#" title = "Delete" %></a>
-  </div>
+	  <a class = "edit emailEdit" href = "#" title = "Edit"></a>
+	  <a class = "delete emailDelete" href = "#" title = "Delete"></a>
+	</div>
   <% end %>
 <% end %>
 <% end %>
