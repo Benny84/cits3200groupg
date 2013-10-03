@@ -9,8 +9,8 @@
   <form id = "currentItem">
     <h1><%= @item.title %></h1> <!-- put checkbox here, class: inactive when inactive -->
     <div class = "itemOptions">
-  	  <a id = "edit" href = "#" title = "Edit"></a>
-	  <a id = "set-email" href = "#" title = "Set Email Reminder"></a>
+  	  <%= link_to '', edit_item_path(@item.id), id: 'edit' %>
+	    <a id = "set-email" href = "#" title = "Set Email Reminder"></a>
     </div>  
     <p><%= @item.body %></p>
     <% @item.triggers.each do |trigger| %>

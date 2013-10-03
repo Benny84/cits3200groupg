@@ -1,6 +1,11 @@
 class ItemsController < ApplicationController
   before_filter :signed_in_user
 
+  def edit
+    @items = Item.all
+    @item = Item.find(params[:id])
+  end
+
   def index
     @items = Item.all
   end
@@ -25,4 +30,14 @@ class ItemsController < ApplicationController
       render 'index'
     end
   end
+
+  def update
+    @item = Item.find(params[:id])
+
+    if @item.update_attributes(params[:item])
+      redirect_to @item
+    else
+      render 'edit'
+    end
+  end 
 end
