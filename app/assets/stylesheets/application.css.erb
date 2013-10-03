@@ -111,7 +111,7 @@ header {
 
 /* css for option links */
 
-#edit {
+.edit {
 	margin-left: 32px;
 	display: block;
 	width: 25px;
@@ -120,11 +120,11 @@ header {
 	text-indent: -99999px;
 }
 
-#edit:hover {
+.edit:hover {
 	background-position: 0 0;
 }
 
-#set-email {
+.set-email {
 	margin-top: -25px;
 	display: block;
 	width: 25px;
@@ -133,15 +133,14 @@ header {
 	text-indent: -99999px;
 }
 
-#set-email:hover {
+.set-email:hover {
 	background-position: 0 0;
 }
 
 .itemOptions {
 	display: none;
 
-	margin-top: -20px;
-	margin-left: 40px;
+	margin-left: 20px;
 	background: #F0F0F0;
 	padding-top: 1px;
 	padding-left: 1px;
@@ -157,6 +156,10 @@ header {
 }
 
 h1:hover + .itemOptions {
+	display: block;
+}
+
+h2:hover + .itemOptions {
 	display: block;
 }
 
@@ -211,11 +214,15 @@ ul {
 h1 {
 	font-weight: 700; 
 	font-size: 220%; 
+	display: inline-block;
+	margin-bottom: -20px;
 }
 
 h2 {
 	font-weight: 700; 
 	font-size: 160%; 
+	display: inline-block;
+	margin-bottom: -20px;
 }
 
 .emailReminder {

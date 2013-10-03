@@ -1,10 +1,5 @@
-<%= render 'hierachy' %>
-
-<div id = "contentPane">
-
   <p id = "rootFormTitle">Editing Item:</p>
-
-  <%= form_for @item do |f| %>
+  <%= form_for(@item, html: {id: "add-root-item-form"}) do |f| %>
     <p><%= f.label :title %><%= f.text_field :title, size: 103, required: true %></p>
     <p><%= f.label :body %><%= f.text_field :body, size: 103, required: true %></p>
     <p><%= f.label :task, 'Enable Complete/Incomplete status?' %><%= f.check_box :task %></p>
@@ -15,5 +10,3 @@
       <%= link_to "Cancel", items_path %>
     </p>
   <% end %>
-
-</div>

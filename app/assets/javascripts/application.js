@@ -15,7 +15,6 @@
 //= require_tree .
 function hideAllForms() {
 	$('#add-item-form').hide();
-	$('#add-root-item-form').hide();
 	$('#set-email-form').hide();
 }
 
@@ -42,10 +41,6 @@ $(function () {
 		hideAllForms();
 		hideCurrentItem();
 		$('#add-root-item-form').show();
-	});
-	
-	$('#edit').click(function() {
-		document.getElementById("currentItem").innerHTML = "you shouldnt have clicked that";
 	});
 	
 	// Add Item Form Options
