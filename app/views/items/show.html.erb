@@ -2,8 +2,7 @@
   
 <div id = "contentPane">
   <p id = "currentItemOptions">
-	<%= link_to "+ Add Item (working)", new_item_path(:pid => @item.id) %> | 
-    <a id = "add-item" href = "#">+ Add Item (at bottom but not working)</a> |
+  <%= link_to "+ Add Item", '#', id: 'add-item' %> |
 	<a id = "go-up" href = "#">Go Up</a>
   </p>
 
@@ -47,10 +46,10 @@
   </form>
   
   <%= form_for(:item, url: items_path, html: {id: "add-item-form"}) do |f| %>
-    <p>Title: <%= f.text_field :title, size: 80, required: true %></p>
-    <p>Body: <%= f.text_field :body, size: 80, required: true %></p>
-    <p>Enable Complete/Incomplete status? <%= f.check_box :task %></p>
-    <%= hidden_field_tag 'item[pid]', params[:pid] %>
+    <p>Title: <%= f.text_field :title, size: 80, required: true, value: '' %></p>
+    <p>Body: <%= f.text_field :body, size: 80, required: true, value: '' %></p>
+    <p>Enable Complete/Incomplete status? <%= f.check_box :task, value: '' %></p>
+    <%= hidden_field_tag 'item[pid]', @item.id %>
     <p class = "newFormOptions">
       <%= f.submit "Confirm item" %>
       <a id = "add-item-clear" href = "#">Clear</a> | 

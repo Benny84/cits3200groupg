@@ -2,6 +2,9 @@ namespace :db do
   
   desc "Add items and triggers to database"
   task :adddata => :environment do
+    puts "Creating swedishclubwa user..."
+    User.create!(:email => "swedishclubwa@gmail.com", :password => "cits3200", :password_confirmation => "cits3200")
+    
     puts "Creating item..."
     Item.create!(:title => "Ikea Food Tasting", :body => "Off to IKEA to taste delicious Swedish foods!")
     puts "Creating email swedishclubwa@gmail.com..."
