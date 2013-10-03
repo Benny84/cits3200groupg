@@ -9,17 +9,21 @@
   <div class = "itemOptions">
     <%= link_to '', edit_item_path(@item.id), class: 'edit', title: 'Edit' %>
 	<a id = "set-email" class = "set-email" href = "#" title = "Set Email Reminder"></a>
+	<a id = "delete" class = "delete itemDelete" href = "#" title = "Delete" %></a> <!-- trigger for deleting item -->
   </div>
   <p><%= @item.body %></p>
   <% @item.triggers.each do |trigger| %>
     <p class = "emailReminder">Email to <% trigger.emails.each do |email| %><%= email.email %> at <%= trigger.date_trigger %></p>
-    <% end %>
+    <div class = "emailOptions">
+	  <a class = "delete" href = "#" title = "Delete" %></a>
+	</div>
+	<% end %>
   <% end %>
 </form>
   
 <!-- TODO patrick/raissa: make this forms work :D  -->
 <form id = "set-email-form">
-  <p>Date: <input type = "text" id = "email-datepicker" size = "9"/><small> DD/MM/YYYY at 0:00</small></p>
+  <p>Date: <input type = "text" id = "email-datepicker" size = "9"/><small> at 0:00</small></p>
   <p>Recipient(s): <input type = "text" id = "email-recip" size = "80" placeholder = "example@swedishclubwa.com"/></p>
   <p>Send all subchildren too? <input type = "checkbox" id = "email-children"/></p>
   <p class = "newFormOptions">
@@ -35,6 +39,7 @@
   <div class = "itemOptions">
   	<%= link_to '', edit_item_path(child), class: 'edit', title: 'Edit' %>
 	<a class = "set-email" href = "#" title = "Set Email Reminder"></a> <!--todo umm do we need to put a hidden form for every child item? im sure theres a better way-->
+	<a class = "delete itemDelete" href = "#" title = "Delete" %></a>
   </div>
   <p>
   <% #raw() needed to display html %>
@@ -42,6 +47,9 @@
   </p>
   <% child.triggers.each do |trigger| %>
   <p class = "emailReminder">Email to <% trigger.emails.each do |email| %><%= email.email %> at <%= trigger.date_trigger %></p>
+  <div class = "emailOptions">
+	<a class = "delete" href = "#" title = "Delete" %></a>
+  </div>
   <% end %>
 <% end %>
 <% end %>
