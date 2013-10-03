@@ -107,5 +107,5 @@ $(function () {
 	});
 	
 	//Date picker jQuery
-	$('#email-datepicker').datepicker();
+	$('#email-datepicker').datepicker({ dateFormat: "dd/mm/yy" });
 });
