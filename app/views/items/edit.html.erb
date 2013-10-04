@@ -3,7 +3,7 @@
     <p><%= f.label :title %><%= f.text_field :title, size: 103, required: true %></p>
     <p><%= f.label :body %><%= f.text_field :body, size: 103, required: true %></p>
     <p><%= f.label :task, 'Enable Complete/Incomplete status?' %><%= f.check_box :task %></p>
-    <%= hidden_field_tag 'item[pid]', params[:pid] %>
+    <%= hidden_field_tag 'item[pid]', @item.pid %>
     <p class = "newFormOptions">
       <%= f.submit "Confirm item" %>
       <a id = "add-root-item-clear" href = "#">Clear</a> | 
