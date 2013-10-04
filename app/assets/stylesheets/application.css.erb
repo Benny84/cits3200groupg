@@ -292,6 +292,10 @@ h2 {
 	margin-bottom: -20px;
 }
 
+h3 {
+	font-size: 30px;
+	text-align: center;
+}
 .emailReminder {
 	color: red;
 }
@@ -305,9 +309,9 @@ h2 {
 	margin-top: 0px;
 }
 
-#add-item-form, #add-root-item-form, #set-email-form {
+#add-item-form, #set-email-form {
 	background: #EFF3F6; 
-	padding: 1px 8px 1px 8px; 
+	padding: 40px 50px; 
 	margin-top: 15px;
 	margin-right: 20px; 
 	border: 1px solid;
@@ -317,12 +321,30 @@ h2 {
 	border-bottom-right-radius: 7px;
 }
 
-#item_title {
-	margin-left: 10px;
+#add-item-form input[type=text] {
+	display: block;
+	width: 100%;
+	margin-bottom: 20px;
 }
 
-#item_body {
-	margin-left: 6px;
+#add-root-item-form input[type=text] {
+	display: block;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+#add-root-item-form	input[type=submit] {
+	float: left;
+}
+
+#add-item-form	input[type=submit] {
+	float: left;
+}
+
+.newFormOptions {
+	width: 300px;
+	display: block;
+	margin: 25px auto;
 }
 
 #email-datepicker {
@@ -341,10 +363,7 @@ h2 {
 	visibility: hidden;
 }
 
-.newFormOptions {
-	text-align: center; 
-	font-size: 14px;
-}
+
 
 #rootFormTitle {
 	text-align: center;

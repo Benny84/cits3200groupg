@@ -1,13 +1,20 @@
-<p id = "rootFormTitle">Adding New Item to Root:</p>
+<h3>Adding New Item to Root</h3>
 
 <%= form_for(:item, url: items_path, html: {id: "add-root-item-form"}) do |f| %>
-  <p><%= f.label :title, 'Title: ' %><%= f.text_field :title, size: 103, required: true %></p>
-  <p><%= f.label :body, 'Body: ' %><%= f.text_field :body, size: 103, required: true %></p>
-  <p><%= f.label :task, 'Enable Complete/Incomplete status? ' %><%= f.check_box :task %></p>
+  <%= f.label :title %>
+  <%= f.text_field :title, required: true %>
+
+  <%= f.label :body %>
+  <%= f.text_field :body, required: true %>
+
+  <%= f.label :task, 'Enable Complete/Incomplete status?' %>
+  <%= f.check_box :task %>
+  
   <%= hidden_field_tag 'item[pid]', params[:pid] %>
-  <p class = "newFormOptions">
+
+  <div class = "newFormOptions">
     <%= f.submit "Confirm item" %>
-    <a id = "add-root-item-clear" href = "#">Clear</a> | 
-    <%= link_to "Cancel", items_path %>
-  </p>
+    <%= link_to "Clear", '#', id: "add-root-item-clear" %>
+    <%= link_to "Cancel", :back %>
+  </div>
 <% end %>

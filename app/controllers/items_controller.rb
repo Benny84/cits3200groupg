@@ -1,26 +1,6 @@
 class ItemsController < ApplicationController
   before_filter :signed_in_user
 
-  def edit
-    @items = Item.all
-    @item = Item.find(params[:id])
-  end
-
-  def index
-    @items = Item.all
-  end
-
-  #for an item at the top
-  def show
-    @items = Item.all
-    @item = Item.find(params[:id]) #top item
-    @children = @item.children
-  end
-
-  def new
-    @items = Item.all
-  end
-
   def create
     @item = Item.new(params[:item])
 
@@ -29,6 +9,32 @@ class ItemsController < ApplicationController
     else
       render 'index'
     end
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+
+    redirect_to items_path
+  end
+
+  def edit
+    @items = Item.top_level
+    @item = Item.find(params[:id])
+  end
+
+  def index
+    @items = Item.top_level
+  end
+
+  def new
+    @items = Item.top_level
+  end
+
+  def show
+    @items = Item.top_level
+    @item = Item.find(params[:id])
+    @children = @item.children
   end
 
   def update
