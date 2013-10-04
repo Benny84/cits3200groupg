@@ -19,20 +19,20 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @items = Item.all
+    @items = Item.top_level
     @item = Item.find(params[:id])
   end
 
   def index
-    @items = Item.all
+    @items = Item.top_level
   end
 
   def new
-    @items = Item.all
+    @items = Item.top_level
   end
 
   def show
-    @items = Item.all
+    @items = Item.top_level
     @item = Item.find(params[:id])
     @children = @item.children
   end
