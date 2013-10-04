@@ -59,13 +59,20 @@
 </form>
   
 <%= form_for(:item, url: items_path, html: {id: "add-item-form"}) do |f| %>
-  <p><%= f.label :title, 'Title:' %><%= f.text_field :title, size: 95, required: true, value: '' %></p>
-  <p><%= f.label :body, 'Body:' %><%= f.text_field :body, size: 95, required: true, value: '' %></p>
-  <p><%= f.label :task, 'Enable Complete/Incomplete status? ' %><%= f.check_box :task, value: '' %></p>
+  <%= f.label :title %>
+  <%= f.text_field :title, required: true, value: '' %>
+
+  <%= f.label :body %>
+  <%= f.text_field :body, required: true, value: '' %>
+
+  <%= f.label :task, 'Enable Complete/Incomplete status?' %>
+  <%= f.check_box :task, value: '' %>
+
   <%= hidden_field_tag 'item[pid]', @item.id %>
-  <p class = "newFormOptions">
+  
+  <div class = "newFormOptions">
     <%= f.submit "Confirm item" %>
-    <a id = "add-item-clear" href = "#">Clear</a> | 
-    <a id = "add-item-cancel" href = "#">Cancel</a>
-  </p>
+    <%= link_to "Clear", '#', id: "add-root-item-clear" %>
+    <%= link_to "Cancel", :back %>
+  </div>
 <% end %>

@@ -1,11 +1,11 @@
 <h3>Adding New Item to Root</h3>
 
 <%= form_for(:item, url: items_path, html: {id: "add-root-item-form"}) do |f| %>
-  <%= f.label :title, 'Title:' %>
-  <%= f.text_field :title %>
+  <%= f.label :title %>
+  <%= f.text_field :title, required: true %>
 
-  <%= f.label :body, 'Body:' %>
-  <%= f.text_field :body %>
+  <%= f.label :body %>
+  <%= f.text_field :body, required: true %>
 
   <%= f.label :task, 'Enable Complete/Incomplete status?' %>
   <%= f.check_box :task %>
@@ -14,7 +14,7 @@
 
   <div class = "newFormOptions">
     <%= f.submit "Confirm item" %>
-    <%= button_to "Clear", id: "add-root-item-clear" %>
-    <%= button_to "Cancel", { action: "index" } %>
+    <%= link_to "Clear", '#', id: "add-root-item-clear" %>
+    <%= link_to "Cancel", :back %>
   </div>
 <% end %>
