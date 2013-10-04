@@ -1,7 +1,6 @@
 <p id = "currentItemOptions">
   <%= link_to "+ Add Item", '#', id: 'add-item' %> |
-  <%= link_to "Go Up (link broken)", @pid %> | <!-- is @pid working? it links to the same item, @item.pid breaks my rails -->
-  <a href = "<%= @item.pid %>">Go Up (working)</a>
+  <a href = "<%= @item.pid %>">Go Up</a> <!-- not in rails link_to format..does it matter? -->
 </p>
 
 <form id = "currentItem">
@@ -23,17 +22,17 @@
   <% end %>
 </form>
   
-<!-- TODO patrick/raissa: make this forms work :D  -->
-<%= form_tag({:controller => 'triggers', :action => 'create'}, {:id => "setemailform"}) do %>
+<%= form_tag({:controller => 'triggers', :action => 'create'}, {:id => "set-email-form"}) do %>
   <p><%= label_tag(:datepicker, "Date:") %> <%= text_field_tag(:datepicker) %> <small> at 0:00</small></p>
   <p><%= label_tag(:emailrecip, "Recipients:") %>  <%= collection_select(:trigger_email, :email_id, Email.all, :id, :email, { :multiple => true }) %></p>
   <p><%= label_tag(:emailchildren, "Send all subchildren too?") %> <%= check_box_tag(:emailchildren) %><%= hidden_field_tag(:parent_id, "") %></p>
   <p class = "newFormOptions">
-  <%= submit_tag("Set email reminder") %> | <a id = "set-email-confirm" href = "#">Set Email Reminder</a> | 
+  <%= submit_tag("Set email reminder") %> | 
 	<a id = "set-email-clear" href = "#">Clear</a> | 
 	<a id = "set-email-cancel" href = "#">Cancel</a>
   </p>
 <% end %>
+
   
 <form id = "currentItemChildren">
   <% @children.each do |child| %>
@@ -50,14 +49,12 @@
   <% child.triggers.each do |trigger| %>
   <p class = "emailReminder">Email to <% trigger.emails.each do |email| %><%= email.email %> at <%= trigger.date_trigger %></p>
   <div class = "emailOptions">
-	  <a class = "edit emailEdit" href = "#" title = "Edit"></a>
-	  <a class = "delete emailDelete" href = "#" title = "Delete"></a>
-	</div>
+	<a class = "edit emailEdit" href = "#" title = "Edit"></a>
+	<a class = "delete emailDelete" href = "#" title = "Delete"></a>
+  </div>
   <% end %>
-  </form>
-</div>
-<% end %>
-<% end %>
+  <% end %>
+  <% end %>
 </form>
   
 <%= form_for(:item, url: items_path, html: {id: "add-item-form"}) do |f| %>
@@ -67,14 +64,14 @@
   <%= f.label :body %>
   <%= f.text_field :body, required: true, value: '' %>
 
-  <%= f.label :task, 'Enable Complete/Incomplete status?' %>
+  <%= f.label :task, 'Make Task?' %>
   <%= f.check_box :task, value: '' %>
 
   <%= hidden_field_tag 'item[pid]', @item.id %>
   
   <div class = "newFormOptions">
-    <%= f.submit "Confirm item" %>
-    <%= link_to "Clear", '#', id: "add-root-item-clear" %>
-    <%= link_to "Cancel", :back %>
+    <%= f.submit "Confirm item" %> | 
+	<%= link_to "Clear", '#', id: "add-item-clear" %> | 
+    <a id = "add-item-cancel" href = "#">Cancel</a>
   </div>
 <% end %>

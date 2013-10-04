@@ -15,7 +15,7 @@
 //= require_tree .
 function hideAllForms() {
 	$('#add-item-form').hide();
-	$('#setemailform').hide();
+	$('#set-email-form').hide();
 }
 
 function hideCurrentItem() {
@@ -35,7 +35,7 @@ $(function () {
 	$('.set-email').click(function() {
 		hideAllForms();
         $('#parent-id').val($(this).attr('name'));
-		$('#setemailform').show();
+		$('#set-email-form').show();
 	});
 	
 	$('#add-root-item').click(function() {
@@ -95,16 +95,16 @@ $(function () {
 		
 		$('#currentItem').append("<p class = 'emailReminder'>Email to " + recip + " at " + date + " 00:00:00 UTC</p>");
 		
-		document.getElementById("setemailform").reset();
-		$('#setemailform').hide();
+		document.getElementById("set-email-form").reset();
+		$('#set-email-form').hide();
 	});
 	
 	$('#set-email-cancel').click(function() {
-		$('#setemailform').hide();
+		$('#set-email-form').hide();
 	});
 	
 	$('#set-email-clear').click(function() {
-		document.getElementById("setemailform").reset();
+		document.getElementById("set-email-form").reset();
 	});
 	
 	//Date picker jQuery
