@@ -59,6 +59,7 @@ header {
 	padding-top: 5px;
 	padding-bottom: 20px;
 	background: #FFFFFF;
+	overflow: auto;
 	border-bottom-left-radius: 7px;
 	border-top-left-radius: 7px;
 	border-top-right-radius: 7px;
@@ -110,8 +111,7 @@ header {
 
 /* css for option links */
 
-#edit {
-	margin-left: 32px;
+.edit {
 	display: block;
 	width: 25px;
 	height: 25px;
@@ -119,11 +119,19 @@ header {
 	text-indent: -99999px;
 }
 
-#edit:hover {
+.itemEdit {
+	margin-left: 32px;
+}
+
+.emailEdit {
+	margin-left: 3px;
+}
+
+.edit:hover {
 	background-position: 0 0;
 }
 
-#set-email {
+.set-email {
 	margin-top: -25px;
 	display: block;
 	width: 25px;
@@ -132,22 +140,97 @@ header {
 	text-indent: -99999px;
 }
 
-#set-email:hover {
+.set-email:hover {
+	background-position: 0 0;
+}
+
+.delete {
+	margin-top: -24px;
+	display: block;
+	width: 25px;
+	height: 25px;
+	background: url(<%=asset_path "delete.png"%>) bottom;
+	text-indent: -99999px;
+}
+
+.itemDelete {
+	margin-left: 60px;
+}
+
+.emailDelete {
+	margin-left: 28px;
+}
+	
+.delete:hover {
 	background-position: 0 0;
 }
 
 .itemOptions {
+	opacity: 0;
+	
+	-webkit-transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+	-moz-transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+	-o-transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+	transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+	
+	position: relative;
+	margin-left: 20px;
+	margin-top: -2px;
+	margin-bottom: -10px;
 	background: #F0F0F0;
 	padding-top: 1px;
 	padding-left: 1px;
-	width: 57px;
+	width: 86px;
 	height: 27px;
+	z-index: 1;
+	
 	border: 1px solid;
 	border-bottom-left-radius: 5px;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
 	box-shadow: rgb(0, 0, 0) 1px 1px 2px 0px;
+}
+
+h1:hover + .itemOptions, .itemOptions:hover{
+	opacity: 1;
+}
+
+h2:hover + .itemOptions, .itemOptions:hover {
+	opacity: 1;
+}
+
+.emailOptions {
+	opacity: 0;
+	
+	-webkit-transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+	-moz-transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+	-o-transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+	transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+	
+	float: right;
+	position: relative;
+	margin-top: -37px;
+	background: #F0F0F0;
+	padding-top: 1px;
+	padding-left: 1px;
+	width: 55px;
+	height: 27px;
+	z-index: 1;
+	
+	border: 1px solid;
+	border-bottom-left-radius: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	box-shadow: rgb(0, 0, 0) 1px 1px 2px 0px;
+}
+
+p:hover + .emailOptions {
+	opacity: 1;
+}
+.emailOptions:hover {
+	opacity: 1;
 }
 
 /* new sessions form formatting */
@@ -197,13 +280,22 @@ ul {
 h1 {
 	font-weight: 700; 
 	font-size: 220%; 
+	display: inline-block;
+	margin-bottom: -20px;
 }
 
 h2 {
 	font-weight: 700; 
 	font-size: 160%; 
+	display: inline-block;
+	margin-top: 1px;
+	margin-bottom: -20px;
 }
 
+h3 {
+	font-size: 30px;
+	text-align: center;
+}
 .emailReminder {
 	color: red;
 }
@@ -217,9 +309,9 @@ h2 {
 	margin-top: 0px;
 }
 
-#add-item-form, #add-root-item-form, #set-email-form {
+#add-item-form, #setemailform {
 	background: #EFF3F6; 
-	padding: 1px 8px 1px 8px; 
+	padding: 40px 50px; 
 	margin-top: 15px;
 	margin-right: 20px; 
 	border: 1px solid;
@@ -229,19 +321,37 @@ h2 {
 	border-bottom-right-radius: 7px;
 }
 
-#new-item-title, #new-root-item-title {
-	margin-left: 10px;
+#add-item-form input[type=text] {
+	display: block;
+	width: 100%;
+	margin-bottom: 20px;
 }
 
-#new-item-body, #new-root-item-body {
-	margin-left: 6px;
+#add-root-item-form input[type=text] {
+	display: block;
+	width: 100%;
+	margin-bottom: 20px;
 }
 
-#email-datepicker {
+#add-root-item-form	input[type=submit] {
+	float: left;
+}
+
+#add-item-form	input[type=submit] {
+	float: left;
+}
+
+.newFormOptions {
+	width: 300px;
+	display: block;
+	margin: 25px auto;
+}
+
+#datepicker {
 	margin-left: 47px;
 }
 
-#email-recip {
+#emailrecip {
 	margin-left: 6px;
 }
 
@@ -253,10 +363,7 @@ h2 {
 	visibility: hidden;
 }
 
-.newFormOptions {
-	text-align: center; 
-	font-size: 14px;
-}
+
 
 #rootFormTitle {
 	text-align: center;

@@ -1,7 +1,7 @@
 ProcessSystem::Application.routes.draw do
 
-  get "triggers/new"
 
+  resources :triggers, only: [:new, :create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
   resources :items
 

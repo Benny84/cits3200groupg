@@ -15,8 +15,7 @@
 //= require_tree .
 function hideAllForms() {
 	$('#add-item-form').hide();
-	$('#add-root-item-form').hide();
-	$('#set-email-form').hide();
+	$('#setemailform').hide();
 }
 
 function hideCurrentItem() {
@@ -33,19 +32,16 @@ $(function () {
 		$('#add-item-form').show();
 	});
 	
-	$('#set-email').click(function() {
+	$('.set-email').click(function() {
 		hideAllForms();
-		$('#set-email-form').show();
+        $('#parent-id').val($(this).attr('name'));
+		$('#setemailform').show();
 	});
 	
 	$('#add-root-item').click(function() {
 		hideAllForms();
 		hideCurrentItem();
 		$('#add-root-item-form').show();
-	});
-	
-	$('#edit').click(function() {
-		document.getElementById("main").innerHTML = "hi";
 	});
 	
 	// Add Item Form Options
@@ -94,23 +90,23 @@ $(function () {
 	
 	// Add Email Reminder Form Options
 	$('#set-email-confirm').click(function() {
-		var date = document.getElementById("email-datepicker").value;
+		var date = document.getElementById("datepicker").value;
 		var recip = document.getElementById("email-recip").value;
 		
-		$('#currentItem').append("<p class = 'emailReminder'>Email to " + recip + " at 0:00 " + date + "</p>");
+		$('#currentItem').append("<p class = 'emailReminder'>Email to " + recip + " at " + date + " 00:00:00 UTC</p>");
 		
-		document.getElementById("set-email-form").reset();
-		$('#set-email-form').hide();
+		document.getElementById("setemailform").reset();
+		$('#setemailform').hide();
 	});
 	
 	$('#set-email-cancel').click(function() {
-		$('#set-email-form').hide();
+		$('#setemailform').hide();
 	});
 	
 	$('#set-email-clear').click(function() {
-		document.getElementById("set-email-form").reset();
+		document.getElementById("setemailform").reset();
 	});
 	
 	//Date picker jQuery
-	$('#email-datepicker').datepicker();
+	$('#datepicker').datepicker({ dateFormat: "dd/mm/yy" });
 });

@@ -1,32 +1,80 @@
-<%= render 'hierachy' %>
-  
-<div id = "contentPane">
-  <p id = "currentItemOptions">
-    <%= link_to "+ Add Item", new_item_path(:pid =>  @item.id) %>
-  </p>
+<p id = "currentItemOptions">
+  <%= link_to "+ Add Item", '#', id: 'add-item' %> |
+  <%= link_to "Go Up (link broken)", @pid %> | <!-- is @pid working? it links to the same item, @item.pid breaks my rails -->
+  <a href = "<%= @item.pid %>">Go Up (working)</a>
+</p>
 
-  <h1><%= @item.title %></h1>
+<form id = "currentItem">
+  <h1><%= @item.title %></h1> <!-- put checkbox here, class: inactive when inactive -->
   <div class = "itemOptions">
-	<a id = "edit" href = "#" title = "Edit"></a>
-	<a id = "set-email" href = "#" title = "Set Email Reminder"></a>
+    <%= link_to '', edit_item_path(@item.id), class: 'edit itemEdit', title: 'Edit' %>
+	  <a id = "set-email" class = "set-email" href = "#" title = "Set Email Reminder" name="<%= @item.id %>"></a>
+	  <%= link_to 'Delete', item_path(@item.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete itemDelete' %>
   </div>
   <p><%= @item.body %></p>
   <% @item.triggers.each do |trigger| %>
-    <p class = "emailReminder">Email to <% trigger.emails.each do |email| %><%= email.email %> at <%= trigger.date_trigger %></p>
-    <% end %>
+    <p class = "emailReminder">Email to 
+    <% trigger.emails.each do |email| %><%= email.email %> at <%= trigger.date_trigger %></p>
+      <div class = "emailOptions">
+    	  <a class = "edit emailEdit" href = "#" title = "Edit"></a>
+    	  <a class = "delete emailDelete" href = "#" title = "Delete"></a>
+  	  </div>
+	  <% end %>
   <% end %>
+</form>
   
-  <form id = "currentItemChildren">
+<!-- TODO patrick/raissa: make this forms work :D  -->
+<%= form_tag({:controller => 'triggers', :action => 'create'}, {:id => "setemailform"}) do %>
+  <p><%= label_tag(:datepicker, "Date:") %> <%= text_field_tag(:datepicker) %> <small> at 0:00</small></p>
+  <p><%= label_tag(:emailrecip, "Recipients:") %>  <%= collection_select(:trigger_email, :email_id, Email.all, :id, :email, { :multiple => true }) %></p>
+  <p><%= label_tag(:emailchildren, "Send all subchildren too?") %> <%= check_box_tag(:emailchildren) %><%= hidden_field_tag(:parent_id, "") %></p>
+  <p class = "newFormOptions">
+  <%= submit_tag("Set email reminder") %> | <a id = "set-email-confirm" href = "#">Set Email Reminder</a> | 
+	<a id = "set-email-clear" href = "#">Clear</a> | 
+	<a id = "set-email-cancel" href = "#">Cancel</a>
+  </p>
+<% end %>
+  
+<form id = "currentItemChildren">
   <% @children.each do |child| %>
-      <h2><%= child.title %></h2>
-	  <p>
-      <% #raw() needed to display html %>
-      <%= raw(child.body) %>
-      </p>
-	  <% child.triggers.each do |trigger| %>
-      <p class = "emailReminder">Email to <% trigger.emails.each do |email| %><%= email.email %> at <%= trigger.date_trigger %></p>
-      <% end %>
-  <% end %>
+  <h2><%= link_to child.title, child %></h2> <!-- put checkbox here, class: inactive when inactive -->
+  <div class = "itemOptions">
+  	<%= link_to '', edit_item_path(child), class: 'edit itemEdit', title: 'Edit' %>
+	<a class = "set-email" href = "#" title = "Set Email Reminder" name="<%= child.id %>"></a> <!--todo umm do we need to put a hidden form for every child item? im sure theres a better way-->
+	<a class = "delete itemDelete" href = "#" title = "Delete" %></a>
+  </div>
+  <p>
+  <% #raw() needed to display html %>
+  <%= raw(child.body) %>
+  </p>
+  <% child.triggers.each do |trigger| %>
+  <p class = "emailReminder">Email to <% trigger.emails.each do |email| %><%= email.email %> at <%= trigger.date_trigger %></p>
+  <div class = "emailOptions">
+	  <a class = "edit emailEdit" href = "#" title = "Edit"></a>
+	  <a class = "delete emailDelete" href = "#" title = "Delete"></a>
+	</div>
   <% end %>
   </form>
 </div>
+<% end %>
+<% end %>
+</form>
+  
+<%= form_for(:item, url: items_path, html: {id: "add-item-form"}) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, required: true, value: '' %>
+
+  <%= f.label :body %>
+  <%= f.text_field :body, required: true, value: '' %>
+
+  <%= f.label :task, 'Enable Complete/Incomplete status?' %>
+  <%= f.check_box :task, value: '' %>
+
+  <%= hidden_field_tag 'item[pid]', @item.id %>
+  
+  <div class = "newFormOptions">
+    <%= f.submit "Confirm item" %>
+    <%= link_to "Clear", '#', id: "add-root-item-clear" %>
+    <%= link_to "Cancel", :back %>
+  </div>
+<% end %>

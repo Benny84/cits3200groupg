@@ -1,14 +1,14 @@
-<%= render 'hierachy' %>
+<p id = "currentItemOptions">
+  <%= link_to "+ Add Item (To Root)", new_item_path(:pid =>  @items.last.id) %><!--do we have a before root item?-->
+</p>
 
-<div id = "contentPane">
-  <p id = "currentItemOptions">
-    <%= link_to "+ Add Item", new_item_path(:pid =>  @items.last.id) %>
-  </p>
-
+<!-- access root children, list children (root children) like in show.html.erb -->
+<p>PAGE UNDER CONSTRUCTION, should list the children of the root just like other pages</p>
+  
 <%= @items.last.title %>
 <%= @items.last.body %>
 
-<!--
+<!-- schedule for deletion(no one needs this right?)
 <form id = "currentItem">
   <h1><input type = "checkbox" class = "itemCheckbox"/> Ikea Food Tasting </h1>
   <div class = "itemOptions">
