@@ -4,7 +4,7 @@
 
 <form>
   <% @items.each do |child| %>
-  <h2><%= link_to child.title, child %></h2> <!-- put checkbox here, class: inactive when inactive -->
+<h2><% if child.task %><input type="checkbox" class="itemCheckbox"<% if child.complete %> checked<% end %> disabled/><% end %><%= link_to child.title, child %></h2>
   <div class = "itemOptions">
     <%= link_to '', edit_item_path(child), class: 'edit itemEdit', title: 'Edit' %>
   <a class = "set-email" href = "#" title = "Set Email Reminder" name="<%= child.id %>"></a> <!--todo umm do we need to put a hidden form for every child item? im sure theres a better way-->

@@ -2,11 +2,13 @@ TODO List
 
 %%%% should be done before monday? %%%%%
 
+- be able to edit items which have task set and 'complete' them
 - have set email reminder work with database + website
 - actually have it send emails
-- * get index page displaying just the root children
+- * add the checkboxes to item titles
+- (DONE) * get index page displaying just the root children
 - get index page email form working
-- have heirachy working (more than 2 levels i suppose?, and only show the current item path)
+- (DONE) have heirachy working (more than 2 levels i suppose?, and only show the current item path) 
 - figure out how we want to set email reminders for children of the current item (use the same form?, 
 position it diferently..)
 
@@ -15,12 +17,15 @@ position it diferently..)
 
 - on index page, put add item form at the bottom of content pane instead of link to the heirachy link
 - allow deleting and editing of email reminders
+- editing an item still resets it to the bottom of the heirachy
+- have heirachy only show current item path + root items
 
 
 %%%% we'll get here %%%%%
 
 - have the editing done in-line (or replace the text with textfields) on the same page, instead of directing to 
 another page
+- when deleting the items children, refresh the page instead of going to index
 - * center the confirm, clear, cancel links in all tabs
 - * if clicking set email reminder and the form is already open, close it
 - * OCD formatting
@@ -35,6 +40,7 @@ another page
 
 Points of discussion
 
+- allow time in email reminder setting? instead of just sending at midnight
 - the gap between item titles and bodies look a bit weird (to have space for the mouse over links), should i
 position the same as email reminders?
 - mouse overs not working on phone browsers since theres no mouse (but you can click the empty space)

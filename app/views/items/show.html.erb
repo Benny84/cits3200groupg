@@ -4,11 +4,11 @@
 </p>
 
 <form id = "currentItem">
-  <h1><%= @item.title %></h1> <!-- put checkbox here, class: inactive when inactive -->
+  <h1><% if @item.task %><input type="checkbox" class="itemCheckbox"<% if @item.complete %> checked<% end %> disabled/><% end %><%= @item.title %></h1>
   <div class = "itemOptions">
     <%= link_to '', edit_item_path(@item.id), class: 'edit itemEdit', title: 'Edit' %>
     <a id = "set-email" class = "set-email" href = "#" title = "Set Email Reminder" name="<%= @item.id %>"></a>
-    <%= link_to 'Delete', item_path(@item.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete itemDelete' %>
+    <%= link_to '', item_path(@item.id), method: :delete, data: { confirm: 'Are you sure you want to delete this item?' }, class: 'delete itemDelete' %>
   </div>
   <p><%= @item.body %></p>
   <% @item.triggers.each do |trigger| %>
@@ -36,11 +36,11 @@
   
 <form id = "currentItemChildren">
   <% @children.each do |child| %>
-  <h2><%= link_to child.title, child %></h2> <!-- put checkbox here, class: inactive when inactive -->
+  <h2><% if child.task %><input type="checkbox" class="itemCheckbox"<% if child.complete %> checked<% end %> disabled/><% end %><%= link_to child.title, child %></h2>
   <div class = "itemOptions">
     <%= link_to '', edit_item_path(child), class: 'edit itemEdit', title: 'Edit' %>
   <a class = "set-email" href = "#" title = "Set Email Reminder" name="<%= child.id %>"></a> <!--todo umm do we need to put a hidden form for every child item? im sure theres a better way-->
-  <a class = "delete itemDelete" href = "#" title = "Delete" %></a>
+  <%= link_to '', item_path(child.id), method: :delete, data: { confirm: 'Are you sure you want to delete this item?' }, class: 'delete itemDelete' %>
   </div>
   <p>
   <% #raw() needed to display html %>
@@ -64,7 +64,7 @@
   <%= f.label :body %>
   <%= f.text_field :body, required: true, value: '' %>
 
-  <%= f.label :task, 'Make Task?' %>
+  <%= f.label :task, 'Set as task?' %>
   <%= f.check_box :task, value: '' %>
 
   <%= hidden_field_tag 'item[parent_id]', @item.id %>
