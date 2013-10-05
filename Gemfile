@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.14'
+gem 'acts_as_tree'
 
 group :development, :test do
   gem 'rspec-rails', '2.13.1'

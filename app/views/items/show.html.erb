@@ -1,24 +1,24 @@
 <p id = "currentItemOptions">
   <%= link_to "+ Add Item", '#', id: 'add-item' %> |
-  <a href = "<%= @item.pid %>">Go Up</a> <!-- not in rails link_to format..does it matter? -->
+  <a href = "<%= @item.parent_id %>">Go Up</a> <!-- not in rails link_to format..does it matter? -->
 </p>
 
 <form id = "currentItem">
   <h1><%= @item.title %></h1> <!-- put checkbox here, class: inactive when inactive -->
   <div class = "itemOptions">
     <%= link_to '', edit_item_path(@item.id), class: 'edit itemEdit', title: 'Edit' %>
-	  <a id = "set-email" class = "set-email" href = "#" title = "Set Email Reminder" name="<%= @item.id %>"></a>
-	  <%= link_to 'Delete', item_path(@item.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete itemDelete' %>
+    <a id = "set-email" class = "set-email" href = "#" title = "Set Email Reminder" name="<%= @item.id %>"></a>
+    <%= link_to 'Delete', item_path(@item.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete itemDelete' %>
   </div>
   <p><%= @item.body %></p>
   <% @item.triggers.each do |trigger| %>
     <p class = "emailReminder">Email to 
     <% trigger.emails.each do |email| %><%= email.email %> at <%= trigger.date_trigger %></p>
       <div class = "emailOptions">
-    	  <a class = "edit emailEdit" href = "#" title = "Edit"></a>
-    	  <a class = "delete emailDelete" href = "#" title = "Delete"></a>
-  	  </div>
-	  <% end %>
+        <a class = "edit emailEdit" href = "#" title = "Edit"></a>
+        <a class = "delete emailDelete" href = "#" title = "Delete"></a>
+      </div>
+    <% end %>
   <% end %>
 </form>
   
@@ -28,8 +28,8 @@
   <p><%= label_tag(:emailchildren, "Send all subchildren too?") %> <%= check_box_tag(:emailchildren) %><%= hidden_field_tag(:parent_id, "") %></p>
   <p class = "newFormOptions">
   <%= submit_tag("Set email reminder") %> | 
-	<a id = "set-email-clear" href = "#">Clear</a> | 
-	<a id = "set-email-cancel" href = "#">Cancel</a>
+  <a id = "set-email-clear" href = "#">Clear</a> | 
+  <a id = "set-email-cancel" href = "#">Cancel</a>
   </p>
 <% end %>
 
@@ -38,9 +38,9 @@
   <% @children.each do |child| %>
   <h2><%= link_to child.title, child %></h2> <!-- put checkbox here, class: inactive when inactive -->
   <div class = "itemOptions">
-  	<%= link_to '', edit_item_path(child), class: 'edit itemEdit', title: 'Edit' %>
-	<a class = "set-email" href = "#" title = "Set Email Reminder" name="<%= child.id %>"></a> <!--todo umm do we need to put a hidden form for every child item? im sure theres a better way-->
-	<a class = "delete itemDelete" href = "#" title = "Delete" %></a>
+    <%= link_to '', edit_item_path(child), class: 'edit itemEdit', title: 'Edit' %>
+  <a class = "set-email" href = "#" title = "Set Email Reminder" name="<%= child.id %>"></a> <!--todo umm do we need to put a hidden form for every child item? im sure theres a better way-->
+  <a class = "delete itemDelete" href = "#" title = "Delete" %></a>
   </div>
   <p>
   <% #raw() needed to display html %>
@@ -49,8 +49,8 @@
   <% child.triggers.each do |trigger| %>
   <p class = "emailReminder">Email to <% trigger.emails.each do |email| %><%= email.email %> at <%= trigger.date_trigger %></p>
   <div class = "emailOptions">
-	<a class = "edit emailEdit" href = "#" title = "Edit"></a>
-	<a class = "delete emailDelete" href = "#" title = "Delete"></a>
+  <a class = "edit emailEdit" href = "#" title = "Edit"></a>
+  <a class = "delete emailDelete" href = "#" title = "Delete"></a>
   </div>
   <% end %>
   <% end %>
@@ -67,11 +67,11 @@
   <%= f.label :task, 'Make Task?' %>
   <%= f.check_box :task, value: '' %>
 
-  <%= hidden_field_tag 'item[pid]', @item.id %>
+  <%= hidden_field_tag 'item[parent_id]', @item.id %>
   
   <div class = "newFormOptions">
     <%= f.submit "Confirm item" %> | 
-	<%= link_to "Clear", '#', id: "add-item-clear" %> | 
+  <%= link_to "Clear", '#', id: "add-item-clear" %> | 
     <a id = "add-item-cancel" href = "#">Cancel</a>
   </div>
 <% end %>

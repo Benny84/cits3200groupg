@@ -11,14 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131001043703) do
+ActiveRecord::Schema.define(:version => 20131005075933) do
 
   create_table "emails", :force => true do |t|
     t.string "email"
   end
 
   create_table "items", :force => true do |t|
-    t.integer  "pid"
+    t.integer  "parent_id"
     t.string   "title"
     t.text     "body"
     t.boolean  "task",       :default => false
