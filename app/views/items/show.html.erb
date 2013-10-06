@@ -10,7 +10,7 @@
     <a id="set-email" class="set-email" href="#" title="Set Email Reminder" name="<%= @item.id %>"></a>
     <%= link_to '', item_path(@item.id), method: :delete, data: { confirm: 'Are you sure you want to delete this item?' }, class: 'delete itemDelete' %>
   </div>
-  <p><%= @item.body %></p>
+  <p><%= raw(@item.body) %></p>
   <% @item.triggers.each do |trigger| %>
   <p class="emailReminder">Email to 
   <% trigger.emails.each do |email| %><%= email.email %> at <%= trigger.date_trigger %></p>
@@ -31,7 +31,6 @@
     <%= link_to '', item_path(child.id), method: :delete, data: { confirm: 'Are you sure you want to delete this item?' }, class: 'delete itemDelete' %>
   </div>
   <p>
-    <% #raw() needed to display html %>
     <%= raw(child.body) %>
   </p>
   <% child.triggers.each do |trigger| %>
