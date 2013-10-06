@@ -11,6 +11,7 @@ TODO List
 - figure out how we want to set email reminders for children of the current item (use the same form?, 
 position it diferently..)
 - get index page email form working
+- "Add Task to Root" has "Enable Complete/Incomplete status?" while "Adding task to task" has "Make Task?" in same place. Make both into "Make Task?".
 
 
 %%%% important to do but do other priority things first %%%%%
@@ -19,6 +20,7 @@ position it diferently..)
 - allow deleting and editing of email reminders
 - editing an item still resets it to the bottom of the heirachy
 - have heirachy only show current item path + root items
+- Hovering over an email address brings up "Edit" and "Delete" Icons at the far right of screen and they are unclickable.
 
 
 %%%% we'll get here %%%%%
