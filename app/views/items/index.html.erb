@@ -8,7 +8,7 @@
   <div class = "itemOptions">
     <%= link_to '', edit_item_path(child), class: 'edit itemEdit', title: 'Edit' %>
   <a class = "set-email" href = "#" title = "Set Email Reminder" name="<%= child.id %>"></a> <!--todo umm do we need to put a hidden form for every child item? im sure theres a better way-->
-  <a class = "delete itemDelete" href = "#" title = "Delete" %></a>
+  <%= link_to '', item_path(child.id), method: :delete, data: { confirm: 'Are you sure you want to delete this item?' }, class: 'delete itemDelete' %>
   </div>
   <p>
   <% #raw() needed to display html %>

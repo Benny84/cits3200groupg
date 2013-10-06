@@ -8,10 +8,10 @@ TODO List
 - (DONE) * add the checkboxes to item titles
 - (DONE) * get index page displaying just the root children
 - (DONE) have heirachy working (more than 2 levels i suppose?, and only show the current item path) 
-- figure out how we want to set email reminders for children of the current item (use the same form?, 
+- (DONE) figure out how we want to set email reminders for children of the current item (use the same form?, 
 position it diferently..)
 - get index page email form working
-- "Add Task to Root" has "Enable Complete/Incomplete status?" while "Adding task to task" has "Make Task?" in same place. Make both into "Make Task?".
+- (DONE) "Add Task to Root" has "Enable Complete/Incomplete status?" while "Adding task to task" has "Make Task?" in same place. Make both into "Make Task?".
 
 
 %%%% important to do but do other priority things first %%%%%
