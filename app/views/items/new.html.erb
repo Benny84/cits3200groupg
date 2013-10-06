@@ -7,13 +7,13 @@
   <%= f.label :body %>
   <%= f.text_field :body, required: true %>
 
-  <%= f.label :task, 'Set as task?' %>
+  <%= f.label :task, 'Set As Task?' %>
   <%= f.check_box :task %>
   
   <%= hidden_field_tag 'item[parent_id]', params[:parent_id] %>
 
   <div class = "newFormOptions">
-    <%= f.submit "Confirm item" %>
+    <%= f.submit "Confirm Item" %>
     <%= link_to "Clear", '#', id: "add-root-item-clear" %>
     <%= link_to "Cancel", :back %>
   </div>
