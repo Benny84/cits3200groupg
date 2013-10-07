@@ -1,6 +1,6 @@
 <li>
   <%= link_to h(item.title), :controller => 'items', :action => 'show', :id => item.id %>
   <% if !item.children.empty? %>
-  <ul><%= render :partial => 'item', :collection => item.children %></ul>
+  <ul><%= render :partial => 'items/item', :collection => item.children %></ul>
   <% end %>  
 </li>

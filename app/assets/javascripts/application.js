@@ -18,12 +18,6 @@ function hideAllForms() {
 	$('#set-email-form').hide();
 }
 
-function hideCurrentItem() {
-	$('#currentItemOptions').hide();
-	$('#currentItem').hide();
-	$('#currentItemChildren').hide();
-}
-
 $(function () {
 	hideAllForms();
 	
@@ -35,27 +29,11 @@ $(function () {
 	$('.set-email').click(function() {
 		hideAllForms();
         $('#parent_id').val($(this).attr('name'));
+		$('#set-email-form').insertAfter($('#item' + $(this).attr('name')));
 		$('#set-email-form').show();
 	});
 	
-	$('#add-root-item').click(function() {
-		hideAllForms();
-		hideCurrentItem();
-		$('#add-root-item-form').show();
-	});
-	
-	// Add Item Form Options
-	$('#add-item-confirm').click(function() {
-		var title = document.getElementById("new-item-title").value;
-		var body = document.getElementById("new-item-body").value;
-		var active = document.getElementById("new-item-active").checked;
-
-		$('#currentItemChildren').append("<h2><input type = 'checkbox' class = 'itemCheckbox" + (active ? "" : " inactive") + "'/><a href = '#'> " + title + "</a></h2><p>" + body + "</p>");
-		
-		document.getElementById("add-item-form").reset();
-		$('#add-item-form').hide();
-	});
-	
+	// Add Item Form Options	
 	$('#add-item-cancel').click(function() {
 		$('#add-item-form').hide();
 	});
@@ -64,32 +42,14 @@ $(function () {
 		document.getElementById("add-item-form").reset();
 	});
 	
-	// Add Root Item Form Options
-	$('#add-root-item-confirm').click(function() {
-		var title = document.getElementById("new-root-item-title").value;
-		
-		$('#rootChildren').append("<li><a href = '#'>" + title + "</a></li>");
-		
-		document.getElementById("add-root-item-form").reset();
-		$('#add-root-item-form').hide();
-		$('#currentItemOptions').show();
-		$('#currentItem').show(); 
-		$('#currentItemChildren').show();
-	});
-	
-	$('#add-root-item-cancel').click(function() {
-		$('#add-root-item-form').hide();
-		$('#currentItemOptions').show();
-		$('#currentItem').show(); 
-		$('#currentItemChildren').show();
-	});
-	
+	// Add Root Item Form Options		
 	$('#add-root-item-clear').click(function() {
 		document.getElementById("add-root-item-form").reset();
 	});
 	
 	// Add Email Reminder Form Options
-	$('#set-email-confirm').click(function() {
+	/* this is set to be deleted, not sure if raissa wants to use any of it though
+	$('#set-email-confirm').click(function() { 
 		var date = document.getElementById("datepicker").value;
 		var recip = document.getElementById("email-recip").value;
 		
@@ -97,7 +57,7 @@ $(function () {
 		
 		document.getElementById("set-email-form").reset();
 		$('#set-email-form').hide();
-	});
+	});*/
 	
 	$('#set-email-cancel').click(function() {
 		$('#set-email-form').hide();
