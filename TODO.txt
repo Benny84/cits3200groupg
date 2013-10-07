@@ -43,6 +43,8 @@ another page
 
 Points of discussion
 
+- when i make the 'cancel' link a button, you can't click it if the textfields are empty because of 
+force requires, so i coded it in html
 - limit the size of item titles? say to 100 characters (because it makes everything look ugly)
 - allow time in email reminder setting? instead of just sending at midnight
 - the gap between item titles and bodies look a bit weird (to have space for the mouse over links), should i

@@ -325,20 +325,17 @@ p:hover + .emailOptions {
 /* css for forms */
 
 h3 {
-	font-size: 30px;
 	text-align: center;
-}
-
-#rootFormTitle {
-	text-align: center;
-	font-weight: 200; 
-	font-size: 160%; 
+	font-weight: 700; 
+	font-size: 220%; 
 	letter-spacing: -1px; 
+	margin-bottom: 10px;
+	margin-left: -20px;
 }
 
-#add-item-form, #set-email-form , #add-root-item-form {
+#add-item-form, #set-email-form , .formCSS {
 	background: #EFF3F6; 
-	padding: 10px 30px; 
+	padding: 15px 20px; 
 	margin-right: 20px; 
 	border: 1px solid;
 	border-bottom-left-radius: 7px;
@@ -353,24 +350,57 @@ h3 {
 	margin-bottom: 20px;
 }
 
-#add-root-item-form input[type=text] {
-	display: block;
-	width: 100%;
-	margin-bottom: 20px;
+#item_title {
+	width: 90%;
+	margin-left: 30px;
+	margin-bottom: 10px;
 }
 
-#add-root-item-form	input[type=submit] {
-	float: left;
+#item_body {
+	width: 90%;
+	height: 100px;
+	margin-left: 26px;
+	margin-bottom: 10px;
+	resize: vertical;
+	vertical-align: top;
 }
 
 #add-item-form	input[type=submit] {
 	float: left;
 }
 
-.newFormOptions {
-	width: 300px;
-	display: block;
-	margin: 25px auto;
+.formOptions {
+	width: 235px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.button {
+   border-top: 1px solid #96d1f8;
+   background: #6abcf2;
+   background: -webkit-gradient(linear, left top, left bottom, from(#368ec9), to(#6abcf2));
+   background: -webkit-linear-gradient(top, #368ec9, #6abcf2);
+   background: -moz-linear-gradient(top, #368ec9, #6abcf2);
+   background: -ms-linear-gradient(top, #368ec9, #6abcf2);
+   background: -o-linear-gradient(top, #368ec9, #6abcf2);
+   padding: 5px 10px;
+   -webkit-border-radius: 0px;
+   -moz-border-radius: 0px;
+   border-radius: 0px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #E3E3E3;
+   font-size: 11px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   margin-right: 3px;
+}
+
+.button:hover {
+   color: #FFFFFF;
 }
 
 #datepicker {
