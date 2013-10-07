@@ -40319,3 +40319,373 @@ Served asset /email.png - 304 Not Modified (0ms)
 
 Started GET "/assets/delete.png" for 127.0.0.1 at 2013-10-07 10:39:53 +0800
 Served asset /delete.png - 304 Not Modified (0ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-07 10:44:15 +0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'Q_K8URa5AhfYcud3G9IO0Q' LIMIT 1[0m
+  [1m[35mItem Load (7.1ms)[0m  SELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mEmail Load (0.5ms)[0m  [1mSELECT "emails".* FROM "emails" [0m
+  [1m[35m (10.1ms)[0m  SELECT COUNT(*) FROM "triggers" WHERE "triggers"."item_id" = 1
+  [1m[36mTrigger Load (2.3ms)[0m  [1mSELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 1[0m
+  [1m[35mEmail Load (6.8ms)[0m  SELECT "emails".* FROM "emails" INNER JOIN "trigger_emails" ON "emails"."id" = "trigger_emails"."email_id" WHERE "trigger_emails"."trigger_id" = 2
+  [1m[36mEmail Load (0.7ms)[0m  [1mSELECT "emails".* FROM "emails" INNER JOIN "trigger_emails" ON "emails"."id" = "trigger_emails"."email_id" WHERE "trigger_emails"."trigger_id" = 3[0m
+  [1m[35mEmail Load (0.5ms)[0m  SELECT "emails".* FROM "emails" INNER JOIN "trigger_emails" ON "emails"."id" = "trigger_emails"."email_id" WHERE "trigger_emails"."trigger_id" = 4
+  [1m[36mItem Load (0.7ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."parent_id" = 1 ORDER BY title[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "triggers" WHERE "triggers"."item_id" = 3
+  [1m[36mTrigger Load (8.1ms)[0m  [1mSELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 3[0m
+  [1m[35mEmail Load (0.8ms)[0m  SELECT "emails".* FROM "emails" INNER JOIN "trigger_emails" ON "emails"."id" = "trigger_emails"."email_id" WHERE "trigger_emails"."trigger_id" = 5
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "triggers" WHERE "triggers"."item_id" = 2[0m
+  [1m[35mTrigger Load (0.2ms)[0m  SELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 2
+  [1m[36mEmail Load (0.4ms)[0m  [1mSELECT "emails".* FROM "emails" INNER JOIN "trigger_emails" ON "emails"."id" = "trigger_emails"."email_id" WHERE "trigger_emails"."trigger_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "emails".* FROM "emails" 
+  Rendered items/show.html.erb within layouts/application (73.0ms)
+  [1m[36mItem Load (0.5ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."parent_id" IS NULL[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "items" WHERE "items"."parent_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."parent_id" = 1 ORDER BY title[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "items" WHERE "items"."parent_id" = 3
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "items" WHERE "items"."parent_id" = 2[0m
+  Rendered items/_item.html.erb (2.9ms)
+  Rendered items/_item.html.erb (6.0ms)
+  Rendered application/_hierachy.html.erb (8.7ms)
+Completed 200 OK in 126ms (Views: 63.4ms | ActiveRecord: 41.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-07 10:44:15 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2013-10-07 10:44:15 +0800
+Served asset /items.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-07 10:44:15 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-07 10:44:15 +0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-10-07 10:44:15 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-07 10:44:15 +0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/triggers.js?body=1" for 127.0.0.1 at 2013-10-07 10:44:15 +0800
+Served asset /triggers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/back.png" for 127.0.0.1 at 2013-10-07 10:44:16 +0800
+Served asset /back.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/edit.png" for 127.0.0.1 at 2013-10-07 10:44:16 +0800
+Served asset /edit.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/email.png" for 127.0.0.1 at 2013-10-07 10:44:16 +0800
+Served asset /email.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/delete.png" for 127.0.0.1 at 2013-10-07 10:44:16 +0800
+Served asset /delete.png - 304 Not Modified (0ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-07 10:53:06 +0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (12.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'Q_K8URa5AhfYcud3G9IO0Q' LIMIT 1
+  [1m[36mItem Load (6.1ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mEmail Load (0.7ms)[0m  SELECT "emails".* FROM "emails" 
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "triggers" WHERE "triggers"."item_id" = 1[0m
+  [1m[35mTrigger Load (6.0ms)[0m  SELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 1
+  [1m[36mEmail Load (5.5ms)[0m  [1mSELECT "emails".* FROM "emails" INNER JOIN "trigger_emails" ON "emails"."id" = "trigger_emails"."email_id" WHERE "trigger_emails"."trigger_id" = 2[0m
+  [1m[35mEmail Load (1.6ms)[0m  SELECT "emails".* FROM "emails" INNER JOIN "trigger_emails" ON "emails"."id" = "trigger_emails"."email_id" WHERE "trigger_emails"."trigger_id" = 3
+  [1m[36mEmail Load (0.5ms)[0m  [1mSELECT "emails".* FROM "emails" INNER JOIN "trigger_emails" ON "emails"."id" = "trigger_emails"."email_id" WHERE "trigger_emails"."trigger_id" = 4[0m
+  [1m[35mItem Load (2.6ms)[0m  SELECT "items".* FROM "items" WHERE "items"."parent_id" = 1 ORDER BY title
+  [1m[36m (2.0ms)[0m  [1mSELECT COUNT(*) FROM "triggers" WHERE "triggers"."item_id" = 3[0m
+  [1m[35mTrigger Load (3.7ms)[0m  SELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 3
+  [1m[36mEmail Load (1.9ms)[0m  [1mSELECT "emails".* FROM "emails" INNER JOIN "trigger_emails" ON "emails"."id" = "trigger_emails"."email_id" WHERE "trigger_emails"."trigger_id" = 5[0m
+  [1m[35m (7.5ms)[0m  SELECT COUNT(*) FROM "triggers" WHERE "triggers"."item_id" = 2
+  [1m[36mTrigger Load (4.8ms)[0m  [1mSELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 2[0m
+  [1m[35mEmail Load (1.6ms)[0m  SELECT "emails".* FROM "emails" INNER JOIN "trigger_emails" ON "emails"."id" = "trigger_emails"."email_id" WHERE "trigger_emails"."trigger_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "emails".* FROM "emails" [0m
+  Rendered items/show.html.erb within layouts/application (113.8ms)
+  [1m[35mItem Load (0.7ms)[0m  SELECT "items".* FROM "items" WHERE "items"."parent_id" IS NULL
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "items" WHERE "items"."parent_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "items".* FROM "items" WHERE "items"."parent_id" = 1 ORDER BY title
+  [1m[36m (2.0ms)[0m  [1mSELECT COUNT(*) FROM "items" WHERE "items"."parent_id" = 3[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "items" WHERE "items"."parent_id" = 2
+  Rendered items/_item.html.erb (10.3ms)
+  Rendered items/_item.html.erb (21.2ms)
+  Rendered application/_hierachy.html.erb (24.0ms)
+Completed 200 OK in 179ms (Views: 110.1ms | ActiveRecord: 61.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-07 10:53:06 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-07 10:53:06 +0800
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-07 10:53:06 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-07 10:53:06 +0800
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/triggers.js?body=1" for 127.0.0.1 at 2013-10-07 10:53:06 +0800
+Served asset /triggers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2013-10-07 10:53:07 +0800
+Served asset /items.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-10-07 10:53:07 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/back.png" for 127.0.0.1 at 2013-10-07 10:53:07 +0800
+Served asset /back.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/edit.png" for 127.0.0.1 at 2013-10-07 10:53:07 +0800
+Served asset /edit.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/email.png" for 127.0.0.1 at 2013-10-07 10:53:07 +0800
+Served asset /email.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/delete.png" for 127.0.0.1 at 2013-10-07 10:53:07 +0800
+Served asset /delete.png - 304 Not Modified (0ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-07 10:53:39 +0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (8.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'Q_K8URa5AhfYcud3G9IO0Q' LIMIT 1[0m
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mEmail Load (0.3ms)[0m  [1mSELECT "emails".* FROM "emails" [0m
+  [1m[35m (7.1ms)[0m  SELECT COUNT(*) FROM "triggers" WHERE "triggers"."item_id" = 1
+  [1m[36mTrigger Load (0.4ms)[0m  [1mSELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 1[0m
+  [1m[35mEmail Load (0.4ms)[0m  SELECT "emails".* FROM "emails" INNER JOIN "trigger_emails" ON "emails"."id" = "trigger_emails"."email_id" WHERE "trigger_emails"."trigger_id" = 2
+  [1m[36mEmail Load (7.9ms)[0m  [1mSELECT "emails".* FROM "emails" INNER JOIN "trigger_emails" ON "emails"."id" = "trigger_emails"."email_id" WHERE "trigger_emails"."trigger_id" = 3[0m
+  [1m[35mEmail Load (0.7ms)[0m  SELECT "emails".* FROM "emails" INNER JOIN "trigger_emails" ON "emails"."id" = "trigger_emails"."email_id" WHERE "trigger_emails"."trigger_id" = 4
+  [1m[36mItem Load (0.6ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."parent_id" = 1 ORDER BY title[0m
+  [1m[35m (3.7ms)[0m  SELECT COUNT(*) FROM "triggers" WHERE "triggers"."item_id" = 3
+  [1m[36mTrigger Load (0.6ms)[0m  [1mSELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 3[0m
+  [1m[35mEmail Load (0.5ms)[0m  SELECT "emails".* FROM "emails" INNER JOIN "trigger_emails" ON "emails"."id" = "trigger_emails"."email_id" WHERE "trigger_emails"."trigger_id" = 5
+  [1m[36m (2.7ms)[0m  [1mSELECT COUNT(*) FROM "triggers" WHERE "triggers"."item_id" = 2[0m
+  [1m[35mTrigger Load (1.1ms)[0m  SELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 2
+  [1m[36mEmail Load (5.5ms)[0m  [1mSELECT "emails".* FROM "emails" INNER JOIN "trigger_emails" ON "emails"."id" = "trigger_emails"."email_id" WHERE "trigger_emails"."trigger_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "emails".* FROM "emails" 
+  Rendered items/show.html.erb within layouts/application (88.6ms)
+  [1m[36mItem Load (4.3ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."parent_id" IS NULL[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "items" WHERE "items"."parent_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."parent_id" = 1 ORDER BY title[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "items" WHERE "items"."parent_id" = 3
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "items" WHERE "items"."parent_id" = 2[0m
+  Rendered items/_item.html.erb (3.1ms)
+  Rendered items/_item.html.erb (7.4ms)
+  Rendered application/_hierachy.html.erb (13.8ms)
+Completed 200 OK in 155ms (Views: 104.6ms | ActiveRecord: 46.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-07 10:53:39 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-07 10:53:39 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-07 10:53:39 +0800
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/triggers.js?body=1" for 127.0.0.1 at 2013-10-07 10:53:39 +0800
+Served asset /triggers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-10-07 10:53:39 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2013-10-07 10:53:39 +0800
+Served asset /items.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-07 10:53:39 +0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/back.png" for 127.0.0.1 at 2013-10-07 10:53:40 +0800
+Served asset /back.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/edit.png" for 127.0.0.1 at 2013-10-07 10:53:41 +0800
+Served asset /edit.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/delete.png" for 127.0.0.1 at 2013-10-07 10:53:41 +0800
+Served asset /delete.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/email.png" for 127.0.0.1 at 2013-10-07 10:53:41 +0800
+Served asset /email.png - 304 Not Modified (0ms)
+
+
+Started POST "/triggers" for 127.0.0.1 at 2013-10-07 10:56:13 +0800
+Processing by TriggersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IM5P7HvJw3Jb8gwqyQPxwNVvZY2wpmsAUeb9/RKwjhg=", "datepicker"=>"09/10/2013", "trigger_email"=>{"email_id"=>["", "1", "2"]}, "parent_id"=>"1", "commit"=>"Set email reminder"}
+Completed 500 Internal Server Error in 13ms
+
+NoMethodError (undefined method `ham' for #<Trigger:0xb5b6e9cc>):
+  app/controllers/triggers_controller.rb:6:in `block in create'
+  app/controllers/triggers_controller.rb:5:in `new'
+  app/controllers/triggers_controller.rb:5:in `create'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.7ms)
+
+
+Started POST "/triggers" for 127.0.0.1 at 2013-10-07 11:00:14 +0800
+Processing by TriggersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IM5P7HvJw3Jb8gwqyQPxwNVvZY2wpmsAUeb9/RKwjhg=", "datepicker"=>"09/10/2013", "trigger_email"=>{"email_id"=>["", "1", "2"]}, "parent_id"=>"1", "commit"=>"Set email reminder"}
+Completed 500 Internal Server Error in 90ms
+
+NoMethodError (undefined method `ham' for #<Trigger:0xb5462cdc>):
+  app/controllers/triggers_controller.rb:6:in `block in create'
+  app/controllers/triggers_controller.rb:5:in `new'
+  app/controllers/triggers_controller.rb:5:in `create'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.5ms)
+
+
+Started POST "/triggers" for 127.0.0.1 at 2013-10-07 11:00:25 +0800
+Processing by TriggersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IM5P7HvJw3Jb8gwqyQPxwNVvZY2wpmsAUeb9/RKwjhg=", "datepicker"=>"09/10/2013", "trigger_email"=>{"email_id"=>["", "1", "2"]}, "parent_id"=>"1", "commit"=>"Set email reminder"}
+  [1m[35m (4.6ms)[0m  BEGIN
+  [1m[36mSQL (11.6ms)[0m  [1mINSERT INTO "triggers" ("date_trigger", "item_id", "subchildren") VALUES ($1, $2, $3) RETURNING "id"[0m  [["date_trigger", Wed, 09 Oct 2013 00:00:00 UTC +00:00], ["item_id", 1], ["subchildren", false]]
+  [1m[35m (1.6ms)[0m  COMMIT
+Completed 500 Internal Server Error in 48ms
+
+NoMethodError (undefined method `each' for "":String):
+  app/controllers/triggers_controller.rb:13:in `create'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (15.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (41.9ms)
+
+
+Started POST "/triggers" for 127.0.0.1 at 2013-10-07 11:02:09 +0800
+Processing by TriggersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IM5P7HvJw3Jb8gwqyQPxwNVvZY2wpmsAUeb9/RKwjhg=", "datepicker"=>"09/10/2013", "trigger_email"=>{"email_id"=>["", "1", "2"]}, "parent_id"=>"1", "commit"=>"Set email reminder"}
+  [1m[36m (3.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (198.8ms)[0m  INSERT INTO "triggers" ("date_trigger", "item_id", "subchildren") VALUES ($1, $2, $3) RETURNING "id"  [["date_trigger", Wed, 09 Oct 2013 00:00:00 UTC +00:00], ["item_id", 1], ["subchildren", false]]
+  [1m[36m (5.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (7.6ms)[0m  BEGIN
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO "trigger_emails" ("email_id", "trigger_id") VALUES ($1, $2) RETURNING "id"[0m  [["email_id", nil], ["trigger_id", 7]]
+  [1m[35m (1.5ms)[0m  COMMIT
+  [1m[36m (3.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (3.8ms)[0m  INSERT INTO "trigger_emails" ("email_id", "trigger_id") VALUES ($1, $2) RETURNING "id"  [["email_id", 1], ["trigger_id", 7]]
+  [1m[36m (3.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (3.0ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "trigger_emails" ("email_id", "trigger_id") VALUES ($1, $2) RETURNING "id"[0m  [["email_id", 2], ["trigger_id", 7]]
+  [1m[35m (1.5ms)[0m  COMMIT
+Redirected to http://0.0.0.0:3000/items/1
+Completed 302 Found in 295ms (ActiveRecord: 239.7ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2013-10-07 11:02:09 +0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'Q_K8URa5AhfYcud3G9IO0Q' LIMIT 1[0m
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mEmail Load (0.3ms)[0m  [1mSELECT "emails".* FROM "emails" [0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "triggers" WHERE "triggers"."item_id" = 1
+  [1m[36mTrigger Load (0.4ms)[0m  [1mSELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 1[0m
+  [1m[35mEmail Load (1.6ms)[0m  SELECT "emails".* FROM "emails" INNER JOIN "trigger_emails" ON "emails"."id" = "trigger_emails"."email_id" WHERE "trigger_emails"."trigger_id" = 2
+  [1m[36mEmail Load (2.0ms)[0m  [1mSELECT "emails".* FROM "emails" INNER JOIN "trigger_emails" ON "emails"."id" = "trigger_emails"."email_id" WHERE "trigger_emails"."trigger_id" = 3[0m
+  [1m[35mEmail Load (0.7ms)[0m  SELECT "emails".* FROM "emails" INNER JOIN "trigger_emails" ON "emails"."id" = "trigger_emails"."email_id" WHERE "trigger_emails"."trigger_id" = 4
+  [1m[36mEmail Load (0.3ms)[0m  [1mSELECT "emails".* FROM "emails" INNER JOIN "trigger_emails" ON "emails"."id" = "trigger_emails"."email_id" WHERE "trigger_emails"."trigger_id" = 6[0m
+  [1m[35mEmail Load (0.4ms)[0m  SELECT "emails".* FROM "emails" INNER JOIN "trigger_emails" ON "emails"."id" = "trigger_emails"."email_id" WHERE "trigger_emails"."trigger_id" = 7
+  [1m[36mItem Load (2.4ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."parent_id" = 1 ORDER BY title[0m
+  [1m[35m (8.3ms)[0m  SELECT COUNT(*) FROM "triggers" WHERE "triggers"."item_id" = 3
+  [1m[36mTrigger Load (1.5ms)[0m  [1mSELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 3[0m
+  [1m[35mEmail Load (3.7ms)[0m  SELECT "emails".* FROM "emails" INNER JOIN "trigger_emails" ON "emails"."id" = "trigger_emails"."email_id" WHERE "trigger_emails"."trigger_id" = 5
+  [1m[36m (6.2ms)[0m  [1mSELECT COUNT(*) FROM "triggers" WHERE "triggers"."item_id" = 2[0m
+  [1m[35mTrigger Load (2.5ms)[0m  SELECT "triggers".* FROM "triggers" WHERE "triggers"."item_id" = 2
+  [1m[36mEmail Load (3.5ms)[0m  [1mSELECT "emails".* FROM "emails" INNER JOIN "trigger_emails" ON "emails"."id" = "trigger_emails"."email_id" WHERE "trigger_emails"."trigger_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "emails".* FROM "emails" 
+  Rendered items/show.html.erb within layouts/application (102.4ms)
+  [1m[36mItem Load (7.1ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."parent_id" IS NULL[0m
+  [1m[35m (5.5ms)[0m  SELECT COUNT(*) FROM "items" WHERE "items"."parent_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."parent_id" = 1 ORDER BY title[0m
+  [1m[35m (2.0ms)[0m  SELECT COUNT(*) FROM "items" WHERE "items"."parent_id" = 3
+  [1m[36m (3.5ms)[0m  [1mSELECT COUNT(*) FROM "items" WHERE "items"."parent_id" = 2[0m
+  Rendered items/_item.html.erb (13.0ms)
+  Rendered items/_item.html.erb (21.8ms)
+  Rendered application/_hierachy.html.erb (31.1ms)
+Completed 200 OK in 334ms (Views: 115.9ms | ActiveRecord: 71.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-07 11:02:10 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-07 11:02:10 +0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-07 11:02:10 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-07 11:02:10 +0800
+Served asset /application.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/triggers.js?body=1" for 127.0.0.1 at 2013-10-07 11:02:10 +0800
+Served asset /triggers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-10-07 11:02:10 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2013-10-07 11:02:10 +0800
+Served asset /items.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/back.png" for 127.0.0.1 at 2013-10-07 11:02:11 +0800
+Served asset /back.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/edit.png" for 127.0.0.1 at 2013-10-07 11:02:11 +0800
+Served asset /edit.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/email.png" for 127.0.0.1 at 2013-10-07 11:02:11 +0800
+Served asset /email.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/delete.png" for 127.0.0.1 at 2013-10-07 11:02:11 +0800
+Served asset /delete.png - 304 Not Modified (0ms)

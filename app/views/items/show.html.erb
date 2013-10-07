@@ -73,7 +73,7 @@
 
 <%= form_tag({:controller => 'triggers', :action => 'create'}, {:id => "set-email-form"}) do %>
   <p><%= label_tag(:datepicker, "Date:") %> <%= text_field_tag(:datepicker) %> <small> at 0:00</small></p>
-  <p><%= label_tag(:emailrecip, "Recipients:") %>  <%= collection_select(:trigger_email, :email_id, Email.all, :id, :email, { :multiple => true }) %></p>
+  <p><%= label_tag(:emailrecip, "Recipients:") %>  <%= collection_select(:trigger_email, :email_id, Email.all, :id, :email, {}, { :multiple => true }) %></p>
   <p><%= label_tag(:emailchildren, "Send all subchildren too?") %> <%= check_box_tag(:emailchildren) %><%= hidden_field_tag(:parent_id, "") %></p>
   <p class="newFormOptions">
   <%= submit_tag("Set email reminder") %> | 

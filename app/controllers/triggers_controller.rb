@@ -9,11 +9,14 @@ class TriggersController < ApplicationController
             t.save!
         end
         #attach email to trigger
-        new_trigger_email = TriggerEmail.new do |t|
-            t.email_id = params[:trigger_email][:email_id]
-            t.trigger_id = new_trigger.id
-            t.save!
-        end
+            @emails = params[:trigger_email][:email_id]
+            @emails.each do |email|
+                new_trigger_email = TriggerEmail.new do |t|
+                    t.email_id = email
+                    t.trigger_id = new_trigger.id
+                    t.save!
+                end
+            end
         redirect_to controller: "items", action: "show", id: params[:parent_id]
     end
 end
