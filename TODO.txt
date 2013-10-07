@@ -28,9 +28,9 @@ position it diferently..)
 - have the editing done in-line (or replace the text with textfields) on the same page, instead of directing to 
 another page
 - when deleting the items children, refresh the page instead of going to index
-- * center the confirm, clear, cancel links in all tabs
+- (DONE) * center the confirm, clear, cancel links in all tabs
 - * if clicking set email reminder and the form is already open, close it
-- * OCD formatting
+- (DONE) * OCD formatting
 - make the current item path on the heirachy a filled circle, its children and other root items discs
 - when hovering over the buttons, the underline dissapears
 

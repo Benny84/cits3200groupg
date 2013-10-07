@@ -1,6 +1,10 @@
 <p id="currentItemOptions">
   <%= link_to "+ Add Item", '#add-item-form', id: 'add-item' %> |
-  <a href="<%= @item.parent_id %>">Go Up</a>
+  <% if @item.parent_id.present? %>
+    <a href="<%= @item.parent_id %>">Go Up</a>
+  <% else %>
+    <%= link_to "Go Up", items_path %>
+  <% end %>
 </p>
 
 <form id="item<%= @item.id %>">
