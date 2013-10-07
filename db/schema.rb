@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131005075933) do
+ActiveRecord::Schema.define(:version => 20131007021039) do
 
   create_table "emails", :force => true do |t|
     t.string "email"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20131005075933) do
   create_table "triggers", :force => true do |t|
     t.integer  "item_id"
     t.datetime "date_trigger"
+    t.boolean  "subchildren",  :default => false
   end
 
   create_table "users", :force => true do |t|
