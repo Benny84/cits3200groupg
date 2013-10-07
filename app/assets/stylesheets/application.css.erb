@@ -195,8 +195,16 @@ h1:hover + .itemOptions, .itemOptions:hover{
 	opacity: 1;
 }
 
+h1:hover {
+	text-decoration: underline;
+}
+
 h2:hover + .itemOptions, .itemOptions:hover {
 	opacity: 1;
+}
+
+h2:hover {
+	text-decoration: underline;
 }
 
 .emailOptions {
@@ -228,8 +236,13 @@ h2:hover + .itemOptions, .itemOptions:hover {
 p:hover + .emailOptions {
 	opacity: 1;
 }
+
 .emailOptions:hover {
 	opacity: 1;
+}
+
+.emailReminder:hover {
+	text-decoration: underline;
 }
 
 /* new sessions form formatting */
@@ -288,13 +301,14 @@ h1 {
 h2 {
 	font-weight: 700; 
 	font-size: 160%; 
-
+	color: #0000FF;
 }
 
 h3 {
 	font-size: 30px;
 	text-align: center;
 }
+
 .emailReminder {
 	color: red;
 }

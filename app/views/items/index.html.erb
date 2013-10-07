@@ -1,6 +1,4 @@
-<p id = "currentItemOptions">
-  <%= link_to "+ Add Item (To Root)", '#', id: 'add-item' %>
-</p>
+<p id = "currentItemOptions"><%= link_to "+ Add Item (To Root)", '#', id: 'add-item' %></p>
 
 <% @items.each do |child| %>
 <form id="item<%= child.id %>">
@@ -10,14 +8,17 @@
     <a class="set-email" href="#" title="Set Email Reminder" name="<%= child.id %>"></a>
     <%= link_to '', item_path(child.id), method: :delete, data: { confirm: 'Are you sure you want to delete this item?' }, class: 'delete itemDelete' %>
   </div>
-  <p>
-    <%= raw(child.body) %>
+  <p><%= raw(child.body) %></p>
+  <% unless child.triggers.empty? %>
+  <% child.triggers.each do |trigger| %> 
+  <p class = "emailReminder">
+    Email to 
+    <% trigger.emails.each do |email| %><%= email.email %><% end %> <!-- TODO, format emails accordingly -->
+    on <%= trigger.date_trigger.strftime("%d/%m/%Y") %>
   </p>
-  <% child.triggers.each do |trigger| %>
-  <p class="emailReminder">Email to <% trigger.emails.each do |email| %><%= email.email %> at <%= trigger.date_trigger %></p>
-  <div class="emailOptions">
-    <a class="edit emailEdit" href="#" title="Edit"></a> <!-- TODO, edit email triggers -->
-    <a class="delete emailDelete" href="#" title="Delete"></a> <!-- TODO, delete email triggers -->
+  <div class = "emailOptions">
+    <a class = "edit emailEdit" href = "#" title = "Edit"></a> <!-- TODO, edit email triggers -->
+    <a class = "delete emailDelete" href = "#" title = "Delete"></a> <!-- TODO, delete email triggers -->
   </div>
   <% end %>
   <% end %>
