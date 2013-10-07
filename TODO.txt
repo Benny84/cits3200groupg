@@ -21,7 +21,7 @@ position it diferently..)
 - editing an item still resets it to the bottom of the heirachy
 - have heirachy only show current item path + root items
 - Hovering over an email address brings up "Edit" and "Delete" Icons at the far right of screen and they are unclickable.
-
+- Add emails to the database
 
 %%%% we'll get here %%%%%
 
