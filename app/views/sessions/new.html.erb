@@ -1,16 +1,13 @@
-<div id = "loginTab">
-	<% flash.each do |key, value| %>
-	  <div class="alert alert-<%= key %>"><%= value %></div>
-	<% end %>
+<% flash.each do |key, value| %>
+<div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
 
-	<%= form_for(:session, url: sessions_path) do |f| %>
+<%= form_for(:session, url: sessions_path) do |f| %>
+  <p><%= f.label :email %>
+  <%= f.text_field :email, size: 20, required: true %></p>
 
-    <p><%= f.label :email %>
-    <%= f.text_field :email, size: 20, required: true %></p>
+  <p><%= f.label :password %>
+  <%= f.password_field :password, size: 20, required: true %></p>
 
-    <p><%= f.label :password %>
-    <%= f.password_field :password, size: 20, required: true %></p>
-
-	  <%= f.submit "Log In" %>
-	<% end %>
-</div>
+  <%= f.submit "Log In" %>
+<% end %>

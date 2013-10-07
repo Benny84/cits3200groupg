@@ -48,3 +48,4 @@ Points of discussion
 - the gap between item titles and bodies look a bit weird (to have space for the mouse over links), should i
 position the same as email reminders?
 - mouse overs not working on phone browsers since theres no mouse (but you can click the empty space)
+- items are being displayed in alphabetical order (while being added in), order by creation date instead?

@@ -1,4 +1,4 @@
-/* This file contains the global page styles for headers footers and menus */
+/* This file contains the global page styles mainly for show.html */
 html,
 body {
 	background-image: url(<%= asset_path 'back.png' %>);
@@ -67,6 +67,41 @@ header {
 	box-shadow: rgb(0, 0, 0) 1px 1px 4px 0px;
 }
 
+#contentPane {
+	text-align: left; 
+	width: 740px; 
+	margin-left: 180px; 
+	padding-left: 40px; 
+	border-left: 1px solid;
+}
+
+#hierachyDiv {
+	float: left;
+	margin-top: 18px;
+	padding-right: 15px;
+	width: 165px;
+	border-right: 1px solid;
+}
+
+#logoutTab {
+	height: 30px; 
+	width: 84px; 
+	background: #FFFFFF; 
+	margin-top: 55px;
+	margin-left: 865px;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	box-shadow: rgb(0, 0, 0) 1px 1px 4px 0px;
+}
+
+#logout {
+	font-size: 14px;
+	padding-top: 5px;
+	padding-left: 15px;
+}
+
+/* log in form formatting */
+
 #centerDiv {
 	width: 400px;
 	height: 300px;
@@ -92,21 +127,63 @@ header {
 	box-shadow: rgb(0, 0, 0) 1px 1px 4px 0px;
 }
 
-#logoutTab {
-	height: 30px; 
-	width: 84px; 
-	background: #FFFFFF; 
-	margin-top: 55px;
-	margin-left: 865px;
-	border-top-left-radius: 7px;
-	border-top-right-radius: 7px;
-	box-shadow: rgb(0, 0, 0) 1px 1px 4px 0px;
+#session_email {
+	margin-left: 40px;
 }
 
-#logout {
+#session_password {
+	margin-left: 15px;
+}
+
+/* css formating for the hierachy */
+
+ul {
+	margin-left: -30px;
+	list-style-type: circle;
+}
+
+.indent { /* unused - set to delete if we don't get around to it */
+	list-style-type: none;
+}
+
+.currentItemPath { /* unused - set to delete if we don't get around to it */
+	list-style-type: disc;
+}
+
+/* css for main content pain and forms */
+
+h1 {
+	font-weight: 700; 
+	font-size: 220%; 
+	margin-top: -5px;
+}
+
+h2 {
+	font-weight: 700; 
+	font-size: 160%; 
+	color: #0000FF;
+}
+
+.currentItemChildren {
+	margin-left: 30px;
+}
+
+.emailReminder {
+	color: red;
+}
+
+#itemToRoot, #currentItemOptions, #newEmail {
 	font-size: 14px;
-	padding-top: 5px;
-	padding-left: 15px;
+	text-align: right;
+}
+
+#itemToRoot {
+	margin-top: 0px;
+}
+
+.itemCheckbox {
+	margin-left: -24px;
+	margin-right: 11px;
 }
 
 /* css for option links */
@@ -178,7 +255,7 @@ header {
 	background: #F0F0F0;
 	padding-top: 1px;
 	padding-left: 1px;
-	margin-top: -48px;
+	margin-top: -44px; /* this margin will affect all the items children */
 	width: 86px;
 	height: 27px;
 	z-index: 1;
@@ -189,6 +266,10 @@ header {
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
 	box-shadow: rgb(0, 0, 0) 1px 1px 2px 0px;
+}
+
+h1 + .itemOptions {
+	margin-top: -48px; /* this margin will affect only the current item */
 }
 
 h1:hover + .itemOptions, h2:hover + .itemOptions, .itemOptions:hover{
@@ -241,81 +322,18 @@ p:hover + .emailOptions {
 	text-decoration: underline;
 }
 
-/* new sessions form formatting */
-
-#session_email {
-	margin-left: 40px;
-}
-
-#session_password {
-	margin-left: 15px;
-}
-
-/* css formating for the hierachy - a lot of lists */
-
-#hierachyDiv {
-	float: left;
-	margin-top: 18px;
-	padding-right: 15px;
-	width: 165px;
-	border-right: 1px solid;
-}
-
-ul {
-	margin-left: -30px;
-	list-style-type: circle;
-}
-
-.indent {
-	list-style-type: none;
-}
-
-.currentItemPath {
-	list-style-type: disc;
-}
-
-/* css for main content pain and forms */
-
-#contentPane {
-	text-align: left; 
-	width: 740px; 
-	margin-left: 180px; 
-	padding-left: 40px; 
-	border-left: 1px solid;
-}
-
-.currentItemChildren {
-	margin-left: 30px;
-}
-
-h1 {
-	font-weight: 700; 
-	font-size: 220%; 
-	margin-top: -5px;
-}
-
-h2 {
-	font-weight: 700; 
-	font-size: 160%; 
-	color: #0000FF;
-}
+/* css for forms */
 
 h3 {
 	font-size: 30px;
 	text-align: center;
 }
 
-.emailReminder {
-	color: red;
-}
-
-#itemToRoot, #currentItemOptions, #newEmail {
-	font-size: 14px;
-	text-align: right;
-}
-
-#itemToRoot {
-	margin-top: 0px;
+#rootFormTitle {
+	text-align: center;
+	font-weight: 200; 
+	font-size: 160%; 
+	letter-spacing: -1px; 
 }
 
 #add-item-form, #set-email-form , #add-root-item-form {
@@ -361,22 +379,6 @@ h3 {
 
 #emailrecip {
 	margin-left: 6px;
-}
-
-.itemCheckbox {
-	margin-left: -24px;
-	margin-right: 11px;
-}
-
-.inactive {
-	visibility: hidden;
-}
-
-#rootFormTitle {
-	text-align: center;
-	font-weight: 200; 
-	font-size: 160%; 
-	letter-spacing: -1px; 
 }
 
 /* formating link hover colours */
