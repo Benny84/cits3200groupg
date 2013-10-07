@@ -7,6 +7,12 @@
   <%= f.text_area :body, required: true, :placeholder => 'HTML tags are allowed!' %>
   <%= f.label :task, 'Set As Task?' %>
   <%= f.check_box :task %>
+  
+  <% if @item.task %>
+  <%= f.label :complete, 'Complete Task?', class: "complete" %>
+  <%= f.check_box :complete %> <!-- needs fixing, doesnt update database -->
+  <% end %>
+  
   <%= hidden_field_tag 'item[parent_id]', @item.parent_id %>
   <div class = "formOptions">
     <%= f.submit "Confirm Item", class: "button" %> 

@@ -27,6 +27,7 @@ function cancelEmailForm() {
 }
 
 $(function () {
+	//hide the add item and email forms at page load
 	hideAllForms();
 	
 	$('#add-item').click(function() {

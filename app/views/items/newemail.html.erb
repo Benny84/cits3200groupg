@@ -1,0 +1,11 @@
+<h3>Adding New Email</h3>
+<!-- sample code, not sure if any of it is wrong so use accordingly! -->
+<%= form_for(:item, url: items_path, html: {class: "formCSS"}) do |f| %>
+  <%= f.label :email, 'Email:' %>
+  <%= f.text_field :email, required: true %>
+  <div class = "formOptions">
+    <%= f.submit "Add Email", class: "button" %> 
+	<%= f.submit "Clear", type: "reset", class: "button" %>
+	<input type="button" class="button" value="Cancel" onClick="history.go(-1); return true;" />
+  </div>
+<% end %>
