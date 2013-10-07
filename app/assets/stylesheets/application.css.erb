@@ -191,17 +191,13 @@ header {
 	box-shadow: rgb(0, 0, 0) 1px 1px 2px 0px;
 }
 
-h1:hover + .itemOptions, .itemOptions:hover{
+h1:hover + .itemOptions, h2:hover + .itemOptions, .itemOptions:hover{
 	opacity: 1;
 }
 
 h1:hover {
 	text-decoration: underline;
-}
-
-h2:hover + .itemOptions, .itemOptions:hover {
-	opacity: 1;
-}
+} 
 
 h2:hover {
 	text-decoration: underline;
@@ -313,7 +309,7 @@ h3 {
 	color: red;
 }
 
-#itemToRoot, #currentItemOptions {
+#itemToRoot, #currentItemOptions, #newEmail {
 	font-size: 14px;
 	text-align: right;
 }
@@ -399,12 +395,12 @@ a:hover {
 	color: #3399FF;
 }
 
-#logout  > a, #itemToRoot > a, #currentItemOptions > a, .newFormOptions > a {
+#logout  > a, #itemToRoot > a, #currentItemOptions > a, .newFormOptions > a, #newEmail > a {
 	color: #3366FF;
 	text-decoration: none;
 }
 
-#logout  > a:hover, #itemToRoot > a:hover, #currentItemOptions > a:hover , .newFormOptions > a:hover {
+#logout  > a:hover, #itemToRoot > a:hover, #currentItemOptions > a:hover , .newFormOptions > a:hover, #newEmail > a:hover {
 	color: #CC66FF;
 	text-decoration: underline;
 }

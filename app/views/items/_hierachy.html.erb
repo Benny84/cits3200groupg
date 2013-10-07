@@ -1,5 +1,5 @@
 <div id = "hierachyDiv">
-  <p id = "itemToRoot"><%= link_to "+ Add Item To Root", new_item_path %></p>
+  <p id="itemToRoot"><%= link_to "+ Add Item To Root", new_item_path %></p>
   <ul><%= render :partial => 'item', :collection => Item.find_all_by_parent_id(nil) %></ul>
-  </ul>
+  <p id="newEmail"><%= link_to "+ Add New Email", new_item_path %></p>
 </div>

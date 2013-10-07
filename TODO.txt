@@ -3,7 +3,7 @@ TODO List
 %%%% should be done before monday? %%%%%
 
 - be able to edit items which have task set and 'complete' them
-- have set email reminder work with database + website
+- (DONE) have set email reminder work with database + website
 - actually have it send emails
 - (DONE) * add the checkboxes to item titles
 - (DONE) * get index page displaying just the root children
@@ -32,6 +32,7 @@ another page
 - * if clicking set email reminder and the form is already open, close it
 - * OCD formatting
 - make the current item path on the heirachy a filled circle, its children and other root items discs
+- when hovering over the buttons, the underline dissapears
 
 
 
