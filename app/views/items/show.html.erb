@@ -62,18 +62,25 @@
   <div class = "formOptions">
     <%= f.submit "Confirm Item", class: "button" %> 
 	<%= f.submit "Clear", type: "reset", class: "button" %>
-	<input type="button" class="button" value="Cancel" onClick="history.go(-1); return true;" />
+	<input type="button" class="button" value="Cancel" onClick="cancelItemForm();" />
   </div>
 <% end %>
 
 
 <%= form_tag({:controller => 'triggers', :action => 'create'}, {:id => "set-email-form"}) do %>
-  <p><%= label_tag(:datepicker, "Date:") %> <%= text_field_tag(:datepicker) %> <small> at 0:00</small></p>
-  <p><%= label_tag(:emailrecip, "Recipients:") %>  <%= collection_select(:trigger_email, :email_id, Email.all, :id, :email, { :multiple => true }) %></p>
-  <p><%= label_tag(:emailchildren, "Send all subchildren too?") %> <%= check_box_tag(:emailchildren) %><%= hidden_field_tag(:parent_id, "") %></p>
-  <p class="newFormOptions">
-  <%= submit_tag("Set email reminder") %> | 
-  <a id="set-email-clear" href="#">Clear</a> | 
-  <a id="set-email-cancel" href="#">Cancel</a>
-  </p>
+  <div id="leftEmailPane">
+    <%= label_tag(:datepicker, "Date:") %>
+    <%= text_field_tag(:datepicker) %> <small> at 0:00</small><br />
+    <%= label_tag(:emailchildren, "Send all subchildren too?") %>
+    <%= check_box_tag(:emailchildren) %><%= hidden_field_tag(:parent_id, "") %>
+  </div>
+  <div id="rightEmailPane">
+    <%= label_tag(:emailrecip, "Recipients:") %>
+    <%= collection_select(:trigger_email, :email_id, Email.all, :id, :email, { :multiple => true }) %>
+  </div>
+  <div class = "formOptions emailForm">
+    <%= submit_tag "Set Email Reminder", class: "button" %> 
+	<%= submit_tag "Clear", type: "reset", class: "button" %>
+	<input type="button" class="button" value="Cancel" onClick="cancelEmailForm();" />
+  </div>
 <% end %>
