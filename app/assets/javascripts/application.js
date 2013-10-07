@@ -34,7 +34,7 @@ $(function () {
 	
 	$('.set-email').click(function() {
 		hideAllForms();
-        $('#parent-id').val($(this).attr('name'));
+        $('#parent_id').val($(this).attr('name'));
 		$('#set-email-form').show();
 	});
 	

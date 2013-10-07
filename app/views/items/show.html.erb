@@ -13,7 +13,7 @@
   <p><%= @item.body %></p>
   <% @item.triggers.each do |trigger| %>
     <p class = "emailReminder">Email to 
-    <% trigger.emails.each do |email| %><%= email.email %> at <%= trigger.date_trigger %></p>
+    <% trigger.emails.each do |email| %><%= email.email %> on <%= trigger.date_trigger.strftime("%d/%m/%Y") %></p>
       <div class = "emailOptions">
         <a class = "edit emailEdit" href = "#" title = "Edit"></a>
         <a class = "delete emailDelete" href = "#" title = "Delete"></a>
@@ -47,7 +47,7 @@
   <%= raw(child.body) %>
   </p>
   <% child.triggers.each do |trigger| %>
-  <p class = "emailReminder">Email to <% trigger.emails.each do |email| %><%= email.email %> at <%= trigger.date_trigger %></p>
+  <p class = "emailReminder">Email to <% trigger.emails.each do |email| %><%= email.email %> on <%= trigger.date_trigger.strftime("%d/%m/%Y") %></p>
   <div class = "emailOptions">
   <a class = "edit emailEdit" href = "#" title = "Edit"></a>
   <a class = "delete emailDelete" href = "#" title = "Delete"></a>
