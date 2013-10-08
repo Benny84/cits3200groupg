@@ -1,6 +1,7 @@
 class TriggersController < ApplicationController
     def new
     end
+	
     def create
         new_trigger = Trigger.new do |t|
             t.item_id = params[:parent_id]
@@ -16,4 +17,11 @@ class TriggersController < ApplicationController
         end
         redirect_to controller: "items", action: "show", id: params[:parent_id]
     end
+	
+	def destroy
+		@trigger = Trigger.find(params[:id])
+		@trigger.destroy
+		
+		redirect_to items_path
+	end
 end
