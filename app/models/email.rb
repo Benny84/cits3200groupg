@@ -1,5 +1,6 @@
 class Email < ActiveRecord::Base
     attr_accessible :email
+    
     has_many :trigger_emails
     has_many :triggers, :through => :trigger_emails
     validates :email, presence: true
