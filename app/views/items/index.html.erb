@@ -6,7 +6,7 @@
   <div class="itemOptions">
     <%= link_to '', edit_item_path(child), class: 'edit itemEdit', title: 'Edit' %>
     <a class="set-email" href="#item<%= child.id %>" title="Set Email Reminder" name="<%= child.id %>"></a>
-    <%= link_to '', item_path(child.id), method: :delete, data: { confirm: 'Are you sure you want to delete this item?' }, class: 'delete itemDelete' %>
+    <%= link_to '', item_path(child.id), method: :delete, data: { confirm: 'Are you sure you want to delete this item?' }, class: 'delete itemDelete', title: 'Delete' %>
   </div>
   <p><%= raw(child.body) %></p>
   <% unless child.triggers.empty? %>
@@ -26,21 +26,17 @@
 
 <% end %>
 <%= form_for(:item, url: items_path, html: {id: "add-item-form"}) do |f| %>
-  <%= f.label :title %>
+  <%= f.label :title, 'Title:' %>
   <%= f.text_field :title, required: true, value: '' %>
-
-  <%= f.label :body %>
-  <%= f.text_field :body, required: true, value: '' %>
-
+  <%= f.label :body, 'Body:' %>
+  <%= f.text_area :body, required: true, :placeholder => 'HTML tags are allowed!', value: '' %>
   <%= f.label :task, 'Set As Task?' %>
-  <%= f.check_box :task, value: '' %>
-
+  <%= f.check_box :task %>
   <%= hidden_field_tag 'item[parent_id]', params[:parent_id] %>
-  
-  <div class="newFormOptions">
-    <%= f.submit "Confirm Item" %> | 
-    <%= link_to "Clear", '#', id: "add-item-clear" %> | 
-    <%= link_to "Cancel", '#', id: "add-item-cancel" %>
+  <div class = "formOptions">
+    <%= f.submit "Confirm Item", class: "button" %> 
+	<%= f.submit "Clear", type: "reset", class: "button" %>
+	<input type="button" class="button" value="Cancel" onClick="cancelItemForm();" />
   </div>
 <% end %>
 
