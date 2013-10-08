@@ -82,7 +82,7 @@
     <%= label_tag(:emailrecip, "Recipients:") %>
     <%= collection_select(:trigger_email, :email_id, Email.all, :id, :email, { :multiple => true }) %>
   </div>
-  <div class = "formOptions emailForm">
+  <div class = "formOptions">
     <%= submit_tag "Set Email Reminder", class: "button" %> 
 	<%= submit_tag "Clear", type: "reset", class: "button" %>
 	<input type="button" class="button" value="Cancel" onClick="cancelEmailForm();" />
