@@ -1,4 +1,4 @@
-/* This file contains the global page styles for headers footers and menus */
+/* This file contains the global page styles mainly for show.html */
 html,
 body {
 	background-image: url(<%= asset_path 'back.png' %>);
@@ -67,6 +67,41 @@ header {
 	box-shadow: rgb(0, 0, 0) 1px 1px 4px 0px;
 }
 
+#contentPane {
+	text-align: left; 
+	width: 740px; 
+	margin-left: 180px; 
+	padding-left: 40px; 
+	border-left: 1px solid;
+}
+
+#hierachyDiv {
+	float: left;
+	margin-top: 18px;
+	padding-right: 15px;
+	width: 165px;
+	border-right: 1px solid;
+}
+
+#logoutTab {
+	height: 30px; 
+	width: 84px; 
+	background: #FFFFFF; 
+	margin-top: 55px;
+	margin-left: 865px;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	box-shadow: rgb(0, 0, 0) 1px 1px 4px 0px;
+}
+
+#logout {
+	font-size: 14px;
+	padding-top: 5px;
+	padding-left: 15px;
+}
+
+/* log in form formatting */
+
 #centerDiv {
 	width: 400px;
 	height: 300px;
@@ -92,21 +127,59 @@ header {
 	box-shadow: rgb(0, 0, 0) 1px 1px 4px 0px;
 }
 
-#logoutTab {
-	height: 30px; 
-	width: 84px; 
-	background: #FFFFFF; 
-	margin-top: 55px;
-	margin-left: 865px;
-	border-top-left-radius: 7px;
-	border-top-right-radius: 7px;
-	box-shadow: rgb(0, 0, 0) 1px 1px 4px 0px;
+#session_email {
+	margin-left: 40px;
 }
 
-#logout {
+#session_password {
+	margin-left: 15px;
+}
+
+/* css formating for the hierachy */
+
+ul {
+	margin-left: -30px;
+	list-style-type: circle;
+}
+
+/* css for main content pain and forms */
+
+h1 {
+	font-weight: 700; 
+	font-size: 220%; 
+	margin-top: -5px;
+}
+
+h2 {
+	font-weight: 700; 
+	font-size: 160%; 
+	color: #0000FF;
+}
+
+.currentItemChildren {
+	margin-left: 30px;
+}
+
+.emailReminder {
+	color: red;
+}
+
+#itemToRoot, #currentItemOptions, #newEmail {
 	font-size: 14px;
-	padding-top: 5px;
-	padding-left: 15px;
+	text-align: right;
+}
+
+#itemToRoot {
+	margin-top: 0px;
+}
+
+.itemCheckbox {
+	margin-left: -24px;
+	margin-right: 11px;
+}
+
+.complete {
+	margin-left: 460px;
 }
 
 /* css for option links */
@@ -178,7 +251,7 @@ header {
 	background: #F0F0F0;
 	padding-top: 1px;
 	padding-left: 1px;
-	margin-top: -48px;
+	margin-top: -44px; /* this margin will affect all the items children */
 	width: 86px;
 	height: 27px;
 	z-index: 1;
@@ -191,12 +264,20 @@ header {
 	box-shadow: rgb(0, 0, 0) 1px 1px 2px 0px;
 }
 
-h1:hover + .itemOptions, .itemOptions:hover{
+h1 + .itemOptions {
+	margin-top: -48px; /* this margin will affect only the current item */
+}
+
+h1:hover + .itemOptions, h2:hover + .itemOptions, .itemOptions:hover{
 	opacity: 1;
 }
 
-h2:hover + .itemOptions, .itemOptions:hover {
-	opacity: 1;
+h1:hover {
+	text-decoration: underline;
+} 
+
+h2:hover {
+	text-decoration: underline;
 }
 
 .emailOptions {
@@ -228,89 +309,29 @@ h2:hover + .itemOptions, .itemOptions:hover {
 p:hover + .emailOptions {
 	opacity: 1;
 }
+
 .emailOptions:hover {
 	opacity: 1;
 }
 
-/* new sessions form formatting */
-
-#session_email {
-	margin-left: 40px;
+.emailReminder:hover {
+	text-decoration: underline;
 }
 
-#session_password {
-	margin-left: 15px;
-}
-
-/* css formating for the hierachy - a lot of lists */
-
-#hierachyDiv {
-	float: left;
-	margin-top: 18px;
-	padding-right: 15px;
-	width: 165px;
-	border-right: 1px solid;
-}
-
-ul {
-	margin-left: -30px;
-	list-style-type: circle;
-}
-
-.indent {
-	list-style-type: none;
-}
-
-.currentItemPath {
-	list-style-type: disc;
-}
-
-/* css for main content pain and forms */
-
-#contentPane {
-	text-align: left; 
-	width: 740px; 
-	margin-left: 180px; 
-	padding-left: 40px; 
-	border-left: 1px solid;
-}
-
-.currentItemChildren {
-	margin-left: 30px;
-}
-
-h1 {
-	font-weight: 700; 
-	font-size: 220%; 
-	margin-top: -5px;
-}
-
-h2 {
-	font-weight: 700; 
-	font-size: 160%; 
-
-}
+/* css for forms */
 
 h3 {
-	font-size: 30px;
 	text-align: center;
-}
-.emailReminder {
-	color: red;
-}
-
-#itemToRoot, #currentItemOptions {
-	font-size: 14px;
-	text-align: right;
+	font-weight: 700; 
+	font-size: 220%; 
+	letter-spacing: -1px; 
+	margin-bottom: 10px;
+	margin-left: -20px;
 }
 
-#itemToRoot {
-	margin-top: 0px;
-}
-
-#add-item-form, #set-email-form , #add-root-item-form {
+#add-item-form, #set-email-form , .formCSS {
 	background: #EFF3F6; 
-	padding: 10px 30px; 
+	padding: 15px 20px; 
 	margin-right: 20px; 
 	border: 1px solid;
 	border-bottom-left-radius: 7px;
@@ -319,54 +340,81 @@ h3 {
 	border-bottom-right-radius: 7px;
 }
 
-#add-item-form input[type=text] {
-	display: block;
-	width: 100%;
-	margin-bottom: 20px;
+#item_title {
+	width: 90%;
+	margin-left: 30px;
+	margin-bottom: 10px;
 }
 
-#add-root-item-form input[type=text] {
-	display: block;
-	width: 100%;
-	margin-bottom: 20px;
+#item_body {
+	width: 90%;
+	height: 100px;
+	margin-left: 26px;
+	margin-bottom: 10px;
+	resize: vertical;
+	vertical-align: top;
 }
 
-#add-root-item-form	input[type=submit] {
+#leftEmailPane {
+	width: 180px;
 	float: left;
 }
 
-#add-item-form	input[type=submit] {
-	float: left;
-}
-
-.newFormOptions {
-	width: 300px;
-	display: block;
-	margin: 25px auto;
+#rightEmailPane {
+	margin-left: 200px;
+	margin-top: 5px;
+	width: 480px;
+	min-height: 60px;
 }
 
 #datepicker {
-	margin-left: 47px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	width: 80px;
 }
 
-#emailrecip {
-	margin-left: 6px;
+#trigger_email_email_id {
+	margin-top: 5px;
+	margin-bottom: 15px;
+	width: 100%;
 }
 
-.itemCheckbox {
-	margin-left: -24px;
-	margin-right: 11px;
+#email_email {
+	width: 90%;
+	margin-left: 21px;
+	margin-bottom: 15px;
 }
 
-.inactive {
-	visibility: hidden;
-}
-
-#rootFormTitle {
+.formOptions {
 	text-align: center;
-	font-weight: 200; 
-	font-size: 160%; 
-	letter-spacing: -1px; 
+}
+
+.button {
+   border-top: 1px solid #96d1f8;
+   background: #6abcf2;
+   background: -webkit-gradient(linear, left top, left bottom, from(#368ec9), to(#6abcf2));
+   background: -webkit-linear-gradient(top, #368ec9, #6abcf2);
+   background: -moz-linear-gradient(top, #368ec9, #6abcf2);
+   background: -ms-linear-gradient(top, #368ec9, #6abcf2);
+   background: -o-linear-gradient(top, #368ec9, #6abcf2);
+   padding: 5px 10px;
+   -webkit-border-radius: 0px;
+   -moz-border-radius: 0px;
+   border-radius: 0px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #E3E3E3;
+   font-size: 11px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   margin-right: 3px;
+}
+
+.button:hover {
+   color: #FFFFFF;
 }
 
 /* formating link hover colours */
@@ -385,12 +433,12 @@ a:hover {
 	color: #3399FF;
 }
 
-#logout  > a, #itemToRoot > a, #currentItemOptions > a, .newFormOptions > a {
+#logout  > a, #itemToRoot > a, #currentItemOptions > a, .newFormOptions > a, #newEmail > a {
 	color: #3366FF;
 	text-decoration: none;
 }
 
-#logout  > a:hover, #itemToRoot > a:hover, #currentItemOptions > a:hover , .newFormOptions > a:hover {
+#logout  > a:hover, #itemToRoot > a:hover, #currentItemOptions > a:hover , .newFormOptions > a:hover, #newEmail > a:hover {
 	color: #CC66FF;
 	text-decoration: underline;
 }

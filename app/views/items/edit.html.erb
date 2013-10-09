@@ -1,20 +1,22 @@
 <h3>Editing Item</h3>
 
-<%= form_for(@item, html: {id: "add-root-item-form"}) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-
-  <%= f.label :body %>
-  <%= f.text_field :body %>
-
-  <%= f.label :task, 'Enable Complete/Incomplete status?' %>
+<%= form_for(@item, html: {class: "formCSS"}) do |f| %>
+  <%= f.label :title, 'Title:' %>
+  <%= f.text_field :title, required: true %>
+  <%= f.label :body, 'Body:' %>
+  <%= f.text_area :body, required: true, :placeholder => 'HTML tags are allowed!' %>
+  <%= f.label :task, 'Set As Task?' %>
   <%= f.check_box :task %>
-
+  
+  <% if @item.task %>
+  <%= f.label :complete, 'Complete Task?', class: "complete" %>
+  <%= f.check_box :complete %> <!-- needs fixing, doesnt update database -->
+  <% end %>
+  
   <%= hidden_field_tag 'item[parent_id]', @item.parent_id %>
-
-  <div class = "newFormOptions">
-    <%= f.submit "Confirm item" %>
-    <%= link_to "Clear", '#', id: "add-root-item-clear" %>
-    <%= link_to "Cancel", :back %>
+  <div class = "formOptions">
+    <%= f.submit "Confirm Item", class: "button" %> 
+	<%= f.submit "Reset", type: "reset", class: "button" %>
+	<input type="button" class="button" value="Cancel" onClick="history.go(-1); return true;" />
   </div>
 <% end %>

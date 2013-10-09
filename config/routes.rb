@@ -4,6 +4,7 @@ ProcessSystem::Application.routes.draw do
   resources :triggers, only: [:new, :create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
   resources :items
+  resources :emails, only: [:new, :create]
 
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
