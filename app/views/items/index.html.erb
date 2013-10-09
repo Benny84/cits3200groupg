@@ -25,7 +25,7 @@
 <% end %>
 <%= form_for(:item, url: items_path, html: {id: "add-item-form"}) do |f| %>
   <%= f.label :title, 'Title:' %>
-  <%= f.text_field :title, required: true, value: '' %>
+  <%= f.text_field :title, required: true, value: '', maxlength: 100 %>
   <%= f.label :body, 'Body:' %>
   <%= f.text_area :body, required: true, :placeholder => 'HTML tags are allowed!', value: '' %>
   <%= f.label :task, 'Set As Task?' %>
