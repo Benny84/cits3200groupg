@@ -10,7 +10,7 @@
 <form id="item<%= @item.id %>">
   <h1><% if @item.task %><input type="checkbox" class="itemCheckbox"<% if @item.complete %> checked<% end %> disabled /><% end %><%= @item.title %></h1>
   <div class="itemOptions">
-    <%= link_to '', edit_item_path(@item.id), class: 'edit itemEdit', title: 'Edit' %>
+    <%= link_to '', edit_item_path(@item.id), class: 'edit', title: 'Edit' %>
     <a class="set-email" href="#" title="Set Email Reminder" name="<%= @item.id %>"></a>
     <%= link_to '', item_path(@item.id), method: :delete, data: { confirm: 'Are you sure you want to delete this item?' }, class: 'delete itemDelete', title: 'Delete' %>
   </div>
@@ -20,8 +20,7 @@
   <% unless trigger.date_trigger < Time.now %>
   <p class = "emailReminder">Email to <% trigger.emails.each_with_index do |email, n| %><% if n != 0 %>, <% end %><%= email.email %><% end %> on <%= trigger.date_trigger.strftime("%d/%m/%Y %H:%M") %> AWST</p>
   <div class = "emailOptions">
-    <a class = "edit emailEdit" href = "#" title = "Edit"></a> <!-- TODO, edit email triggers -->
-	<%= link_to '', {:controller => 'triggers', :action => 'destroy', :id => trigger.id}, method: :delete, data: { confirm: 'Are you sure you want to cancel this email reminder?' }, class: 'delete emailDelete', title: 'Delete' %>
+	<%= link_to '', {:controller => 'triggers', :action => 'destroy', :id => trigger.id}, method: :delete, data: { confirm: 'Are you sure you want to cancel this email reminder?' }, class: 'delete', title: 'Cancel' %>
   </div>
   <% end %>
   <% end %>
@@ -32,9 +31,9 @@
 <form id="item<%= child.id %>" class="currentItemChildren">
   <h2><% if child.task %><input type="checkbox" class="itemCheckbox"<% if child.complete %> checked<% end %> disabled /><% end %><%= link_to child.title, child %></h2>
   <div class="itemOptions">
-    <%= link_to '', edit_item_path(child), class: 'edit itemEdit', title: 'Edit' %>
+    <%= link_to '', edit_item_path(child), class: 'edit', title: 'Edit' %>
     <a class="set-email" href="#item<%= child.id %>" title="Set Email Reminder" name="<%= child.id %>"></a>
-    <%= link_to '', item_path(child.id), method: :delete, data: { confirm: 'Are you sure you want to delete this item?' }, class: 'delete itemDelete', title: 'Delete' %>
+    <%= link_to '', item_path(child.id), method: :delete, data: { confirm: 'Are you sure you want to delete this item?' }, class: 'delete itemDelete' , title: 'Delete' %>
   </div>
   <p><%= raw(child.body) %></p>
   <% unless child.triggers.empty? %>
@@ -42,8 +41,7 @@
   <% unless trigger.date_trigger < Time.now %>
   <p class = "emailReminder">Email to <% trigger.emails.each_with_index do |email, n| %><% if n != 0 %>, <% end %><%= email.email %><% end %> on <%= trigger.date_trigger.strftime("%d/%m/%Y %H:%M") %> AWST</p>
   <div class = "emailOptions">
-    <a class = "edit emailEdit" href = "#" title = "Edit"></a> <!-- TODO, edit email triggers -->
-    <%= link_to '', {:controller => 'triggers', :action => 'destroy', :id => trigger.id}, method: :delete, data: { confirm: 'Are you sure you want to cancel this email reminder?' }, class: 'delete emailDelete', title: 'Delete' %>
+    <%= link_to '', {:controller => 'triggers', :action => 'destroy', :id => trigger.id}, method: :delete, data: { confirm: 'Are you sure you want to cancel this email reminder?' }, class: 'delete', title: 'Cancel' %>
   </div>
   <% end %>
   <% end %>
