@@ -2,7 +2,7 @@ TODO List
 
 %%%% should be done before monday? %%%%%
 
-- be able to edit items which have task set and 'complete' them
+- (DONE) be able to edit items which have task set and 'complete' them
 - (DONE) have set email reminder work with database + website
 - actually have it send emails
 - (DONE) * add the checkboxes to item titles
@@ -30,7 +30,7 @@ another page
 - when deleting the items children, refresh the page instead of going to index
 - make the current item path on the heirachy a filled circle, its children and other root items discs
 - when hovering over the buttons, the underline dissapears
-- remove old email reminder notes on the page (ie the ones already sent)
+- (DONE) remove old email reminder notes on the page (ie the ones already sent)
 - only send the email reminder IF the task is still incomplete (if set by user)
 
 %%%%% bugs? %%%%%

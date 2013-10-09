@@ -14,6 +14,6 @@ class Item < ActiveRecord::Base
   after_initialize :init #set defaults
   def init
     self.task = false if self.task.nil?
-    self.complete = false if self.task
+    self.complete = false if self.complete.nil?
   end    
 end
