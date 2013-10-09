@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <title> Club Process System - Swedish Club of WA </title>
-  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= stylesheet_link_tag "application", media: "all" %>
 </head>
 <body>
   <div id="centerDiv">
@@ -15,7 +15,7 @@
     <%= yield %>
       </div>
     <footer>
-      <p>&copy; 2013 Swedish Club of WA - Website Created by CITS3200 Group G</p>
+      <p>&copy; 2013 <%= link_to "Swedish Club of WA", "http://www.swedishclubofwa.org/", id: "footLink" %> - Website Created by CITS3200 Group G</p>
     </footer>
   </div>
 </body>
