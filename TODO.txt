@@ -32,3 +32,7 @@ another page
 - when hovering over the buttons, the underline dissapears
 - remove old email reminder notes on the page (ie the ones already sent)
 - only send the email reminder IF the task is still incomplete (if set by user)
+
+%%%%% bugs? %%%%%
+
+can't resize multiselect box in chrome

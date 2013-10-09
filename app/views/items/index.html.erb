@@ -1,4 +1,4 @@
-<p id = "currentItemOptions"><%= link_to "+ Add Item (To Root)", '#', id: 'add-item' %></p>
+<p id = "currentItemOptions"><%= link_to "+ Add Item (To Root)", '#add-item-form', id: 'add-item' %></p>
 
 <% @items.each do |child| %>
 <form id="item<%= child.id %>">
