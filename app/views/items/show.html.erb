@@ -17,7 +17,7 @@
   <p><%= raw(@item.body) %></p>
   <% unless @item.triggers.empty? %>
   <% @item.triggers.each do |trigger| %> 
-  <p class = "emailReminder">Email to <% trigger.emails.each_with_index do |email, n| %><% if n != 0 %>, <% end %><%= email.email %><% end %> on <%= trigger.date_trigger.strftime("%d/%m/%Y") %></p>
+  <p class = "emailReminder">Email to <% trigger.emails.each_with_index do |email, n| %><% if n != 0 %>, <% end %><%= email.email %><% end %> on <%= trigger.date_trigger.strftime("%d/%m/%Y %H:%M") %> AWST</p>
   <div class = "emailOptions">
     <a class = "edit emailEdit" href = "#" title = "Edit"></a> <!-- TODO, edit email triggers -->
 	<%= link_to '', {:controller => 'triggers', :action => 'destroy', :id => trigger.id}, method: :delete, data: { confirm: 'Are you sure you want to cancel this email reminder?' }, class: 'delete emailDelete', title: 'Delete' %>
@@ -37,7 +37,7 @@
   <p><%= raw(child.body) %></p>
   <% unless child.triggers.empty? %>
   <% child.triggers.each do |trigger| %> 
-  <p class = "emailReminder">Email to <% trigger.emails.each_with_index do |email, n| %><% if n != 0 %>, <% end %><%= email.email %><% end %> on <%= trigger.date_trigger.strftime("%d/%m/%Y") %></p>
+  <p class = "emailReminder">Email to <% trigger.emails.each_with_index do |email, n| %><% if n != 0 %>, <% end %><%= email.email %><% end %> on <%= trigger.date_trigger.strftime("%d/%m/%Y %H:%M") %> AWST</p>
   <div class = "emailOptions">
     <a class = "edit emailEdit" href = "#" title = "Edit"></a> <!-- TODO, edit email triggers -->
     <%= link_to '', {:controller => 'triggers', :action => 'destroy', :id => trigger.id}, method: :delete, data: { confirm: 'Are you sure you want to cancel this email reminder?' }, class: 'delete emailDelete', title: 'Delete' %>
@@ -65,14 +65,14 @@
 
 <%= form_tag({:controller => 'triggers', :action => 'create'}, {:id => "set-email-form"}) do %>
   <div id="leftEmailPane">
-    <%= label_tag :datepicker, 'Date:' %>
-    <%= text_field_tag (:datepicker), '', {required: true, pattern: '(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d'} %> <small> at 0:00</small><br />
+    <%= label_tag :datetimepicker, 'Date:' %>
+    <%= text_field_tag (:datetimepicker), '', {required: true, pattern: '(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d\s\d\d:\d\d'} %><small> AWST</small>
     <%= label_tag :emailchildren, 'Send all subchildren too?' %>
     <%= check_box_tag(:emailchildren) %><%= hidden_field_tag(:parent_id, "") %>
   </div>
   <div id="rightEmailPane">
     <%= label_tag :emailrecip, 'Recipients:' %>
-    <%= collection_select(:trigger_email, :email_id, Email.all, :id, :email, {}, { :multiple => true }) %>
+    <%= collection_select(:trigger_email, :email_id, Email.all, :id, :email, {}, {multiple: true, required: true}) %>
   </div>
   <div class = "formOptions">
     <%= submit_tag "Set Email Reminder", class: "button" %> 

@@ -43,5 +43,5 @@ $(function () {
 	});
 	
 	//Date picker jQuery
-	$('#datepicker').datepicker({ dateFormat: "dd/mm/yy" });
+	$('#datetimepicker').datetimepicker({ dateFormat: "dd/mm/yy" });
 });
