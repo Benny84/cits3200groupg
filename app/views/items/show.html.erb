@@ -17,11 +17,7 @@
   <p><%= raw(@item.body) %></p>
   <% unless @item.triggers.empty? %>
   <% @item.triggers.each do |trigger| %> 
-  <p class = "emailReminder">
-    Email to 
-    <% trigger.emails.each do |email| %><%= email.email %><% end %> <!-- TODO, format emails accordingly -->
-	on <%= trigger.date_trigger.strftime("%d/%m/%Y") %>
-  </p>
+  <p class = "emailReminder">Email to <% trigger.emails.each_with_index do |email, n| %><% if n != 0 %>, <% end %><%= email.email %><% end %> on <%= trigger.date_trigger.strftime("%d/%m/%Y") %></p>
   <div class = "emailOptions">
     <a class = "edit emailEdit" href = "#" title = "Edit"></a> <!-- TODO, edit email triggers -->
 	<%= link_to '', {:controller => 'triggers', :action => 'destroy', :id => trigger.id}, method: :delete, data: { confirm: 'Are you sure you want to cancel this email reminder?' }, class: 'delete emailDelete', title: 'Delete' %>
@@ -41,11 +37,7 @@
   <p><%= raw(child.body) %></p>
   <% unless child.triggers.empty? %>
   <% child.triggers.each do |trigger| %> 
-  <p class = "emailReminder">
-    Email to 
-    <% trigger.emails.each do |email| %><%= email.email %><% end %> <!-- TODO, format emails accordingly -->
-    on <%= trigger.date_trigger.strftime("%d/%m/%Y") %>
-  </p>
+  <p class = "emailReminder">Email to <% trigger.emails.each_with_index do |email, n| %><% if n != 0 %>, <% end %><%= email.email %><% end %> on <%= trigger.date_trigger.strftime("%d/%m/%Y") %></p>
   <div class = "emailOptions">
     <a class = "edit emailEdit" href = "#" title = "Edit"></a> <!-- TODO, edit email triggers -->
     <%= link_to '', {:controller => 'triggers', :action => 'destroy', :id => trigger.id}, method: :delete, data: { confirm: 'Are you sure you want to cancel this email reminder?' }, class: 'delete emailDelete', title: 'Delete' %>

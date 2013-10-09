@@ -2,7 +2,7 @@
 
 <%= form_for(:email, url: emails_path, html: {class: "formCSS"}) do |f| %>
   <%= f.label :email, 'Email:' %>
-  <%= f.text_field :email, required: true, pattern: '[^@]+@[^@]+\.[a-zA-Z]{2,6}', placeholder: 'example@example.com' %>
+  <%= f.text_field :email, required: true, pattern: '([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})', placeholder: 'example@example.com' %>
   <div class = "formOptions">
     <%= f.submit "Add Email", class: "button" %> 
     <input type="button" class="button" value="Cancel" onClick="history.go(-1); return true;" />

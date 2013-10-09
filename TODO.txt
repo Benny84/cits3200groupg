@@ -12,18 +12,19 @@ TODO List
 position it diferently..)
 - (DONE) get index page email form working
 - (DONE) "Add Task to Root" has "Enable Complete/Incomplete status?" while "Adding task to task" has "Make Task?" in same place. Make both into "Make Task?".
-- Add emails to the database
+- (DONE) Add emails to the database
 
 
 %%%% important to do but do other priority things first %%%%%
 
 - (DONE) on index page, put add item form at the bottom of content pane instead of link to the heirachy link
-- allow deleting and editing of email reminders
+- (DONE) allow deleting of email triggers
 - editing an item still resets it to the bottom of the heirachy
 - have heirachy only show current item path + root items
 
 %%%% we'll get here %%%%%
 
+- allow editing of email triggers
 - have the editing done in-line (or replace the text with textfields) on the same page, instead of directing to 
 another page
 - when deleting the items children, refresh the page instead of going to index
