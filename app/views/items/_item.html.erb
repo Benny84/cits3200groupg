@@ -1,4 +1,4 @@
-<li>
+<li id="tree<%= item.id %>" name="<%= item.parent_id %>">
   <%= link_to h(item.title), :controller => 'items', :action => 'show', :id => item.id %>
   <% if !item.children.empty? %>
   <ul><%= render :partial => 'items/item', :collection => item.children %></ul>
