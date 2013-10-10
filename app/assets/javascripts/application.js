@@ -95,5 +95,6 @@ $(function () {
 	});
 	
 	//Date picker jQuery
-	$('#datetimepicker').datetimepicker({ dateFormat: "dd/mm/yy" });
+	var dateToday = new Date();
+	$('#datetimepicker').datetimepicker({ dateFormat: "dd/mm/yy", minDate: dateToday  });
 });

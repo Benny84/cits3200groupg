@@ -11,7 +11,7 @@
   <p><%= raw(child.body) %></p>
   <% unless child.triggers.empty? %>
   <% child.triggers.each do |trigger| %> 
-  <% unless trigger.date_trigger < Time.now %>
+  <% unless trigger.date_trigger <= Time.zone.today %>
   <p class = "emailReminder">Email to <% trigger.emails.each_with_index do |email, n| %><% if n != 0 %>, <% end %><%= email.email %><% end %> on <%= trigger.date_trigger.strftime("%d/%m/%Y %H:%M") %> AWST</p>
   <div class = "emailOptions">
     <%= link_to '', {:controller => 'triggers', :action => 'destroy', :id => trigger.id}, method: :delete, data: { confirm: 'Are you sure you want to cancel this email reminder?' }, class: 'delete', title: 'Cancel' %>
