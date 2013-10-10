@@ -4,10 +4,10 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Swedish Club Email Reminder</h1>i
+    <h1>Swedish Club Email Reminder</h1>
     <h2><%= @subject %></h2>
     <p>
-      <%= @message %>
+      <%= raw(@message) %>
     </p>
   </body>
 </html>

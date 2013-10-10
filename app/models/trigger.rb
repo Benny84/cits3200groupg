@@ -11,8 +11,11 @@ class Trigger < ActiveRecord::Base
     end
 
     def self.send_reminders
+        time = Time.new
         puts "Sending emails..."
-        UserMailer.send_email.deliver
+        dueEmailReminder = Trigger.where('date_trigger = ?', time.strftime("%Y-%m-%d 00:00:00")).find_each do |trigger| #Get date_trigger that equal to today date
+          UserMailer.send_email(trigger.id).deliver
+        end
     end
 
 end
