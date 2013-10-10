@@ -5,8 +5,14 @@ class Trigger < ActiveRecord::Base
     has_many :emails, :through => :trigger_emails
     validates :item_id, :date_trigger, presence: true
     after_initialize :init #set defaults
+
     def init
         self.subchildren = false if self.subchildren.nil?
-    end    
+    end
+
+    def self.send_reminders
+        puts "Sending emails..."
+        UserMailer.send_email.deliver
+    end
 
 end
