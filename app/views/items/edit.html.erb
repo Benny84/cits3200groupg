@@ -9,8 +9,8 @@
   <%= f.check_box :task %>
   
   <% if @item.task %>
-  <%= f.label :complete, 'Complete Task?', class: "complete" %>
-  <%= f.check_box :complete %> <!-- needs fixing, doesnt update database -->
+  <p><b><%= f.label :complete, 'Complete Task?' %>
+  <%= f.check_box :complete %></b></p>
   <% end %>
   
   <%= hidden_field_tag 'item[parent_id]', @item.parent_id %>
