@@ -26,6 +26,16 @@ function cancelEmailForm() {
 	$('#set-email-form').hide();
 }
 
+function getPageItemId() {
+	//grab it from the URL
+	var curId = document.location.pathname.match(/[^\/]+$/)[0];	
+	//check if its an editing page, if so get id from appropriate place
+	if (curId == "edit") {
+		curId = $("#getThis").attr('name');
+	}
+	return curId;
+}
+
 function constructHierarchy() {	
 	//firstly, hide every node in the hierarchy
 	//SILLY WAY TO HIDE EVERY NODE...
@@ -36,12 +46,13 @@ function constructHierarchy() {
 	//then show the root nodes
 	$('*[name = ""]').show();
 	
+	//grab current item id
+	var curId = getPageItemId();
 	//then firstly show the current items direct children
-	var curId = document.location.pathname.match(/[^\/]+$/)[0];	
 	//$('*[name = curId]').show(); //THIS DOESNT WORK
 	
-	//make sure we aren't on the index page
-	if (curId != "items") {
+	//make sure we aren't on the index page or on a new root item/email page
+	if (curId != "items" && curId != "new") {	
 		//then show the current node, and all of its direct parents until the root
 		while (curId != "") {
 			$("#tree" + curId).show();
@@ -50,7 +61,7 @@ function constructHierarchy() {
 		}
 	
 		//re-initialise curId (this can probably be done better)
-		curId = document.location.pathname.match(/[^\/]+$/)[0];	
+		curId = getPageItemId();
 		
 		//bold the current item
 		$("#tree" + curId).attr("style", "font-weight: bold; list-style-type:disc");
