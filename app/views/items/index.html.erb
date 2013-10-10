@@ -6,7 +6,7 @@
   <div class="itemOptions">
     <%= link_to '', edit_item_path(child), class: 'edit', title: 'Edit' %>
     <a class="set-email" href="#item<%= child.id %>" title="Set Email Reminder" name="<%= child.id %>"></a>
-    <%= link_to '', item_path(child.id), method: :delete, data: { confirm: 'Are you sure you want to delete this item?' }, class: 'delete itemDelete', title: 'Delete' %>
+    <%= link_to '', item_path(child.id), method: :delete, data: { confirm: 'Are you sure you want to delete this item? (All subchildren will also be deleted)' }, class: 'delete itemDelete', title: 'Delete' %>
   </div>
   <p><%= raw(child.body) %></p>
   <% unless child.triggers.empty? %>
