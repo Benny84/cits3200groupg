@@ -4,8 +4,7 @@
   <% else %>
     <%= link_to h(item.title), :controller => 'items', :action => 'show', :id => item.id %>
   <% end %>
-
-  <% if item.root.id == Item.find(params[:id].to_i).root.id && !item.children.empty? %>
+  <% if params[:id].to_i != 0 && item.root.id == Item.find(params[:id].to_i).root.id && !item.children.empty? %>
     <ul><%= render :partial => 'items/item', :collection => item.children %></ul>
   <% end %>  
 </li>

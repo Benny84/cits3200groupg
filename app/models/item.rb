@@ -7,7 +7,7 @@ class Item < ActiveRecord::Base
   attr_accessible :parent_id, :title, :body, :task, :complete
 
   has_many :triggers
-  validates :title, :body, presence: true
+  validates :title, presence: true
 
   scope :top_level, where(:parent_id => nil)
   
