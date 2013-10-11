@@ -1,5 +1,5 @@
 <li>
-  <% if item.id == Item.find(params[:id].to_i).root.id %>
+  <% if item.id == params[:id].to_i %>
     <b><%= link_to h(item.title), :controller => 'items', :action => 'show', :id => item.id %></b>
   <% else %>
     <%= link_to h(item.title), :controller => 'items', :action => 'show', :id => item.id %>
