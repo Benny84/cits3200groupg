@@ -36,51 +36,51 @@ function getPageItemId() {
 	return curId;
 }
 
-function constructHierarchy() {	
-	//firstly, hide every node in the hierarchy
-	//SILLY WAY TO HIDE EVERY NODE...
-	for (var i = 1; i < 500; i++){
-		$("#tree" + i).hide();
-	}
+// function constructHierarchy() {	
+// 	//firstly, hide every node in the hierarchy
+// 	//SILLY WAY TO HIDE EVERY NODE...
+// 	for (var i = 1; i < 500; i++){
+// 		$("#tree" + i).hide();
+// 	}
 	
-	//then show the root nodes
-	$('*[name = ""]').show();
+// 	//then show the root nodes
+// 	$('*[name = ""]').show();
 	
-	//grab current item id
-	var curId = getPageItemId();
-	//then firstly show the current items direct children
-	//$('*[name = curId]').show(); //THIS DOESNT WORK
+// 	//grab current item id
+// 	var curId = getPageItemId();
+// 	//then firstly show the current items direct children
+// 	//$('*[name = curId]').show(); //THIS DOESNT WORK
 	
-	//make sure we aren't on the index page or on a new root item/email page
-	if (curId != "items" && curId != "new") {	
-		//then show the current node, and all of its direct parents until the root
-		while (curId != "") {
-			$("#tree" + curId).show();
-			$("#tree" + curId).attr("style", "list-style-type:disc");
-			curId = $("#tree" + curId).attr('name');
-		}
+// 	//make sure we aren't on the index page or on a new root item/email page
+// 	if (curId != "items" && curId != "new") {	
+// 		//then show the current node, and all of its direct parents until the root
+// 		while (curId != "") {
+// 			$("#tree" + curId).show();
+// 			$("#tree" + curId).attr("style", "list-style-type:disc");
+// 			curId = $("#tree" + curId).attr('name');
+// 		}
 	
-		//re-initialise curId (this can probably be done better)
-		curId = getPageItemId();
+// 		//re-initialise curId (this can probably be done better)
+// 		curId = getPageItemId();
 		
-		//bold the current item
-		$("#tree" + curId).attr("style", "font-weight: bold; list-style-type:disc");
+// 		//bold the current item
+// 		$("#tree" + curId).attr("style", "font-weight: bold; list-style-type:disc");
 		
-		//show children...ideally done before but oh well
-		for (var i = 1; i < 500; i++) { //THIS IS STUPID
-			if ($("#tree" + i).attr('name') == curId) {
-				$("#tree" + i).show();
-				$("#tree" + i).attr("style", "font-weight: normal");
-			}
-		}
-	}	
-}
+// 		//show children...ideally done before but oh well
+// 		for (var i = 1; i < 500; i++) { //THIS IS STUPID
+// 			if ($("#tree" + i).attr('name') == curId) {
+// 				$("#tree" + i).show();
+// 				$("#tree" + i).attr("style", "font-weight: normal");
+// 			}
+// 		}
+// 	}	
+// }
 
 $(function () {
 	//hide the add item and email forms at page load
 	hideAllForms();
 	//construct the hierarchy according to what page you're currently on
-	constructHierarchy();
+	//constructHierarchy();
 	
 	$('#add-item').click(function() {
 		hideAllForms();
