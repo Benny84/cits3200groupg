@@ -28,7 +28,7 @@
   <%= f.label :title, 'Title:' %>
   <%= f.text_field :title, required: true, value: '', maxlength: 100 %>
   <%= f.label :body, 'Body:' %>
-  <%= f.text_area :body, required: true, :placeholder => 'HTML tags are allowed!', value: '' %>
+  <%= f.text_area :body, :placeholder => 'HTML tags are allowed!', value: '' %>
   <%= f.label :task, 'Set As Task?' %>
   <%= f.check_box :task %>
   <%= hidden_field_tag 'item[parent_id]', params[:parent_id] %>
