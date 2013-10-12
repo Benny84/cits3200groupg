@@ -7,12 +7,12 @@
   <% end %>
 </p>
 
-<form id="item<%= @item.id %>">
-  <h1><% if @item.task %><input type="checkbox" class="itemCheckbox"<% if @item.complete %> checked<% end %> disabled /><% end %><%= @item.title %></h1>
+<div id="item<%= @item.id %>">  
+  <h1><% if @item.task %><% if @item.complete %><%= link_to '', tick_box_item_path(@item.id), method: :put, class: 'itemCheckbox tick', title: 'Set As Incomplete' %><% else %><%= link_to '', tick_box_item_path(@item.id), method: :put, class: 'itemCheckbox', title: 'Set As Complete' %><% end %><% end %><%= @item.title %></h1>
   <div class="itemOptions">
     <%= link_to '', edit_item_path(@item.id), class: 'edit', title: 'Edit' %>
     <a class="set-email" href="#item<%= @item.id %>" title="Set Email Reminder" name="<%= @item.id %>"></a>
-    <%= link_to '', item_path(@item.id), method: :delete, data: { confirm: 'Are you sure you want to delete this item? (All subchildren will also be deleted)' }, class: 'delete itemDelete', title: 'Delete' %>
+	<%= link_to '', item_path(@item.id), method: :delete, data: { confirm: 'Are you sure you want to delete this item? (All subchildren will also be deleted)' }, class: 'delete itemDelete', title: 'Delete' %>
   </div>
   <% unless @item.body.empty? %>
   <p><%= raw(@item.body) %></p>
@@ -27,11 +27,11 @@
   <% end %>
   <% end %>
   <% end %>
-</form>
+</div>
 
 <% @children.each do |child| %>
-<form id="item<%= child.id %>" class="currentItemChildren">
-  <h2><% if child.task %><input type="checkbox" class="itemCheckbox"<% if child.complete %> checked<% end %> disabled /><% end %><%= link_to child.title, child %></h2>
+<div id="item<%= child.id %>" class="currentItemChildren">
+  <h2><% if child.task %><% if child.complete %><%= link_to '', tick_child_box_item_path(child.id), method: :put, class: 'itemCheckbox tick', title: 'Set As Incomplete' %><% else %><%= link_to '', tick_child_box_item_path(child.id), method: :put, class: 'itemCheckbox', title: 'Set As Complete' %><% end %><% end %><%= link_to child.title, child %></h2>
   <div class="itemOptions">
     <%= link_to '', edit_item_path(child), class: 'edit', title: 'Edit' %>
     <a class="set-email" href="#item<%= child.id %>" title="Set Email Reminder" name="<%= child.id %>"></a>
@@ -50,7 +50,7 @@
   <% end %>
   <% end %>
   <% end %>
-</form>
+</div>
 
 <% end %>
 <%= form_for(:item, url: items_path, html: {id: "add-item-form"}) do |f| %>

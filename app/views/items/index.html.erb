@@ -1,8 +1,8 @@
 <p id = "currentItemOptions"><%= link_to "+ Add Item (To Root)", '#add-item-form', id: 'add-item' %></p>
 
 <% @items.each do |child| %>
-<form id="item<%= child.id %>">
-  <h2><% if child.task %><input type="checkbox" class="itemCheckbox"<% if child.complete %> checked<% end %> disabled /><% end %><%= link_to child.title, child %></h2>
+<div id="item<%= child.id %>">
+  <h2><% if child.task %><% if child.complete %><%= link_to '', tick_child_box_item_path(child.id), method: :put, class: 'itemCheckbox tick', title: 'Set As Incomplete' %><% else %><%= link_to '', tick_child_box_item_path(child.id), method: :put, class: 'itemCheckbox', title: 'Set As Complete' %><% end %><% end %><%= link_to child.title, child %></h2>
   <div class="itemOptions">
     <%= link_to '', edit_item_path(child), class: 'edit', title: 'Edit' %>
     <a class="set-email" href="#item<%= child.id %>" title="Set Email Reminder" name="<%= child.id %>"></a>
@@ -21,7 +21,7 @@
   <% end %>
   <% end %>
   <% end %>
-</form>
+</div>
 
 <% end %>
 <%= form_for(:item, url: items_path, html: {id: "add-item-form"}) do |f| %>

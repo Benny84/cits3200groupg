@@ -47,4 +47,24 @@ class ItemsController < ApplicationController
       render 'edit'
     end
   end 
+  
+  def tick_box
+	@item = Item.find(params[:id])
+	@item.complete = !@item.complete
+	@item.save
+	
+	redirect_to @item
+  end
+  
+  def tick_child_box
+	@item = Item.find(params[:id])
+	@item.complete = !@item.complete
+	@item.save
+	
+	if @item.parent_id.nil?
+	  redirect_to items_path
+	else
+	  redirect_to item_path(@item.parent_id)
+	end
+  end
 end

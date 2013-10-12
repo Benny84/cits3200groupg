@@ -4,15 +4,13 @@
   <%= f.label :title, 'Title:' %>
   <%= f.text_field :title, required: true, maxlength: 100 %>
   <%= f.label :body, 'Body:' %>
-  <%= f.text_area :body, required: true, :placeholder => 'HTML tags are allowed!' %>
+  <%= f.text_area :body, :placeholder => 'HTML tags are allowed!' %>
   <%= f.label :task, 'Set As Task?' %>
   <%= f.check_box :task %>
-  
   <% if @item.task %>
   <p><b><%= f.label :complete, 'Complete Task?' %>
   <%= f.check_box :complete %></b></p>
   <% end %>
-  
   <%= hidden_field_tag 'item[parent_id]', @item.parent_id %>
   <div class = "formOptions">
     <%= f.submit "Confirm Item", class: "button" %> 

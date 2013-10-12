@@ -3,7 +3,12 @@ ProcessSystem::Application.routes.draw do
 
   resources :triggers, only: [:new, :create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
-  resources :items
+  resources :items do
+	member do 
+	  put 'tick_box'
+	  put 'tick_child_box'
+	end
+  end
   resources :emails, only: [:new, :create, :destroy]
 
   match '/signin',  to: 'sessions#new'
