@@ -13,6 +13,6 @@ class EmailsController < ApplicationController
 	@email = Email.find(params[:id])
 	@email.destroy
 	
-	redirect_to items_path
+	redirect_to new_email_path
   end
 end
