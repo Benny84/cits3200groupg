@@ -18,13 +18,14 @@ class TriggersController < ApplicationController
                     t.save!
                 end
             end
-        redirect_to controller: "items", action: "show", id: params[:parent_id]
+        #redirect_to controller: "items", action: "show", id: params[:parent_id]
+		redirect_to :back
     end
 	
 	def destroy
 		@trigger = Trigger.find(params[:id])
 		@trigger.destroy
 		
-		redirect_to item_path(@trigger.item_id)
+		redirect_to :back
 	end
 end
