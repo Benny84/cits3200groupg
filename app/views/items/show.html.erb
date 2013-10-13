@@ -20,8 +20,8 @@
   <% unless @item.triggers.empty? %>
   <% @item.triggers.each do |trigger| %> 
   <% unless (trigger.date_trigger - 8.hours).to_date < Time.zone.today %>
-  <p class = "emailReminder">Email to <% trigger.emails.each_with_index do |email, n| %><% if n != 0 %>, <% end %><%= email.email %><% end %> on <%= (trigger.date_trigger - 8.hours).to_datetime.strftime("%d/%m/%Y %H:%M") %> AWST</p>
-  <div class = "emailOptions">
+  <p class="emailReminder">Email to <% trigger.emails.each_with_index do |email, n| %><% if n != 0 %>, <% end %><%= email.email %><% end %> on <%= (trigger.date_trigger - 8.hours).to_datetime.strftime("%d/%m/%Y %H:%M") %> AWST</p>
+  <div class="emailOptions">
 	<%= link_to '', {:controller => 'triggers', :action => 'destroy', :id => trigger.id}, method: :delete, data: { confirm: 'Are you sure you want to cancel this email reminder?' }, class: 'delete', title: 'Cancel' %>
   </div>
   <% end %>
@@ -43,8 +43,8 @@
   <% unless child.triggers.empty? %>
   <% child.triggers.each do |trigger| %> 
   <% unless trigger.date_trigger - 8.hours < Time.zone.today %>
-  <p class = "emailReminder">Email to <% trigger.emails.each_with_index do |email, n| %><% if n != 0 %>, <% end %><%= email.email %><% end %> on <%= (trigger.date_trigger - 8.hours).to_datetime.strftime("%d/%m/%Y %H:%M") %> AWST</p>
-  <div class = "emailOptions">
+  <p class="emailReminder">Email to <% trigger.emails.each_with_index do |email, n| %><% if n != 0 %>, <% end %><%= email.email %><% end %> on <%= (trigger.date_trigger - 8.hours).to_datetime.strftime("%d/%m/%Y %H:%M") %> AWST</p>
+  <div class="emailOptions">
     <%= link_to '', {:controller => 'triggers', :action => 'destroy', :id => trigger.id}, method: :delete, data: { confirm: 'Are you sure you want to cancel this email reminder?' }, class: 'delete', title: 'Cancel' %>
   </div>
   <% end %>
@@ -61,7 +61,7 @@
   <%= f.label :task, 'Set As Task?' %>
   <%= f.check_box :task %>
   <%= hidden_field_tag 'item[parent_id]', @item.id %>
-  <div class = "formOptions">
+  <div class="formOptions">
     <%= f.submit "Confirm Item", class: "button" %> 
 	<%= f.submit "Clear", type: "reset", class: "button" %>
 	<input type="button" class="button" value="Cancel" onClick="cancelItemForm();" />
@@ -80,7 +80,7 @@
     <%= label_tag :emailrecip, 'Recipients:' %>
     <%= collection_select(:trigger_email, :email_id, Email.all, :id, :email, {}, {multiple: true, required: true}) %>
   </div>
-  <div class = "formOptions">
+  <div class="formOptions">
     <%= submit_tag "Set Email Reminder", class: "button" %> 
 	<%= submit_tag "Clear", type: "reset", class: "button" %>
 	<input type="button" class="button" value="Cancel" onClick="cancelEmailForm();" />

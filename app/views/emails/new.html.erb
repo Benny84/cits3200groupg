@@ -3,7 +3,7 @@
 <%= form_for(:email, url: emails_path, html: {class: "formCSS"}) do |f| %>
   <%= f.label :email, 'Email:' %>
   <%= f.text_field :email, required: true, maxlength: 100, pattern: '([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})', placeholder: 'example@example.com' %>
-  <div class = "formOptions">
+  <div class="formOptions">
     <%= f.submit "Add Email", class: "button" %> 
     <input type="button" class="button" value="Cancel" onClick="history.go(-1); return true;" />
   </div>
@@ -16,7 +16,7 @@
   <ul>
   <% Email.all.each do |email| %>
   <li class="emailList"><%= email.email %></li>
-  <div class = "emailOptions">
+  <div class="emailOptions">
 	<%= link_to '', {:controller => 'emails', :action => 'destroy', :id => email.id}, method: :delete, data: { confirm: 'Are you sure you want to delete this email?' }, class: 'delete', title: 'Delete' %>
   </div>
   <% end %>
