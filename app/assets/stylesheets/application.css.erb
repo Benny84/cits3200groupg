@@ -1,7 +1,7 @@
 /* This file contains the global page styles mainly for show.html */
 html,
 body {
-	background-image: url(<%= asset_path 'back.png' %>);
+	background-image: url(<%= asset_path "back.png" %>);
 	background-repeat: repeat-x;
 	margin: 0;
 	padding: 0;
@@ -56,7 +56,7 @@ header {
 
 #timeTab {
 	float: left;
-	margin-left: 440px;
+	margin-left: 420px;
 	margin-top: 5px;
 	font-size: 10px;
 	color: #666666;
@@ -301,13 +301,9 @@ h1:hover + .itemOptions, h2:hover + .itemOptions, .itemOptions:hover{
 	opacity: 1;
 }
 
-h1:hover {
+h1:hover, h2:hover, .emailReminder:hover, .emailList:hover {
 	text-decoration: underline;
 } 
-
-h2:hover {
-	text-decoration: underline;
-}
 
 .emailOptions {
 	opacity: 0;
@@ -335,16 +331,8 @@ h2:hover {
 	box-shadow: rgb(0, 0, 0) 1px 1px 2px 0px;
 }
 
-p:hover + .emailOptions, .emailList:hover + .emailOptions {
+p:hover + .emailOptions, .emailList:hover + .emailOptions, .emailOptions:hover {
 	opacity: 1;
-}
-
-.emailOptions:hover {
-	opacity: 1;
-}
-
-.emailReminder:hover, .emailList:hover {
-	text-decoration: underline;
 }
 
 /* css for forms */
@@ -450,14 +438,9 @@ h3 {
 
 /* formating link hover colours */
 
-a:link {
+a:link, a:visited {
 	color: #0000FF;
 	text-decoration: none;
-}
-
-a:visited {
-	color: #0000FF;
-	text-decoration:none;
 }
 
 a:hover {

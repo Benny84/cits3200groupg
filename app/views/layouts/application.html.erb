@@ -17,7 +17,7 @@
         <%= link_to items_path, title: 'Go To The Root' do %><p id="title1">Swedish Club of WA</p>
         <p id="title2">Club Process System</p><% end %>
       </div>
-	  <div id="timeTab">The current time in Perth is <%= Time.zone.now.strftime("%H:%M %d/%m/%Y") %></div>
+	  <div id="timeTab">The current time in Perth is <%= Time.zone.now.strftime("%l:%M%p %d/%m/%Y") %></div>
       <div id="logoutTab">
         <p id="logout"><%= link_to "Log Out", signout_path, method: "delete" %></p>
       </div>
