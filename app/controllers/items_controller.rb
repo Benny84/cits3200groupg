@@ -15,7 +15,11 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @item.destroy
 
-    redirect_to items_path
+    if @item.parent_id.nil?
+	  redirect_to items_path
+	else
+	  redirect_to item_path(@item.parent_id)
+	end
   end
 
   def edit
