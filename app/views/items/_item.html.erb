@@ -1,4 +1,14 @@
 <li>
+  <% if item.task %>
+    <% if item.complete %>
+	<div class="listTask tick" title="<%= item.title %> is complete"></div>
+	<% else %>
+	<div class="listTask" title="<%= item.title %> is incomplete"></div>
+	<% end %>  
+  <% end %>  
+  <% unless item.triggers.empty? %>
+    <div class="listEmail" title="<%= item.title %> has email reminders set"></div>
+  <% end %>  
   <% if item.id == params[:id].to_i %>
     <b><%= link_to h(item.title), :controller => 'items', :action => 'show', :id => item.id %></b>
   <% else %>

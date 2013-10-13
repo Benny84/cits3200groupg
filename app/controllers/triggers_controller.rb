@@ -25,6 +25,6 @@ class TriggersController < ApplicationController
 		@trigger = Trigger.find(params[:id])
 		@trigger.destroy
 		
-		redirect_to items_path
+		redirect_to item_path(@trigger.item_id)
 	end
 end
