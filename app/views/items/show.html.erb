@@ -74,7 +74,8 @@
     <%= label_tag :datepicker, 'Date:' %>
     <%= text_field_tag (:datepicker), '', {required: true, pattern: '(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d'} %><small> 00:00 AWST</small>
     <%= label_tag :emailchildren, 'Send all subchildren too?' %>
-    <%= check_box_tag(:emailchildren) %><%= hidden_field_tag(:parent_id, "") %>
+    <%= check_box_tag 'emailchildren', '', false, disabled: true, title: 'Currently not implemented' %>
+	<%= hidden_field_tag(:parent_id, "") %>
   </div>
   <div id="rightEmailPane">
     <%= label_tag :emailrecip, 'Recipients:' %>
