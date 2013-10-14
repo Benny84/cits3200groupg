@@ -17,7 +17,7 @@
   <% Email.all.each do |email| %>
   <li class="emailList"><%= email.email %></li>
   <div class="emailOptions">
-	<%= link_to '', {:controller => 'emails', :action => 'destroy', :id => email.id}, method: :delete, data: { confirm: 'Are you sure you want to delete this email?' }, class: 'delete', title: 'Delete' %>
+	<%= link_to '', {:controller => 'emails', :action => 'destroy', :id => email.id}, method: :delete, data: { confirm: "Are you sure you want to delete this email?\nWARNING: Deleting an email will not delete any triggers associated with it!" }, class: 'delete', title: 'Delete' %>
   </div>
   <% end %>
   </ul>
