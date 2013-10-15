@@ -9,6 +9,10 @@ class EmailsController < ApplicationController
     end
   end
   
+  def new
+    @items = Item.order_by('title, created_at').top_level
+  end
+  
   def destroy
 	@email = Email.find(params[:id])
 	@email.destroy
