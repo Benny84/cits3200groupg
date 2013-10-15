@@ -2,6 +2,8 @@ class Item < ActiveRecord::Base
   include ActsAsTree
   extend ActsAsTree::Presentation
 
+  scope :order_by, lambda { |o| {order: o} }
+  
   acts_as_tree order: "title, created_at"
 
   attr_accessible :parent_id, :title, :body, :task, :complete

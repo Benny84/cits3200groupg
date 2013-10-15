@@ -23,20 +23,20 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @items = Item.top_level
+    @items = Item.order_by('title, created_at').top_level
     @item = Item.find(params[:id])
   end
 
   def index
-    @items = Item.top_level
+    @items = Item.order_by('title, created_at').top_level
   end
 
   def new
-    @items = Item.top_level
+    @items = Item.order_by('title, created_at').top_level
   end
 
   def show
-    @items = Item.top_level
+    @items = Item.order_by('title, created_at').top_level
     @item = Item.find(params[:id])
     @children = @item.children
     @emails = Email.all
