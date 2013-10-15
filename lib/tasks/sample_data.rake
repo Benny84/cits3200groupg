@@ -1,20 +1,12 @@
 namespace :db do
   
-  desc "Add items and triggers to database"
+  desc "Add user and welcome message item to database..."
   task :adddata => :environment do
     puts "Creating swedishclubwa user..."
-    User.create!(:email => "swedishclubwa@gmail.com", :password => "cits3200", :password_confirmation => "cits3200")
+	# Here is where you will set your password:                        V                                       V
+    User.create!(:email => "swedishclubwa@gmail.com", :password => "cits3200", :password_confirmation => "cits3200") 
     
-    puts "Creating item..."
-    Item.create!(:title => "Ikea Food Tasting", :body => "Off to IKEA to taste delicious Swedish foods!")
-    puts "Creating email swedishclubwa@gmail.com..."
-    Email.create!(:email => "swedishclubwa@gmail.com")
-    puts "Creating task..."
-    Item.create!(:parent_id => 1, :title => "Transport", :body => "A bus needs to be hired from Hireabus.com", :task => true)
-    puts "Attaching note..."
-    Item.create!(:parent_id => 1, :title => "Blacklist", :body => "These people have been banned from the event due to excessive meatball consumption:<br /><ul><li>Foodie McFood</li><li>Bobby Bigtum</li></ul>", :task => false)
-    puts "Attaching trigger..."
-    Trigger.create!(:item_id => 2, :date_trigger => '2013-12-12 [18:00:00]')
-    TriggerEmail.create!(:trigger_id => 1, :email_id => 1)
+    puts "Creating welcome item..."
+    Item.create!(:title => "Welcome to the Club Process System", :body => "The Swedish Club of Western Australia would like to have a system that enables committee members to enter tasks and information about how to plan events, together with dates when those tasks should be e-mailed out automatically by the system. Ideally, members should be able to check off tasks as they're done to enable the team to keep track of what still needs to be done.</p><h4>Client</h4><p>Peter Thönell<br/>Telephone: 0405 658 750<br/>Email: thonellp@iinet.net.au<br/>Location: Leederville (Usually meet at UWA)")
   end
 end
