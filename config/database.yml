@@ -15,6 +15,7 @@
 development:
   adapter: postgresql
   database: db/development
+  password: cits3200
   pool: 5
   timeout: 5000
 
@@ -24,12 +25,14 @@ development:
 test: &test
   adapter: postgresql
   database: db/test
+  password: cits3200
   pool: 5
   timeout: 5000
 
 production:
   adapter: postgresql
   database: db/production
+  password: cits3200
   pool: 5
   timeout: 5000
 
