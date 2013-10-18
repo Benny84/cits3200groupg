@@ -75,6 +75,7 @@ $(function () {
 	});
 	
 	//Date picker jQuery
-	var dateToday = new Date();
-	$('#datepicker').datepicker({ dateFormat: "dd/mm/yy", minDate: dateToday });
+	var today = new Date();
+	var tomorrow = new Date(today.getTime() + (24 * 60 * 60 * 1000));
+	$('#datepicker').datepicker({ dateFormat: "dd/mm/yy", minDate: tomorrow });
 });
